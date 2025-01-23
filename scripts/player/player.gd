@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var maxSpeed = 450
 @export var accel = 2000
 @export var friction = 600
+@export var data: PlayerData
 
 var input = Vector2.ZERO
 var screen_size
