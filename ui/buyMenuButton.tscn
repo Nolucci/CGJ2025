@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvcv2rfxcmlsy"]
+
+[ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="1_m7kia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2612h"]
+content_margin_left = 50.0
+content_margin_top = 20.0
+content_margin_bottom = 50.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_tymto"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="Gradient" id="Gradient_t4x04"]
+offsets = PackedFloat32Array(0.994048, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pi6ql"]
+gradient = SubResource("Gradient_t4x04")
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw74w"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="Gradient" id="Gradient_nogdu"]
+offsets = PackedFloat32Array(0.992647, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hlgcd"]
+gradient = SubResource("Gradient_nogdu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8evj"]
+texture = SubResource("GradientTexture1D_hlgcd")
+texture_margin_top = 20.0
+texture_margin_bottom = 20.0
+
+[node name="BuyMenuButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2612h")
+text = "Nom de la compétence"
+label_settings = SubResource("LabelSettings_tymto")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_pi6ql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Je suis la description de ma compétence"
+label_settings = SubResource("LabelSettings_aw74w")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
+
+[node name="BuyButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_m7kia")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8evj")
+text = "800
+"
