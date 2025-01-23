@@ -1,27 +1,28 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 450
-var screen_size
+@export var maxSpeed = 450
+@export var accel = 2000
+@export var friction = 600
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	screen_size = get_viewport_rect().size
+var input = Vector2.ZERO
 
+func _physics_process(delta):
+	player_movement(delta)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO
+func get_input():
+	input.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	input.y = int(Input.is_action_pressed("move_bot")) - int(Input.is_action_pressed("move_top"))
+	return input.normalized()
 	
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_bot"):
-		velocity.y += 1	
-	if Input.is_action_pressed("move_top"):
-		velocity.y -= 1
+func player_movement(delta):
+	input = get_input()
 	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed;
-	
-	position += velocity * delta
+	if input == Vector2.ZERO:
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity += (input * accel * delta)
+		velocity = velocity.limit_length(maxSpeed)
+	move_and_slide()
