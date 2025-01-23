@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvcv2rfxcmlsy"]
+[gd_scene load_steps=11 format=3 uid="uid://cvcv2rfxcmlsy"]
 
+[ext_resource type="Script" path="res://scripts/ui/buy_menu_button.gd" id="1_g6vep"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="1_m7kia"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2612h"]
@@ -39,8 +40,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g6vep")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,44 +50,44 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="Main"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2612h")
 text = "Nom de la compétence"
 label_settings = SubResource("LabelSettings_tymto")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MainContent" type="HBoxContainer" parent="Main"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginImage" type="MarginContainer" parent="Main/MainContent"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="ImageCompetence" type="TextureRect" parent="Main/MainContent/MarginImage"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("GradientTexture1D_pi6ql")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="Info" type="VBoxContainer" parent="Main/MainContent"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Description" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Description" type="Label" parent="Main/MainContent/Info"]
 layout_mode = 2
 text = "Je suis la description de ma compétence"
 label_settings = SubResource("LabelSettings_aw74w")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginBuyButton" type="MarginContainer" parent="Main/MainContent/Info"]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 50
 
-[node name="BuyButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="BuyButton" type="Button" parent="Main/MainContent/Info/MarginBuyButton"]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/outline_size = 5
@@ -94,3 +96,5 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_m8evj")
 text = "800
 "
+
+[connection signal="pressed" from="Main/MainContent/Info/MarginBuyButton/BuyButton" to="." method="_on_buy_button_pressed"]

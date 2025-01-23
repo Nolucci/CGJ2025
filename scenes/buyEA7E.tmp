@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccak2hcy0s5jm"]
+[gd_scene load_steps=15 format=3 uid="uid://ccak2hcy0s5jm"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
-[ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
 
 [sub_resource type="Gradient" id="Gradient_4lu3y"]
 
@@ -55,7 +54,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_avfc3")
-button_scene = ExtResource("2_tdeeq")
+player_node = null
 
 [node name="Main" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -126,8 +125,56 @@ layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "
 "
-theme_override_constants/separation = 300
+theme_override_constants/separation = 10
 alignment = 1
+
+[node name="Button" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button2" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button3" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button4" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button5" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button6" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button7" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button8" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button9" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button10" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button11" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
+
+[node name="Button12" type="Button" parent="Main/RigthPart/ScrollSkillContainer/SkillContainer"]
+layout_mode = 2
+text = "rggrf"
 
 [node name="Footer" type="PanelContainer" parent="Main/RigthPart"]
 layout_mode = 2

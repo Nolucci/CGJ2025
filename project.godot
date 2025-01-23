@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="CGJ2025"
-run/main_scene="res://scenes/player/player.tscn"
 run/main_scene="res://scenes/buyBonusPage.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
