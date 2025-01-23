@@ -5,8 +5,10 @@ extends CharacterBody2D
 @export var friction = 600
 
 var input = Vector2.ZERO
+var screen_size
 
 func _physics_process(delta):
+	screen_size = get_viewport_rect().size
 	player_movement(delta)
 
 func get_input():
@@ -25,4 +27,6 @@ func player_movement(delta):
 	else:
 		velocity += (input * accel * delta)
 		velocity = velocity.limit_length(maxSpeed)
+	
+	position = position.clamp(Vector2.ZERO, screen_size)
 	move_and_slide()
