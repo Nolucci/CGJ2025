@@ -132,16 +132,6 @@ pattern = SubResource("16")
 
 [node name="SpawnPoint1" type="Node2D" parent="."]
 script = ExtResource("6_st2p3")
-active = true
-auto_pattern_id = "1"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
 
 [node name="BulletPattern" type="Path2D" parent="."]
 curve = SubResource("Curve2D_br070")

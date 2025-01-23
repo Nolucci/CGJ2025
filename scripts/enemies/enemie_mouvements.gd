@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 50  # Vitesse de déplacement
+@export var speed: float = 100  # Vitesse de déplacement
 var direction: Vector2 = Vector2.ZERO  # Direction du mouvement
 var time_since_change: float = 0.0  # Temps écoulé depuis le dernier changement de direction
 var change_direction_time: float = 0.0  # Temps avant le prochain changement de direction
