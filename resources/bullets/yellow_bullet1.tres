@@ -1,35 +1,25 @@
-[gd_resource type="PackedDataContainer" script_class="BulletProps" load_steps=7 format=3 uid="uid://yfeh5wp20qlb"]
+[gd_resource type="PackedDataContainer" script_class="BulletProps" load_steps=6 format=3 uid="uid://0a0kss6skr12"]
 
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="1_jv46e"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="2_1lu8y"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="1_y8wl3"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="2_cu4ji"]
 
-[sub_resource type="Curve" id="Curve_xl4gj"]
+[sub_resource type="Curve" id="Curve_q48fg"]
 
-[sub_resource type="Resource" id="Resource_pkr1t"]
-script = ExtResource("1_jv46e")
+[sub_resource type="Resource" id="Resource_tvq15"]
+script = ExtResource("1_y8wl3")
 ID = ""
-texture = "black_bullet3_eat"
+texture = "yellow_bullet1"
 collision = ""
 SFX = ""
 tex_scale = 1.0
 tex_skew = 0.0
 
-[sub_resource type="Resource" id="Resource_glwaf"]
-script = ExtResource("1_jv46e")
-ID = ""
-texture = "black_bullet3"
-collision = ""
-SFX = ""
-tex_scale = 1.0
-tex_skew = 0.0
-
-[sub_resource type="Curve" id="Curve_dw154"]
+[sub_resource type="Curve" id="Curve_plrs3"]
 
 [resource]
-script = ExtResource("2_1lu8y")
-anim_idle = SubResource("Resource_glwaf")
-anim_delete = SubResource("Resource_pkr1t")
-anim_more = Array[ExtResource("1_jv46e")]([])
+script = ExtResource("2_cu4ji")
+anim_idle = SubResource("Resource_tvq15")
+anim_more = Array[ExtResource("1_y8wl3")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -47,7 +37,7 @@ death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 a_direction_equation = "cos(x)"
 a_curve_movement = 0
-a_speed_multiplier = SubResource("Curve_xl4gj")
+a_speed_multiplier = SubResource("Curve_q48fg")
 a_speed_multi_iterations = 0
 a_speed_multi_scale = 0.0
 trigger_container = ""
@@ -58,7 +48,7 @@ homing_steer = 0.0
 homing_time_start = 0.0
 homing_duration = 999.0
 scale_multi_iterations = 0
-scale_multiplier = SubResource("Curve_dw154")
+scale_multiplier = SubResource("Curve_plrs3")
 scale_multi_scale = 1.0
 r_randomisation_chances = 1.0
 r_speed_choice = PackedFloat32Array()
