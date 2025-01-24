@@ -29,8 +29,12 @@ func setup(skill_data: PlayerUpgrade):
 		$Main/MainContent/ImageCompetence.texture = preload("res://icon.svg")
 		
 func update_information():
-	level.text = "Level: "+str(skill.current_level)
-	buy_button.text = str(skill.price) + " Coin"
+	if skill.current_level==skill.max_level:
+		buy_button.text = "Niveau max atteint"
+		buy_button.disabled
+	else:
+		buy_button.text = str(skill.price) + " Patoune"
+	level.text = "Niveau: "+str(skill.current_level)
 
 func _on_buy_button_pressed() -> void:
 	var upgrade:PlayerUpgrade = PlayerManager.player_data.find_upgrade_by_key(skill.primary_key)

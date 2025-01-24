@@ -9,6 +9,7 @@ var player_instantiated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$ColorRect.visible = false
 	#@TODO obliger de faire ça pour le moment car sinon data pas initialisé
 	if !player_instantiated:
 		var player_scene = preload("res://scenes/player/player.tscn")
@@ -40,7 +41,8 @@ func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: i
 
 
 func _on_new_game_pressed() -> void:
-	transition.play("fade_out")
+	$ColorRect.visible = true
+	transition.play("to new page")
 
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:

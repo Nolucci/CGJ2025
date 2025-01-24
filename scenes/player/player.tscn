@@ -1,36 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=16 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="2_kyo3p"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="2_v5h3j"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="3_ta0nx"]
+[ext_resource type="Texture2D" uid="uid://sxvuiv8jy51f" path="res://addons/BulletUpHell/Bullet/Sprites/Bullet_3.png" id="4_kf7pl"]
 
 [sub_resource type="Resource" id="Resource_1ww7h"]
 script = ExtResource("3_ta0nx")
 primary_key = 0
-name = "test"
-description = "cette compétence permet d'augmenter ton % de gay"
+name = "Vie supplémentaire"
+description = "Parce que vous êtes un peu nul"
 price = 100
-max_level = 100
-current_level = 5
+max_level = 2
+current_level = 0
+icon = ExtResource("4_kf7pl")
 
 [sub_resource type="Resource" id="Resource_noxnv"]
 script = ExtResource("3_ta0nx")
 primary_key = 1
-name = "test2"
-description = "test3"
+name = "Speed"
+description = "Faster is better"
 price = 10000
 max_level = 1
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_cgfj3"]
 script = ExtResource("3_ta0nx")
 primary_key = 3
-name = "test3"
-description = "test3"
-price = 100
-max_level = 1
+name = "Shield"
+description = "Invincible for 3s"
+price = 500
+max_level = 5
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_x1oe8"]
 script = ExtResource("3_ta0nx")
@@ -40,6 +44,7 @@ description = "test4"
 price = 200
 max_level = 2
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_e5ogb"]
 script = ExtResource("3_ta0nx")
@@ -49,6 +54,7 @@ description = "test5"
 price = 1001
 max_level = 1
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_arwah"]
 script = ExtResource("3_ta0nx")
@@ -58,6 +64,7 @@ description = "test6"
 price = 120
 max_level = 3
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_akhww"]
 script = ExtResource("3_ta0nx")
@@ -67,6 +74,7 @@ description = "test7"
 price = 300
 max_level = 1
 current_level = 0
+icon = ExtResource("2_v5h3j")
 
 [sub_resource type="Resource" id="Resource_sppsm"]
 script = ExtResource("2_kyo3p")
