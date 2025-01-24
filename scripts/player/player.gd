@@ -71,7 +71,6 @@ func take_damage():
 	data.isInvinsible = true
 	data.life = data.life - 1
 	for i in range(1, 15):
-		var t = create_tween()
 		sprite.set_modulate('ff8e7e');
 		await get_tree().create_timer(0.1).timeout
 		sprite.set_modulate('ffffff');
