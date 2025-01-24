@@ -1,112 +1,87 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=14 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
-[ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="2_kyo3p"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="2_v5h3j"]
-[ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="3_ta0nx"]
-[ext_resource type="Texture2D" uid="uid://sxvuiv8jy51f" path="res://addons/BulletUpHell/Bullet/Sprites/Bullet_3.png" id="4_kf7pl"]
+[ext_resource type="Resource" uid="uid://phj4d3qacoco" path="res://resources/player_data/player_data.tres" id="2_6pwet"]
+[ext_resource type="Texture2D" uid="uid://b6y5vdlik3jh" path="res://assets/player/Cat_Roll_Animation.png" id="3_6vsef"]
+[ext_resource type="PackedScene" uid="uid://otpt2jr0on6t" path="res://scenes/player/fart.tscn" id="3_andpl"]
 
-[sub_resource type="Resource" id="Resource_1ww7h"]
-script = ExtResource("3_ta0nx")
-primary_key = 0
-name = "Vie supplémentaire"
-description = "Parce que vous êtes un peu nul"
-price = 100
-max_level = 2
-current_level = 0
-icon = ExtResource("4_kf7pl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_epukw"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(0, 0, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_noxnv"]
-script = ExtResource("3_ta0nx")
-primary_key = 1
-name = "Speed"
-description = "Faster is better"
-price = 10000
-max_level = 1
-current_level = 0
-icon = ExtResource("2_v5h3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_15k5t"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(1600, 0, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_cgfj3"]
-script = ExtResource("3_ta0nx")
-primary_key = 3
-name = "Shield"
-description = "Invincible for 3s"
-price = 500
-max_level = 5
-current_level = 0
-icon = ExtResource("2_v5h3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e4l2"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(3200, 0, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_x1oe8"]
-script = ExtResource("3_ta0nx")
-primary_key = 4
-name = "test4"
-description = "test4"
-price = 200
-max_level = 2
-current_level = 0
-icon = ExtResource("2_v5h3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uayb7"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(0, 1600, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_e5ogb"]
-script = ExtResource("3_ta0nx")
-primary_key = 5
-name = "test5"
-description = "test5"
-price = 1001
-max_level = 1
-current_level = 0
-icon = ExtResource("2_v5h3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgw1b"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(1600, 1600, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_arwah"]
-script = ExtResource("3_ta0nx")
-primary_key = 6
-name = "test6"
-description = "test6"
-price = 120
-max_level = 3
-current_level = 0
-icon = ExtResource("2_v5h3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnasj"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(3200, 1600, 1600, 1600)
 
-[sub_resource type="Resource" id="Resource_akhww"]
-script = ExtResource("3_ta0nx")
-primary_key = 7
-name = "test7"
-description = "test7"
-price = 300
-max_level = 1
-current_level = 0
-icon = ExtResource("2_v5h3j")
-
-[sub_resource type="Resource" id="Resource_sppsm"]
-script = ExtResource("2_kyo3p")
-name = "Alain"
-money = 1000
-upgrades = Array[ExtResource("3_ta0nx")]([SubResource("Resource_1ww7h"), SubResource("Resource_noxnv"), SubResource("Resource_cgfj3"), SubResource("Resource_x1oe8"), SubResource("Resource_e5ogb"), SubResource("Resource_arwah"), SubResource("Resource_akhww")])
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jv11"]
+atlas = ExtResource("3_6vsef")
+region = Rect2(0, 3200, 1600, 1600)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r4juv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_v5h3j")
+"texture": SubResource("AtlasTexture_epukw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15k5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e4l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uayb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgw1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnasj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jv11")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yt0hi"]
 radius = 43.0
 height = 92.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 position = Vector2(487, 235)
 script = ExtResource("1_f24cv")
 maxSpeed = 700
 accel = 4000
 friction = 2000
-data = SubResource("Resource_sppsm")
+data = ExtResource("2_6pwet")
+sprite = NodePath("AnimatedSprite2D")
+fart_scene = ExtResource("3_andpl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.0775, 0.0741761)
 sprite_frames = SubResource("SpriteFrames_r4juv")
+autoplay = "default"
+frame_progress = 0.345217
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yt0hi")

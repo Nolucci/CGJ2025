@@ -6,7 +6,8 @@ class_name PlayerData
 signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int)
 
 @export var name: String = "Alain"
-@export var money: int = 0 
+@export var life: int = 1
+@export var money: int = 0
 @export var upgrades: Array[PlayerUpgrade] = []
 
 # Fonction pour acheter une amélioration
