@@ -1,11 +1,42 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3 uid="uid://phj4d3qacoco"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=7 format=3 uid="uid://drm5rnbla6wa8"]
 
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="1_xx3fb"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="2_o1r2w"]
+[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="3_gudms"]
+
+[sub_resource type="Resource" id="Resource_nev6f"]
+script = ExtResource("2_o1r2w")
+primary_key = 0
+name = "Vie"
+description = "Donne 1 vie supplémentaire"
+price = 100
+max_level = 3
+current_level = 0
+icon = ExtResource("3_gudms")
+
+[sub_resource type="Resource" id="Resource_lmnle"]
+script = ExtResource("2_o1r2w")
+primary_key = 1
+name = "Bouclier"
+description = "Ajoute un bouclier temporaire"
+price = 500
+max_level = 2
+current_level = 0
+icon = ExtResource("3_gudms")
+
+[sub_resource type="Resource" id="Resource_1unf8"]
+script = ExtResource("2_o1r2w")
+primary_key = 2
+name = "Vitesse"
+description = "Faster is better"
+price = 1000
+max_level = 2
+current_level = 0
+icon = ExtResource("3_gudms")
 
 [resource]
 script = ExtResource("1_xx3fb")
 name = "Alain"
 life = 1
 money = 5464564545646
-upgrades = Array[ExtResource("2_o1r2w")]([])
+upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_1unf8")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8n3qvuk07rja"]
+[gd_scene load_steps=16 format=3 uid="uid://b8n3qvuk07rja"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_k48oh"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_lm2k0"]
@@ -115,6 +115,9 @@ animations = [{
 radius = 19.0
 height = 40.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhwqm"]
+radius = 21.0
+
 [node name="Enemie" type="CharacterBody2D"]
 position = Vector2(312, 266)
 collision_layer = 2
@@ -139,3 +142,14 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_mmcyk")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_uhwqm")
