@@ -14,7 +14,7 @@ func _ready() -> void:
 		add_child(player)
 		player.hide()
 		player_instantiated = true
-
+		$Main/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
 		load_buttons()
 
 
@@ -26,5 +26,8 @@ func _process(delta: float) -> void:
 func load_buttons():
 	for skill_data in PlayerManager.player_data.upgrades:
 		var button_instance = button_scene.instantiate()
-		button_instance.setup(skill_data)
-		scroll_container.add_child(button_instance)
+		call_deferred("_setup_button", button_instance, skill_data)
+
+func _setup_button(button_instance, skill_data):
+	button_instance.setup(skill_data)
+	scroll_container.add_child(button_instance)

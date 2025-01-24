@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccak2hcy0s5jm"]
+[gd_scene load_steps=15 format=3 uid="uid://ccak2hcy0s5jm"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
@@ -22,8 +22,6 @@ font = ExtResource("2_loy3t")
 font_size = 20
 
 [sub_resource type="Theme" id="Theme_kme7x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5y0h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2jmn"]
 
@@ -114,7 +112,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_kme7x")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_e5y0h")
+horizontal_scroll_mode = 0
 
 [node name="SkillContainer" type="VBoxContainer" parent="Main/RigthPart/ScrollSkillContainer"]
 layout_mode = 2
@@ -122,8 +120,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 tooltip_text = "
 "
-theme_override_constants/separation = 250
-alignment = 1
+theme_override_constants/separation = 20
 
 [node name="Footer" type="PanelContainer" parent="Main/RigthPart"]
 layout_mode = 2

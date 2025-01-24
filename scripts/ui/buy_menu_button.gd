@@ -1,6 +1,11 @@
 extends Control
 # Compétence associée au bouton
 var skill : PlayerUpgrade
+@onready var title = $Main/Title
+@onready var description = $Main/MainContent/Info/Info_base/Description
+@onready var buy_button = $Main/MainContent/Info/MarginBuyButton/BuyButton
+@onready var level = $Main/MainContent/Info/Info_base/Level
+@onready var icon = $Main/MainContent/ImageCompetence
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,12 +24,17 @@ func setup(skill_data: PlayerUpgrade):
 	$Main/MainContent/Info/MarginBuyButton/BuyButton.text = str(skill_data.price) + " Coin"
 	$Main/MainContent/Info/Info_base/Level.text = "Level: "+str(skill_data.current_level) 
 	if skill_data and "icon" in skill_data and skill_data.icon:
-		$Main/MainContent/MarginImage/ImageCompetence.texture = skill_data.icon
+		$Main/MainContent/ImageCompetence.texture = skill_data.icon
 	else:
-		$Main/MainContent/MarginImage/ImageCompetence.texture = preload("res://icon.svg")
+		$Main/MainContent/ImageCompetence.texture = preload("res://icon.svg")
+		
+func update_information():
+	level.text = "Level: "+str(skill.current_level)
+	buy_button.text = str(skill.price) + " Coin"
 
 func _on_buy_button_pressed() -> void:
 	var upgrade:PlayerUpgrade = PlayerManager.player_data.find_upgrade_by_key(skill.primary_key)
 	if PlayerManager.player_data.can_upgrade(upgrade):
 		PlayerManager.player_data.buy_upgrade(skill.primary_key)
-		$Main/MainContent/Info/Info_base/Level.text = "Level: "+str(skill.current_level)
+		update_information()
+		
