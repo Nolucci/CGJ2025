@@ -11,8 +11,11 @@ class_name Player
 
 var input = Vector2.ZERO
 var screen_size
+var area: Area2D
 
 func _ready() -> void:
+	area = $Area2D
+	Spawning.bullet_collided_body.connect(on_area_entered)
 	EventManager.register_player(self)
 	PlayerManager.player_data = data
 	print(PlayerManager.player_data)
@@ -77,3 +80,16 @@ func take_damage():
 		await get_tree().create_timer(0.1).timeout
 	
 	data.isInvinsible = false
+
+func on_area_entered(body, body_shape_index, B, local_shape_index, shared_area):
+	print(get_props_groups(B))
+		
+func get_props_groups(B: Dictionary) -> Variant:
+	# Vérifie si B contient la clé "props"
+	if B.has("props"):
+		var props = B["props"]
+		# Vérifie si "props" est un dictionnaire et contient la clé "groups"
+		if typeof(props) == TYPE_DICTIONARY and props.has("groups"):
+			return props["groups"]
+	# Si "props" ou "groups" n'existent pas, retourne null
+	return null

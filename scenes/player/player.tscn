@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=15 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Resource" uid="uid://fqav33bxwpwt" path="res://resources/player_data/player_data.tres" id="2_6pwet"]
@@ -63,8 +63,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yt0hi"]
-radius = 43.0
-height = 92.0
+radius = 30.8824
+height = 70.5883
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbhng"]
+radius = 35.2941
+height = 79.4117
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 position = Vector2(487, 235)
@@ -87,4 +91,11 @@ sprite_frames = SubResource("SpriteFrames_r4juv")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.47058, 0)
 shape = SubResource("CapsuleShape2D_yt0hi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.47058, 0)
+shape = SubResource("CapsuleShape2D_mbhng")
