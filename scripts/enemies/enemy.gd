@@ -10,8 +10,8 @@ var target_position: Vector2 = Vector2.ZERO
 
 signal enemy_death(enemy: Enemie)
 
-func goTo(position: Vector2):
-	target_position = position
+func goTo(pos: Vector2):
+	target_position = pos
 	set_start_movement(false)
 
 func _ready() -> void:
@@ -19,8 +19,8 @@ func _ready() -> void:
 	EventManager.register_enemy(self)
 	area.area_entered.connect(on_area_entered)
 	
-func set_start_movement(start_movement: bool):
-	self.start_movement = start_movement
+func set_start_movement(new_start_movement: bool):
+	self.start_movement = new_start_movement
 
 func _process(delta):
 	screen_size = get_viewport_rect().size
@@ -38,9 +38,8 @@ func goToTargetPosition():
 	velocity = direction * 100.0
 	move_and_slide()
 	
-	# Vérification si la position cible est atteinte
-	if position.distance_to(target_position) < 5.0:  # Tolérance de 5 unités
-		velocity = Vector2.ZERO  # Arrêter le mouvement
+	if position.distance_to(target_position) < 5.0:
+		velocity = Vector2.ZERO
 		target_position = Vector2.ZERO
 		set_start_movement(true)
 

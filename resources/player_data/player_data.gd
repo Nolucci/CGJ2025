@@ -2,9 +2,6 @@ extends Resource
 
 class_name PlayerData
 
-#Ajout de signal pour gérer dans certaine classe
-signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int)
-
 @export var name: String = "Alain"
 @export var life: int = 1
 @export var money: int = 0
@@ -31,9 +28,9 @@ func find_upgrade_by_key(primary_key: int) -> PlayerUpgrade:
 			return u
 	return null
 
-func find_upgrade_by_name(name: String) -> PlayerUpgrade:
+func find_upgrade_by_name(upgrade_name: String) -> PlayerUpgrade:
 	for u in upgrades:
-		if u.name == name:
+		if u.name == upgrade_name:
 			return u
 	return null
 

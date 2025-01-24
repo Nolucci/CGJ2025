@@ -25,7 +25,7 @@ var moving_to_orbit: bool = true
 var time_since_change: float = 0.0
 var change_interval: float = 0.0
 
-func process_movement(enemis: Enemie, delta, screen_size: Vector2):
+func process_movement(enemis: Enemie, delta, _screen_size: Vector2):
 	# Si le centre n'est pas défini (Vector2.ZERO), on choisit la position actuelle de l'ennemi
 	if center == Vector2.ZERO:
 		center = enemis.position
@@ -35,7 +35,7 @@ func process_movement(enemis: Enemie, delta, screen_size: Vector2):
 	else:
 		orbit_center(enemis, delta)
 
-func move_to_orbit(enemis: Enemie, delta):
+func move_to_orbit(enemis: Enemie, _delta):
 	# Calculer la position cible sur le cercle (rayon depuis le centre)
 	var target_position = center + Vector2(cos(angle), sin(angle)) * radius
 

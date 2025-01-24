@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
-[ext_resource type="PackedScene" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
-[ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/Cat_Roll_Animation_color.png" id="5_j3yb4"]
+[ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
+[ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/Cat_Roll_Animation.png" id="5_j3yb4"]
 
 [sub_resource type="Gradient" id="Gradient_4lu3y"]
 offsets = PackedFloat32Array(0, 0.0151515)

@@ -40,6 +40,7 @@ position = Vector2(189, -86)
 position = Vector2(500, -88)
 
 [node name="spawnPoint3" type="Marker2D" parent="spawnPoints"]
+visible = false
 position = Vector2(746, -90)
 
 [node name="spawnPoint4" type="Marker2D" parent="spawnPoints"]
