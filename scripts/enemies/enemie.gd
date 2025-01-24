@@ -8,6 +8,8 @@ var area: Area2D
 var screen_size: Vector2
 var target_position: Vector2 = Vector2.ZERO
 
+signal enemy_death(enemy: Enemie)
+
 func goTo(position: Vector2):
 	target_position = position
 	set_start_movement(false)
@@ -50,4 +52,5 @@ func on_area_entered(area_entered: Area2D):
 		else:
 			life -= 1
 		if life <= 0:
+			enemy_death.emit(self)
 			queue_free()

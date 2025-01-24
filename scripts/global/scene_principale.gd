@@ -7,13 +7,13 @@ extends Node2D
 var currentWave: int = 1
 var currentLevel: int = 1
 
-@export var enemies: Array[Enemie] = []
+@export var enemies: int = 0
 
 func _ready():
-	pass
+	EventManager.enemy_get_killed.connect(_on_enemy_death)
 
-func _process(_delta):
-	if enemies.size() == 0:
+func _physics_process(delta):
+	if enemies == 0:
 		if(currentWave - 1) == waves.size():
 			currentWave = 1
 			print("c'est repartis");
@@ -28,12 +28,6 @@ func _process(_delta):
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
 			currentLevel += 1
-		
-	if Input.is_action_just_released("fart"):
-		if enemies.size() > 0:
-			for enemy in enemies:
-				remove_child(enemy)
-		enemies.clear()
 
 func spawn_enemies(boss: bool):
 	var enemy_scene: PackedScene
@@ -44,17 +38,19 @@ func spawn_enemies(boss: bool):
 	else:
 		enemy_scene = waves[currentWave - 1].typeEnemy
 		nb = waves[currentWave - 1].nbEnemies
+	var free_point = go_points.get_children()
 
 	for i in range(nb):
+		
 		var markers = spawn_point.get_children()
 		var enemy_instance = enemy_scene.instantiate()
-		enemies.append(enemy_instance)
+		enemies += 1
 		add_child(enemy_instance)
 		enemy_instance.position = markers[i % markers.size() - 1].global_position
 
-	var free_point = go_points.get_children()
-	
-	for enemy: Enemie in enemies:
 		var marker = free_point.pick_random()
 		free_point.erase(marker)
-		enemy.goTo(marker.global_position)
+		enemy_instance.goTo(marker.global_position)
+
+func _on_enemy_death(enemy: Enemie):
+	enemies -= 1
