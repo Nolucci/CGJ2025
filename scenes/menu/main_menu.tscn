@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://b108br60ietbi"]
+[gd_scene load_steps=25 format=3 uid="uid://b108br60ietbi"]
 
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_1mamq"]
 [ext_resource type="Texture2D" uid="uid://c2w25ggmayq5q" path="res://assets/images/main_menu.png" id="2_pfgd4"]
 [ext_resource type="FontFile" uid="uid://dg3176jd8hvu1" path="res://assets/fonts/BeontypixelRegularDemo-XGdMg.otf" id="2_wuvld"]
 [ext_resource type="Texture2D" uid="uid://ca43nbl1bc7u6" path="res://assets/images/chatPanneau.tres" id="3_7cfwd"]
 [ext_resource type="FontFile" uid="uid://dj6eva8umh1qg" path="res://assets/fonts/Paaxel-xRjLO.otf" id="3_qst4b"]
+[ext_resource type="Texture2D" uid="uid://d0rro1ok2q35l" path="res://assets/images/Patoune.png" id="4_13un1"]
 [ext_resource type="Texture2D" uid="uid://b6p6cgjys108i" path="res://assets/images/catButton2.png" id="4_acc8c"]
 [ext_resource type="Texture2D" uid="uid://cm80rfsvgvbxn" path="res://assets/images/catButton.png" id="4_oqcx3"]
 [ext_resource type="Texture2D" uid="uid://cg5srctkg0vdf" path="res://assets/images/catButton3.png" id="5_yfka5"]
@@ -146,6 +147,17 @@ size_flags_vertical = 4
 texture = ExtResource("3_7cfwd")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="BackgroundPatoune" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_13un1")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 1

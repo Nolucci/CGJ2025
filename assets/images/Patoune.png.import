@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgcgsbalgc06o"
-path="res://.godot/imported/Panneau_Cat-2.png-529ff554f6e7745f1646afb21ec63677.ctex"
+uid="uid://d0rro1ok2q35l"
+path="res://.godot/imported/Patoune.png-c47b33ffd5dce65bf3df21272ebb8599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Panneau_Cat-2.png"
-dest_files=["res://.godot/imported/Panneau_Cat-2.png-529ff554f6e7745f1646afb21ec63677.ctex"]
+source_file="res://assets/images/Patoune.png"
+dest_files=["res://.godot/imported/Patoune.png-c47b33ffd5dce65bf3df21272ebb8599.ctex"]
 
 [params]
 
