@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_w6r0j"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_p3qtu"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_idnoj"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_57jsq"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_5260i"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="5_se254"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="6_bavsm"]
 [ext_resource type="Texture2D" uid="uid://dypyaoty8ossg" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="7_h7md5"]
@@ -129,7 +129,7 @@ wait_tween_time = 0.0
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_5y1vw"]
 script = ExtResource("5_se254")
-anim_more = Array[ExtResource("5_57jsq")]([])
+anim_more = Array[ExtResource("5_5260i")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -205,7 +205,7 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_j5lwx"]
 script = ExtResource("5_se254")
-anim_more = Array[ExtResource("5_57jsq")]([])
+anim_more = Array[ExtResource("5_5260i")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -281,7 +281,7 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_ba22m"]
 script = ExtResource("5_se254")
-anim_more = Array[ExtResource("5_57jsq")]([])
+anim_more = Array[ExtResource("5_5260i")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -358,7 +358,7 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_i6qsh"]
 script = ExtResource("5_se254")
-anim_more = Array[ExtResource("5_57jsq")]([])
+anim_more = Array[ExtResource("5_5260i")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -439,7 +439,7 @@ colors = PackedColorArray(0, 1, 0.203125, 1)
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_w2wt3"]
 script = ExtResource("5_se254")
-anim_more = Array[ExtResource("5_57jsq")]([])
+anim_more = Array[ExtResource("5_5260i")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -593,14 +593,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(80, 56)
@@ -614,14 +607,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(64, 392)
@@ -635,14 +621,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(96, 392)
@@ -656,14 +635,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint5" type="Node2D" parent="SpawnPoints"]
 position = Vector2(864, 40)
@@ -677,14 +649,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="Target" type="Sprite2D" parent="."]
 position = Vector2(448, 168)

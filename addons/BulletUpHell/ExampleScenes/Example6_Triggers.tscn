@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2hg81bw5ptq"]
+[gd_scene load_steps=34 format=3 uid="uid://c2hg81bw5ptq"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_y1qmf"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_8fi2v"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHTriggerContainer.gd" id="2_fwqwm"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_3syup"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Triggers/TriggerTime.gd" id="3_gs7vq"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/Pattern.gd" id="4_227hp"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_801jc"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_wpn57"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="5_i6mox"]
@@ -447,8 +448,7 @@ id = "un"
 advanced_controls = "0=0
 >q"
 triggers = Array[RichTextEffect]([SubResource("RichTextEffect_oap44")])
-patterns = Array[NavigationPolygon]([SubResource("NavigationPolygon_vnfc6")])
-pool_amount = null
+patterns = Array[ExtResource("4_227hp")]([SubResource("NavigationPolygon_vnfc6")])
 
 [node name="TriggerContainer3" type="Node" parent="."]
 script = ExtResource("2_fwqwm")
@@ -456,7 +456,7 @@ id = "trois"
 advanced_controls = "0=0
 >q"
 triggers = Array[RichTextEffect]([SubResource("RichTextEffect_lartf")])
-patterns = Array[NavigationPolygon]([SubResource("NavigationPolygon_vnfc6")])
+patterns = Array[ExtResource("4_227hp")]([SubResource("NavigationPolygon_vnfc6")])
 
 [node name="TriggerContainer4" type="Node" parent="."]
 script = ExtResource("2_fwqwm")
@@ -464,7 +464,7 @@ id = "quatre"
 advanced_controls = "0=0
 >q"
 triggers = Array[RichTextEffect]([SubResource("RichTextEffect_xk7l8")])
-patterns = Array[NavigationPolygon]([SubResource("NavigationPolygon_vnfc6")])
+patterns = Array[ExtResource("4_227hp")]([SubResource("NavigationPolygon_vnfc6")])
 
 [node name="NodeIcons5" type="Sprite2D" parent="."]
 position = Vector2(344, 448)
@@ -531,13 +531,6 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("../../TriggerContainer2")
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(51, 206)
@@ -552,13 +545,6 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("")
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(47, 334)
@@ -574,13 +560,6 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("")
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 17

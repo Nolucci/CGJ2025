@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_kdwy4"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_espee"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="5_aeave"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="7_1w1un"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="7_6ocop"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="9_1v31q"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="10_taw2s"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="11_2iydo"]
@@ -71,55 +71,25 @@ resource_name = "PatternLine"
 script = ExtResource("5_aeave")
 offset = Vector2(20, 10)
 center = 3
-symmetrical = null
+symmetric = true
 bullet = "1"
 nbr = 5
-pattern_angle = -0.8006
 iterations = -1
-follows_parent = false
+pattern_angle = -0.8006
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
 cooldown_shoot = 0.0
 cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
-wait_latence = 0
 wait_tween_momentum = 0
 wait_tween_length = 0.0
 wait_tween_time = 0.0
-layer_nbr = 1
-layer_cooldown_spawn = 0.0
-layer_pos_offset = 0.0
-layer_speed_offset = 0.0
-layer_angle_offset = 0.0
-r_randomisation_chances = 1.0
-r_offset_choice = ""
-r_offset_x_variation = Vector3(0, 0, 0)
-r_offset_y_variation = Vector3(0, 0, 0)
-r_center_choice = ""
-r_symmetry_chances = 0.0
-r_bullet_choice = ""
-r_bullet_nbr_choice = ""
-r_bullet_nbr_variation = Vector3(0, 0, 0)
-r_pattern_angle_choice = ""
-r_pattern_angle_variation = Vector3(0, 0, 0)
-r_infinite_iter_chances = 0.0
-r_iterations_choice = ""
-r_iterations_variation = Vector3(0, 0, 0)
-r_forced_angle_choice = ""
-r_forced_angle_variation = Vector3(0, 0, 0)
-r_forced_target_choice = []
-r_stasis_chances = 0.0
-r_cooldown_spawn_choice = ""
-r_cooldown_spawn_variation = Vector3(0, 0, 0)
-r_cooldown_shoot_choice = ""
-r_cooldown_shoot_variation = Vector3(0, 0, 0)
-r_cooldown_n_spawn_choice = ""
-r_cooldown_n_spawn_variation = Vector3(0, 0, 0)
-r_cooldown_n_shoot_choice = ""
-r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_kjhx3"]
 
@@ -129,7 +99,7 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_yktta"]
 script = ExtResource("10_taw2s")
-anim_more = Array[ExtResource("7_1w1un")]([])
+anim_more = Array[ExtResource("7_6ocop")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -243,14 +213,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(86, 307)
@@ -264,14 +227,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(83, 510)
@@ -285,14 +241,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 16

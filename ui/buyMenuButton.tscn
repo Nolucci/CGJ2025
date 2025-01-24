@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://cvcv2rfxcmlsy"]
+
+[ext_resource type="Script" path="res://scripts/ui/buy_menu_button.gd" id="1_g6vep"]
+[ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="1_m7kia"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tymto"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="Gradient" id="Gradient_t4x04"]
+offsets = PackedFloat32Array(0.994048, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pi6ql"]
+gradient = SubResource("Gradient_t4x04")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ro3ja"]
+content_margin_left = 16.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw74w"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7bqd"]
+content_margin_right = 20.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_eup3v"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="Gradient" id="Gradient_nogdu"]
+offsets = PackedFloat32Array(0.992647, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hlgcd"]
+gradient = SubResource("Gradient_nogdu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8evj"]
+texture = SubResource("GradientTexture1D_hlgcd")
+texture_margin_top = 20.0
+texture_margin_bottom = 20.0
+
+[node name="BuyMenuButton" type="Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_g6vep")
+
+[node name="Main" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Main"]
+layout_mode = 2
+text = "Nom de la compétence"
+label_settings = SubResource("LabelSettings_tymto")
+
+[node name="MainContent" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ImageCompetence" type="TextureRect" parent="Main/MainContent"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_pi6ql")
+
+[node name="Info" type="VBoxContainer" parent="Main/MainContent"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Info_base" type="HBoxContainer" parent="Main/MainContent/Info"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 100
+
+[node name="Description" type="Label" parent="Main/MainContent/Info/Info_base"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ro3ja")
+text = "Je suis la description de ma compétence"
+label_settings = SubResource("LabelSettings_aw74w")
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Main/MainContent/Info/Info_base"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.5
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s7bqd")
+text = "Level: 20
+"
+label_settings = SubResource("LabelSettings_eup3v")
+horizontal_alignment = 3
+vertical_alignment = 1
+justification_flags = 162
+clip_text = true
+
+[node name="MarginBuyButton" type="MarginContainer" parent="Main/MainContent/Info"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="BuyButton" type="Button" parent="Main/MainContent/Info/MarginBuyButton"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_m7kia")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8evj")
+text = "800
+"
+
+[connection signal="pressed" from="Main/MainContent/Info/MarginBuyButton/BuyButton" to="." method="_on_buy_button_pressed"]

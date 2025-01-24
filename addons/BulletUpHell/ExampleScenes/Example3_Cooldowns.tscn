@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_rg1mt"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="3_fdgx0"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_n06iy"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_gk4f4"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_hbl8k"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="5_mbm2d"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="6_st2p3"]
 
@@ -198,7 +198,7 @@ wait_tween_time = 0.0
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_mmsky"]
 script = ExtResource("5_mbm2d")
-anim_more = Array[ExtResource("5_gk4f4")]([])
+anim_more = Array[ExtResource("5_hbl8k")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
@@ -332,14 +332,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint2" type="Node2D" parent="."]
 position = Vector2(128, 320)
@@ -353,14 +346,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint5" type="Node2D" parent="."]
 position = Vector2(640, 320)
@@ -374,14 +360,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint6" type="Node2D" parent="."]
 position = Vector2(640, 480)
@@ -395,14 +374,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint3" type="Node2D" parent="."]
 position = Vector2(128, 480)
@@ -416,14 +388,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint4" type="Node2D" parent="."]
 position = Vector2(640, 128)
@@ -437,14 +402,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 16
