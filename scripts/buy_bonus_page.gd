@@ -15,6 +15,7 @@ func _ready() -> void:
 		player.hide()
 		player_instantiated = true
 		$Main/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
+		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
 
 
@@ -31,3 +32,6 @@ func load_buttons():
 func _setup_button(button_instance, skill_data):
 	button_instance.setup(skill_data)
 	scroll_container.add_child(button_instance)
+	
+func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int):
+	$Main/RigthPart/Header/NumberOfCoin.text = "Coin: " + str(remaining_money)
