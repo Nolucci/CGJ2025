@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=11 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
 [ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
@@ -6,11 +6,13 @@
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
 [ext_resource type="Script" path="res://resources/waves/level/level.gd" id="3_tev63"]
 [ext_resource type="PackedScene" uid="uid://cxal81lhhuopo" path="res://scenes/enemie/boss/bigTeenager.tscn" id="5_r6nls"]
-[ext_resource type="Resource" uid="uid://bbktu2l5cbp4v" path="res://resources/waves/level/level_5_baby.tres" id="6_nlwsg"]
+[ext_resource type="Resource" uid="uid://si4bfwwujmd4" path="res://resources/waves/level/wave1/w1_lvl1.tres" id="6_44adx"]
+[ext_resource type="Resource" uid="uid://bbktu2l5cbp4v" path="res://resources/waves/level/wave1/w1_lvl3.tres" id="6_nlwsg"]
+[ext_resource type="Resource" uid="uid://db11kl2igqyo5" path="res://resources/waves/level/wave1/w1_lvl2.tres" id="7_5s17w"]
 
 [sub_resource type="Resource" id="Resource_rqrmn"]
 script = ExtResource("2_y4v6y")
-tabLevel = Array[ExtResource("3_tev63")]([ExtResource("6_nlwsg"), ExtResource("6_nlwsg"), ExtResource("6_nlwsg")])
+tabLevel = Array[ExtResource("3_tev63")]([ExtResource("6_44adx"), ExtResource("7_5s17w"), ExtResource("6_nlwsg")])
 tabBoss = Array[PackedScene]([ExtResource("5_r6nls")])
 
 [node name="Principal" type="Node2D"]

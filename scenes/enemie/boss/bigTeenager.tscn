@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dho088ru0eh0c" path="res://assets/enemies/TeenagerBoss.png" id="3_csmyp"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_q73fo"]
 [ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_y78bc"]
-[ext_resource type="Resource" uid="uid://dhwqbspkidyw7" path="res://resources/patterns/black_bullet_guitarist_pattern.tres" id="6_ko3ec"]
-[ext_resource type="Resource" uid="uid://ccgk1ctj1hqhh" path="res://resources/patterns/bullet_line_colors_guitarist_pattern.tres" id="7_c0qhh"]
-[ext_resource type="Resource" uid="uid://wca3coskw4v7" path="res://resources/patterns/bullet_circle_colors_guitarist_pattern.tres" id="8_la6ox"]
+[ext_resource type="Resource" uid="uid://dhwqbspkidyw7" path="res://resources/patterns/guitarist/black_bullet_guitarist_pattern.tres" id="6_ko3ec"]
+[ext_resource type="Resource" uid="uid://ccgk1ctj1hqhh" path="res://resources/patterns/guitarist/bullet_line_colors_guitarist_pattern.tres" id="7_c0qhh"]
+[ext_resource type="Resource" uid="uid://wca3coskw4v7" path="res://resources/patterns/guitarist/bullet_circle_colors_guitarist_pattern.tres" id="8_la6ox"]
 
 [sub_resource type="Resource" id="Resource_xkxc7"]
 script = ExtResource("2_6fewp")

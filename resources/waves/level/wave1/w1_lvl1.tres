@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://si4bfwwujmd4"]
+
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="1_835w3"]
+[ext_resource type="PackedScene" uid="uid://b8n3qvuk07rja" path="res://scenes/enemie/baby.tscn" id="2_yc2ko"]
+
+[resource]
+script = ExtResource("1_835w3")
+tabEnemies = Array[PackedScene]([ExtResource("2_yc2ko"), ExtResource("2_yc2ko")])
