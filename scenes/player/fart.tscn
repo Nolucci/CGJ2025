@@ -1,20 +1,95 @@
-[gd_scene load_steps=4 format=3 uid="uid://otpt2jr0on6t"]
+[gd_scene load_steps=10 format=3 uid="uid://otpt2jr0on6t"]
 
-[ext_resource type="Texture2D" uid="uid://csklwjsaxwgf6" path="res://assets/player/fart.png" id="1_2akuq"]
+[ext_resource type="Texture2D" uid="uid://b1loswlkc0hwr" path="res://assets/player/fart.png" id="1_2akuq"]
 [ext_resource type="Script" path="res://scripts/player/fart.gd" id="1_gthxi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x4u1n"]
 radius = 55.0818
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eisyg"]
+atlas = ExtResource("1_2akuq")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqhn0"]
+atlas = ExtResource("1_2akuq")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi612"]
+atlas = ExtResource("1_2akuq")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofwbm"]
+atlas = ExtResource("1_2akuq")
+region = Rect2(0, 2048, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36rpt"]
+atlas = ExtResource("1_2akuq")
+region = Rect2(1024, 2048, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8usa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eisyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqhn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi612")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rpt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Fart" type="Area2D" groups=["fart"]]
+z_index = 1000
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_gthxi")
+growth_speed = 12.0
+duration = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["fart"]]
+light_mask = 2
+visibility_layer = 2
 shape = SubResource("CircleShape2D_x4u1n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999998, 0)
-scale = Vector2(1.92188, 1.76563)
-texture = ExtResource("1_2akuq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(0.124298, 0.124298)
+sprite_frames = SubResource("SpriteFrames_f8usa")
+autoplay = "default"
+frame = 12
+frame_progress = 1.0

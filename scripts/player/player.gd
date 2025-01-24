@@ -39,7 +39,7 @@ func fart():
 
 func player_movement(delta):
 	input = get_input()
-	adapat_sprite(input)
+	adapat_sprite()
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
@@ -52,7 +52,7 @@ func player_movement(delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	move_and_slide()
 
-func adapat_sprite(input: Vector2):
+func adapat_sprite():
 	if input.y > 0:
 		sprite.speed_scale = 0.7
 	elif input.y < 0:
