@@ -31,6 +31,12 @@ func find_upgrade_by_key(primary_key: int) -> PlayerUpgrade:
 			return u
 	return null
 
+func find_upgrade_by_name(name: String) -> PlayerUpgrade:
+	for u in upgrades:
+		if u.name == name:
+			return u
+	return null
+
 # Fonction pour vérifier si une amélioration peut être effectuée
 func can_upgrade(upgrade: PlayerUpgrade) -> bool:
 	if upgrade.current_level >= upgrade.max_level:

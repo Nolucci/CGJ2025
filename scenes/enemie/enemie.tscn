@@ -105,3 +105,11 @@ curve = SubResource("Curve2D_iltyl")
 script = ExtResource("4_3lwwp")
 id = "bullettest"
 props = SubResource("PackedDataContainer_bldld")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

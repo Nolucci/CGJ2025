@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var spawn_point = $spawnPoints  # Le nœud contenant les spawn points
-@onready var go_points = $goPoints  # Le nœud contenant les points cibles
-@onready var baby_scene = preload("res://scenes/enemie/baby.tscn")  # Précharger la scène des babies
+@onready var spawn_point = $spawnPoints
+@onready var go_points = $goPoints
+@onready var baby_scene = preload("res://scenes/enemie/baby.tscn")
 
 func _ready():
-	var free_points = go_points.get_children()  # Obtenez une copie des enfants de goPoints
+	var free_points = go_points.get_children()
 	
 	for i in range(4):
 		if free_points.size() > 0:
