@@ -97,7 +97,6 @@ sprite_frames = SubResource("SpriteFrames_r4juv")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_yt0hi")
 
 [node name="ColorTrigger" type="Node" parent="."]
