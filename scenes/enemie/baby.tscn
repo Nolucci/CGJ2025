@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8n3qvuk07rja"]
+[gd_scene load_steps=19 format=3 uid="uid://b8n3qvuk07rja"]
 
-[ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_k48oh"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_k48oh"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_lm2k0"]
-[ext_resource type="Script" path="res://scripts/Patterns/PatternManager.gd" id="3_e0bsv"]
-[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="4_er6ci"]
-[ext_resource type="Resource" uid="uid://dqovdxb52f8vo" path="res://resources/patterns/black_bullet_bandmaster_pattern.tres" id="6_e6cg1"]
-[ext_resource type="Texture2D" uid="uid://sqbas162m6rd" path="res://assets/enemies/baby.png" id="7_7se2y"]
+[ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="3_e0bsv"]
+[ext_resource type="Script" path="res://resources/patterns/abstract_pattern.gd" id="4_er6ci"]
+[ext_resource type="Resource" uid="uid://cgj0ehbkdwyd3" path="res://resources/bullets/Line_bleue_red.tres" id="6_4klab"]
+[ext_resource type="Resource" uid="uid://cltpvgy8byp7p" path="res://resources/bullets/circle_black.tres" id="7_5soij"]
+[ext_resource type="Texture2D" uid="uid://df7lunaf641cv" path="res://assets/enemies/baby.png" id="7_7se2y"]
+[ext_resource type="Resource" uid="uid://di006ed4xrmlm" path="res://resources/bullets/circle_bleue_red.tres" id="8_6bqqd"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -21,29 +23,70 @@ angle = 0.0
 is_increasing = true
 speed = 100.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujoud"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwj7t"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhexr"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvocf"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(0, 2048, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6oat"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(1024, 2048, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_incx5"]
+atlas = ExtResource("7_7se2y")
+region = Rect2(2048, 2048, 1024, 1024)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6ahs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_7se2y")
+"texture": SubResource("AtlasTexture_ujoud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwj7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhexr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvocf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6oat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_incx5")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmcyk"]
-radius = 19.0
+radius = 16.0
+height = 38.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xthu5"]
+radius = 17.0
 height = 40.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uhwqm"]
-radius = 21.0
-
-[node name="Enemie2" type="CharacterBody2D"]
-z_index = 900
+[node name="Enemie" type="CharacterBody2D"]
+z_index = 500
 position = Vector2(312, 266)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 6
+safe_margin = 0.001
 script = ExtResource("1_k48oh")
 movement = SubResource("Resource_2wsfb")
 start_movement = true
@@ -53,23 +96,26 @@ z_index = 900
 position = Vector2(0, -0.250009)
 scale = Vector2(0.0423239, 0.0513614)
 sprite_frames = SubResource("SpriteFrames_y6ahs")
+autoplay = "default"
 script = ExtResource("3_e0bsv")
-patterns = Array[ExtResource("4_er6ci")]([ExtResource("6_e6cg1")])
+patterns = Array[ExtResource("4_er6ci")]([ExtResource("6_4klab"), ExtResource("7_5soij"), ExtResource("8_6bqqd")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 900
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_mmcyk")
 
 [node name="Area2D" type="Area2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-collision_layer = 3
-collision_mask = 3
+collision_layer = 4
+collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("CircleShape2D_uhwqm")
+[node name="CollisionShape2Dbis" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_xthu5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

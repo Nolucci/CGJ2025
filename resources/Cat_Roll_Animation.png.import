@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0gcdgk440dfb"
-path="res://.godot/imported/Cat_Roll_Animation_color.png-88f388619a0f4dae2f2905ad9a3d50a6.ctex"
+path="res://.godot/imported/Cat_Roll_Animation.png-4c19009d8321d52b22e9f55f27097773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Cat_Roll_Animation_color.png"
-dest_files=["res://.godot/imported/Cat_Roll_Animation_color.png-88f388619a0f4dae2f2905ad9a3d50a6.ctex"]
+source_file="res://resources/Cat_Roll_Animation.png"
+dest_files=["res://.godot/imported/Cat_Roll_Animation.png-4c19009d8321d52b22e9f55f27097773.ctex"]
 
 [params]
 

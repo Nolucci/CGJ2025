@@ -7,7 +7,7 @@ extends Node2D
 
 var timer: float = 0.0
 var bullet_increase_base : float
-var shoot_interval_base : int
+var shoot_interval_base : float
 var patterns_name:Dictionary
 var nb_patterns : int
 
@@ -64,10 +64,10 @@ func createPattern():
 					angle_in_radians = PI / 2
 
 				# Enregistrement du pattern avec son angle
-				var name = pattern.pattern_type.resource_name + str(nb_patterns)
-				patterns_name[name] = angle_in_radians  # Stocke l'angle correct en radians
+				var pattern_name = pattern.pattern_type.resource_name + str(nb_patterns)
+				patterns_name[pattern_name] = angle_in_radians  # Stocke l'angle correct en radians
 				
-				Spawning.new_pattern(name, new_pattern)
+				Spawning.new_pattern(pattern_name, new_pattern)
 
 
 func updateDifficulty():
@@ -78,9 +78,9 @@ func updateDifficulty():
 		pattern.pattern_difficulty.nbr = int(pattern.pattern_difficulty.bullet_increase * pattern.pattern_difficulty.bullet_increase)
 	createPattern()
 
-func shoot_pattern_with_rotation(name: String, rotation_angle: float):
-	if patterns_name.has(name):
-		Spawning.spawn({"position": global_position, "rotation": rotation_angle}, name, "0")
+func shoot_pattern_with_rotation(pattern_name: String, rotation_angle: float):
+	if patterns_name.has(pattern_name):
+		Spawning.spawn({"position": global_position, "rotation": rotation_angle}, pattern_name, "0")
 
 func shoot_patterns(nb: int):
 	if patterns_name.size() > 0:

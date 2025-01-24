@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnk6h4glmyfp4"
-path="res://.godot/imported/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.ctex"
+uid="uid://bygkqn10stvk1"
+path="res://.godot/imported/Lyre.png-abb73128a82f34f955cb5418c451efde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background.png"
-dest_files=["res://.godot/imported/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.ctex"]
+source_file="res://assets/enemies/Lyre.png"
+dest_files=["res://.godot/imported/Lyre.png-abb73128a82f34f955cb5418c451efde.ctex"]
 
 [params]
 

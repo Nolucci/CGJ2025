@@ -14,13 +14,14 @@ var screen_size
 var test: TriggerContainer
 
 func _ready() -> void:
+	EventManager.register_player(self)
 	test = $BlackTrigger
 	test.child_entered_tree.connect(test_signal)
 	PlayerManager.player_data = data
 	print(PlayerManager.player_data)
+	EventManager.player_get_hit.connect(take_damage)
 
 func _physics_process(delta):
-	EventManager.register_player(self)
 	screen_size = get_viewport_rect().size
 	player_movement(delta)
 	fart()
@@ -41,7 +42,7 @@ func fart():
 
 func player_movement(delta):
 	input = get_input()
-	adapat_sprite(input)
+	adapat_sprite()
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
@@ -54,7 +55,7 @@ func player_movement(delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	move_and_slide()
 
-func adapat_sprite(input: Vector2):
+func adapat_sprite():
 	if input.y > 0:
 		sprite.speed_scale = 0.7
 	elif input.y < 0:
@@ -68,6 +69,17 @@ func adapat_sprite(input: Vector2):
 		sprite.rotation = -45
 	else:
 		sprite.rotation = 0
+	
+func take_damage():
+	data.isInvinsible = true
+	data.life = data.life - 1
+	for i in range(1, 15):
+		sprite.set_modulate('ff8e7e');
+		await get_tree().create_timer(0.1).timeout
+		sprite.set_modulate('ffffff');
+		await get_tree().create_timer(0.1).timeout
+	
+	data.isInvinsible = false
 
 
 func test_signal(node: Node):

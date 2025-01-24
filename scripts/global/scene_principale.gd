@@ -12,7 +12,7 @@ var currentLevel: int = 1
 func _ready():
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if enemies == 0:
 		if(currentWave - 1) == waves.size():
 			currentWave = 1
@@ -27,7 +27,7 @@ func _physics_process(delta):
 			spawn_enemies(false)
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
-			currentLevel += 1
+			currentLevel += 1	
 
 func spawn_enemies(boss: bool):
 	var enemy_scene: PackedScene
@@ -52,5 +52,7 @@ func spawn_enemies(boss: bool):
 		free_point.erase(marker)
 		enemy_instance.goTo(marker.global_position)
 
-func _on_enemy_death(enemy: Enemie):
+func _on_enemy_death(_enemy: Enemie):
 	enemies -= 1
+	if enemies < 0:
+		enemies = 0

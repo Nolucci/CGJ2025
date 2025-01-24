@@ -1,22 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=10 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
 [ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
-[ext_resource type="PackedScene" uid="uid://b8n3qvuk07rja" path="res://scenes/enemie/baby.tscn" id="2_fs1ym"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
+[ext_resource type="PackedScene" uid="uid://bf2ak7utt86dq" path="res://scenes/enemie/serpent.tscn" id="4_55nls"]
+[ext_resource type="PackedScene" uid="uid://umyq56u840ay" path="res://scenes/enemie/triangle.tscn" id="4_xl3sl"]
+[ext_resource type="PackedScene" uid="uid://dicsom68usoa4" path="res://scenes/enemie/violon.tscn" id="5_bunet"]
 
 [sub_resource type="Resource" id="Resource_eboig"]
 script = ExtResource("2_y4v6y")
-nbLevelBeforeBoss = 5
-typeEnemy = ExtResource("2_fs1ym")
+nbLevelBeforeBoss = 2
+typeEnemy = ExtResource("4_55nls")
+nbEnemies = 4
+typeBoss = ExtResource("4_xl3sl")
+nbBoss = 1
+
+[sub_resource type="Resource" id="Resource_l8t6w"]
+script = ExtResource("2_y4v6y")
+nbLevelBeforeBoss = 2
+typeEnemy = ExtResource("5_bunet")
 nbEnemies = 5
-typeBoss = ExtResource("2_fs1ym")
+typeBoss = ExtResource("5_bunet")
 nbBoss = 1
 
 [node name="Principal" type="Node2D"]
 script = ExtResource("1_rqhj8")
-waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_eboig")])
+waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_eboig"), SubResource("Resource_l8t6w")])
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, 5)
@@ -30,6 +40,7 @@ texture = ExtResource("1_vdhsq")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
+friction = 3000
 
 [node name="spawnPoints" type="Node2D" parent="."]
 
