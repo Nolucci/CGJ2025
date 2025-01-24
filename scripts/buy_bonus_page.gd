@@ -4,6 +4,7 @@ extends Control
 @onready var scroll_container = $Main/RigthPart/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
 var play_scene = preload("res://scenes/player/player.tscn")
+var animation_finished = false
 
 var player_instantiated = false
 
@@ -15,7 +16,7 @@ func _ready() -> void:
 		var player_scene = preload("res://scenes/player/player.tscn")
 		var player = player_scene.instantiate()
 		add_child(player)
-		player.hide()
+		player.queue_free()
 		player_instantiated = true
 		$Main/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
@@ -43,10 +44,16 @@ func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: i
 func _on_new_game_pressed() -> void:
 	$ColorRect.visible = true
 	transition.play("to new page")
+	
+func _input(event: InputEvent) -> void:
+	if event.is_pressed() and animation_finished:
+		_go_to_next_scene()
 
 
-
-
-
+func _go_to_next_scene():
+	print("je change de scene")
+	get_tree().change_scene_to_file("res://scenes/test.tscn")
+	
+	
 func _on_transition_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.
+	animation_finished = true
