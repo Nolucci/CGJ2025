@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=14 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Resource" uid="uid://phj4d3qacoco" path="res://resources/player_data/player_data.tres" id="2_6pwet"]
 [ext_resource type="Texture2D" uid="uid://b6y5vdlik3jh" path="res://assets/player/Cat_Roll_Animation.png" id="3_6vsef"]
+[ext_resource type="PackedScene" uid="uid://otpt2jr0on6t" path="res://scenes/player/fart.tscn" id="3_andpl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epukw"]
 atlas = ExtResource("3_6vsef")
@@ -73,6 +74,7 @@ accel = 4000
 friction = 2000
 data = ExtResource("2_6pwet")
 sprite = NodePath("AnimatedSprite2D")
+fart_scene = ExtResource("3_andpl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
