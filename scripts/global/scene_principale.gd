@@ -16,7 +16,8 @@ func _physics_process(_delta):
 	if enemies == 0:
 		if(currentWave - 1) == waves.size():
 			currentWave = 1
-			print("c'est repartis");
+			PatternManager.updateDifficulty()
+			print("difficulté augmentée")
 		if waves[currentWave - 1].tabLevel.size() == currentLevel - 1:
 			spawn_enemies(true)
 			print("currentLevel : ", currentLevel)

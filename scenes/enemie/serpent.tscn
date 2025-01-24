@@ -1,16 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bf2ak7utt86dq"]
+[gd_scene load_steps=12 format=3 uid="uid://bf2ak7utt86dq"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_hohrx"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_72j61"]
 [ext_resource type="Texture2D" uid="uid://bpjds46jg3yoy" path="res://assets/enemies/serpent.png" id="3_wxl3u"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_pc21o"]
-[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_o72n4"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_tad7i"]
-[ext_resource type="PackedDataContainer" uid="uid://0dcc7a0cyft1" path="res://resources/bullets/green_bullet1.tres" id="7_oc8lf"]
-[ext_resource type="PackedDataContainer" uid="uid://chmxk2fkcnyiu" path="res://resources/bullets/pink_bullet1.tres" id="8_gkwn2"]
-[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="9_16lyy"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="10_a3v53"]
-[ext_resource type="Resource" uid="uid://dqovdxb52f8vo" path="res://resources/patterns/black_bullet_bandmaster_pattern.tres" id="11_1yw4u"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -55,46 +48,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="Resource" id="Resource_5ydab"]
-script = ExtResource("9_16lyy")
-nbr = 7
-bullet_increase = 1.5
-targeting = false
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fdwo6"]
-resource_name = "PatternCircle"
-script = ExtResource("10_a3v53")
-radius = 0
-angle_total = 6.28319
-angle_decal = 0.0
-symmetric = false
-center = 0
-symmetry_type = 0
-bullet = ""
-nbr = 7
-iterations = 1
-pattern_angle = 0.0
-pattern_angle_target = NodePath("")
-pattern_angle_mouse = false
-forced_angle = 0.0
-forced_target = NodePath("")
-forced_lookat_mouse = false
-forced_pattern_lookat = true
-cooldown_stasis = false
-cooldown_spawn = 1.0
-cooldown_shoot = 0.0
-cooldown_next_spawn = 0.0
-cooldown_next_shoot = 0.0
-wait_tween_momentum = 0
-wait_tween_length = 0.0
-wait_tween_time = 0.0
-
-[sub_resource type="Resource" id="Resource_y8fpc"]
-script = ExtResource("5_o72n4")
-pattern_difficulty = SubResource("Resource_5ydab")
-pattern_type = SubResource("NavigationPolygon_fdwo6")
-bullet_props = Array[ExtResource("6_tad7i")]([ExtResource("7_oc8lf"), ExtResource("8_gkwn2")])
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmcyk"]
 radius = 16.0
 height = 46.0
@@ -121,7 +74,6 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 frame_progress = 0.971922
 script = ExtResource("4_pc21o")
-patterns = Array[ExtResource("5_o72n4")]([SubResource("Resource_y8fpc"), ExtResource("11_1yw4u")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
