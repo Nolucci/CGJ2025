@@ -1,9 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8n3qvuk07rja"]
+[gd_scene load_steps=19 format=3 uid="uid://b8n3qvuk07rja"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_k48oh"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_lm2k0"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="3_e0bsv"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_wdds7"]
+[ext_resource type="Resource" uid="uid://bfbw5dedys3cg" path="res://resources/patterns/baby/black_bullet_baby_pattern.tres" id="6_f0iaw"]
 [ext_resource type="Texture2D" uid="uid://df7lunaf641cv" path="res://assets/enemies/baby.png" id="7_7se2y"]
+[ext_resource type="Resource" uid="uid://ddebw6apoxs28" path="res://resources/patterns/baby/bullet_circle_colors_baby_pattern.tres" id="7_x6app"]
+[ext_resource type="Resource" uid="uid://msnxfvtwjscd" path="res://resources/patterns/baby/bullet_line_colors_baby_pattern.tres" id="8_erdx8"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -95,6 +99,7 @@ scale = Vector2(0.0423239, 0.0513614)
 sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 script = ExtResource("3_e0bsv")
+patterns = Array[ExtResource("5_wdds7")]([ExtResource("7_x6app"), ExtResource("8_erdx8"), ExtResource("6_f0iaw"), ExtResource("6_f0iaw")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
