@@ -21,14 +21,14 @@ Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
-
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
 [input]
 
