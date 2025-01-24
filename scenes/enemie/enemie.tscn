@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tq68ncjbgdih"]
+[gd_scene load_steps=16 format=3 uid="uid://tq68ncjbgdih"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_jimyj"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/path_sentinelle.gd" id="2_fed0b"]
@@ -16,11 +16,11 @@ loop_path = true
 reverse_path = false
 speed = 100.0
 
-[sub_resource type="Curve" id="Curve_21fq6"]
+[sub_resource type="Curve" id="Curve_p7a4y"]
 
-[sub_resource type="Curve" id="Curve_22263"]
+[sub_resource type="Curve" id="Curve_pe53q"]
 
-[sub_resource type="PackedDataContainer" id="PackedDataContainer_gm84q"]
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_c78u4"]
 script = ExtResource("6_ldni3")
 anim_more = Array[ExtResource("5_7e7ct")]([])
 damage = 1.0
@@ -40,7 +40,7 @@ death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 a_direction_equation = ""
 a_curve_movement = 0
-a_speed_multiplier = SubResource("Curve_21fq6")
+a_speed_multiplier = SubResource("Curve_p7a4y")
 a_speed_multi_iterations = 0
 a_speed_multi_scale = 0.0
 trigger_container = ""
@@ -51,7 +51,7 @@ homing_steer = 0.0
 homing_time_start = 0.0
 homing_duration = 999.0
 scale_multi_iterations = 0
-scale_multiplier = SubResource("Curve_22263")
+scale_multiplier = SubResource("Curve_pe53q")
 scale_multi_scale = 1.0
 r_randomisation_chances = 1.0
 r_speed_choice = PackedFloat32Array()
@@ -92,13 +92,13 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
-[sub_resource type="Resource" id="Resource_pyskc"]
+[sub_resource type="Resource" id="Resource_cdnvj"]
 script = ExtResource("7_8rmu5")
-nbr = 5
-bullet_increase = 1.2
-targeting = true
+nbr = 0
+bullet_increase = 0.0
+targeting = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_37l85"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7nxdo"]
 resource_name = "PatternCircle"
 script = ExtResource("8_r6umd")
 radius = 0
@@ -108,7 +108,7 @@ symmetric = false
 center = 0
 symmetry_type = 0
 bullet = ""
-nbr = 1
+nbr = 5
 iterations = 1
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
@@ -126,21 +126,17 @@ wait_tween_momentum = 0
 wait_tween_length = 0.0
 wait_tween_time = 0.0
 
-[sub_resource type="Resource" id="Resource_f0elu"]
+[sub_resource type="Resource" id="Resource_34whw"]
 script = ExtResource("4_hc6p7")
-pattern_difficulty = SubResource("Resource_pyskc")
-pattern_type = SubResource("NavigationPolygon_37l85")
-bullet_props = Array[ExtResource("6_ldni3")]([SubResource("PackedDataContainer_gm84q")])
+pattern_difficulty = SubResource("Resource_cdnvj")
+pattern_type = SubResource("NavigationPolygon_7nxdo")
+bullet_props = Array[ExtResource("6_ldni3")]([SubResource("PackedDataContainer_c78u4")])
 
-[node name="Enemie" type="Area2D"]
 [node name="Enemie" type="CharacterBody2D"]
 position = Vector2(312, 266)
 script = ExtResource("1_jimyj")
 movement = SubResource("Resource_h564x")
 
-[node name="SpawnPatternBullet" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_35kli")
-patterns = Array[ExtResource("4_hc6p7")]([SubResource("Resource_f0elu")])
-speed = 1.0
-shoot_interval = 1.0
-nb_patterns_shoot = 1
+patterns = Array[ExtResource("4_hc6p7")]([SubResource("Resource_34whw")])

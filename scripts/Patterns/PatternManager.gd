@@ -16,13 +16,11 @@ func _ready():
 	shoot_interval_base = shoot_interval
 	createPattern()
 
-func _process(delta):
+func _physics_process(delta):
 	timer += delta
 	if timer >= shoot_interval:
 		timer = 0.0
 		shoot_patterns(nb_patterns_shoot)
-	if timer >= 1:
-		updateDifficulty()
 	for pattern in patterns:
 		if shoot_interval < 0.50:
 			shoot_interval = shoot_interval_base * pattern.pattern_difficulty.bullet_increase
@@ -68,6 +66,7 @@ func createPattern():
 				# Enregistrement du pattern avec son angle
 				var name = pattern.pattern_type.resource_name + str(nb_patterns)
 				patterns_name[name] = angle_in_radians  # Stocke l'angle correct en radians
+				
 				Spawning.new_pattern(name, new_pattern)
 
 
@@ -76,7 +75,7 @@ func updateDifficulty():
 	nb_patterns = 0
 	Spawning.reset()
 	for pattern in patterns:
-		pattern.pattern_difficulty.nbr = int(pattern.pattern_difficulty.bullet_increase_rate * pattern.pattern_difficulty.bullet_increase)
+		pattern.pattern_difficulty.nbr = int(pattern.pattern_difficulty.bullet_increase * pattern.pattern_difficulty.bullet_increase)
 	createPattern()
 
 func shoot_pattern_with_rotation(name: String, rotation_angle: float):
