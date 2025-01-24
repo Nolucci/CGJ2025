@@ -1,19 +1,17 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccak2hcy0s5jm"]
+[gd_scene load_steps=28 format=3 uid="uid://ccak2hcy0s5jm"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
 [ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
+[ext_resource type="Texture2D" uid="uid://brpggcp8dauyp" path="res://resources/image.psd3.png" id="3_kwj1n"]
+[ext_resource type="Texture2D" uid="uid://dii47707xp1l8" path="res://resources/image.png" id="4_f2cvm"]
 [ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/Cat_Roll_Animation_color.png" id="5_j3yb4"]
 
-[sub_resource type="Gradient" id="Gradient_4lu3y"]
-offsets = PackedFloat32Array(0, 0.0151515)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_bipw2"]
-gradient = SubResource("Gradient_4lu3y")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c817q"]
-texture = SubResource("GradientTexture1D_bipw2")
+texture = ExtResource("3_kwj1n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6lp6"]
+texture = ExtResource("4_f2cvm")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ivl0n"]
 font = ExtResource("2_loy3t")
@@ -24,6 +22,8 @@ font = ExtResource("2_loy3t")
 font_size = 20
 
 [sub_resource type="Theme" id="Theme_kme7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgv8h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2jmn"]
 
@@ -289,25 +289,33 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -187.0
-offset_top = -324.5
-offset_right = 187.0
-offset_bottom = 325.5
+offset_top = -322.0
+offset_right = 195.0
+offset_bottom = 326.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CatSprite" type="Sprite2D" parent="Main/Panel/SpriteContainer"]
-position = Vector2(185, 319)
-scale = Vector2(2.23491, 3.75)
-texture = ExtResource("1_m6gbt")
+position = Vector2(191, 324.25)
+scale = Vector2(0.757813, 1.29395)
 
-[node name="RigthPart" type="VBoxContainer" parent="Main"]
+[node name="Panel2" type="Panel" parent="Main"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_y6lp6")
 
-[node name="Header" type="HBoxContainer" parent="Main/RigthPart"]
+[node name="RigthPart" type="VBoxContainer" parent="Main/Panel2"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 767.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Main/Panel2/RigthPart"]
 layout_mode = 2
 
-[node name="CaverneName" type="Label" parent="Main/RigthPart/Header"]
+[node name="CaverneName" type="Label" parent="Main/Panel2/RigthPart/Header"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -316,21 +324,22 @@ label_settings = SubResource("LabelSettings_ivl0n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NumberOfCoin" type="Label" parent="Main/RigthPart/Header"]
+[node name="NumberOfCoin" type="Label" parent="Main/Panel2/RigthPart/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 text = "Coin: "
 label_settings = SubResource("LabelSettings_mtwdn")
 
-[node name="ScrollSkillContainer" type="ScrollContainer" parent="Main/RigthPart"]
+[node name="ScrollSkillContainer" type="ScrollContainer" parent="Main/Panel2/RigthPart"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_kme7x")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pgv8h")
 horizontal_scroll_mode = 0
 
-[node name="SkillContainer" type="VBoxContainer" parent="Main/RigthPart/ScrollSkillContainer"]
+[node name="SkillContainer" type="VBoxContainer" parent="Main/Panel2/RigthPart/ScrollSkillContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -338,13 +347,13 @@ tooltip_text = "
 "
 theme_override_constants/separation = 20
 
-[node name="Footer" type="PanelContainer" parent="Main/RigthPart"]
+[node name="Footer" type="PanelContainer" parent="Main/Panel2/RigthPart"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_j2jmn")
 
-[node name="NewGame" type="Button" parent="Main/RigthPart/Footer"]
+[node name="NewGame" type="Button" parent="Main/Panel2/RigthPart/Footer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -384,5 +393,5 @@ text = "[center]Vous émergez des ombres, animé par une rage glaciale. Ceux qui
 visible_characters = 0
 visible_ratio = 0.0
 
-[connection signal="pressed" from="Main/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main/Panel2/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
