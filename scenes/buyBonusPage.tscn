@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
 
 [sub_resource type="Gradient" id="Gradient_4lu3y"]
+offsets = PackedFloat32Array(0, 0.0151515)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bipw2"]
 gradient = SubResource("Gradient_4lu3y")
@@ -136,3 +137,5 @@ theme_override_fonts/font = ExtResource("2_loy3t")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_74yc6")
 text = "Faire la sieste"
+
+[connection signal="pressed" from="Main/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]

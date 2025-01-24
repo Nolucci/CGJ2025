@@ -2,6 +2,8 @@ extends Control
 
 @export var button_scene: PackedScene
 @onready var scroll_container = $Main/RigthPart/ScrollSkillContainer/SkillContainer
+@onready var transition = $Transition
+var play_scene = preload("res://scenes/player/player.tscn")
 
 var player_instantiated = false
 
@@ -35,3 +37,11 @@ func _setup_button(button_instance, skill_data):
 	
 func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int):
 	$Main/RigthPart/Header/NumberOfCoin.text = "Coin: " + str(remaining_money)
+
+
+func _on_new_game_pressed() -> void:
+	transition.play("fade_out")
+
+
+func _on_transition_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_packed(play_scene)
