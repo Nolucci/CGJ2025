@@ -100,7 +100,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_iuo51"]
 resource_name = "to new page"
-length = 3.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,10 +108,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 2.96667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.0333334, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(733, 2426), Vector2(673, 1317), Vector2(605, -693)]
+"values": [Vector2(575, 2440), Vector2(605, -693)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,7 +144,31 @@ tracks/3/path = NodePath("ColorRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1),
+"times": PackedFloat32Array(0.0999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -199,6 +223,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oua5a"]
@@ -320,5 +368,19 @@ sprite_frames = SubResource("SpriteFrames_6ch8b")
 libraries = {
 "": SubResource("AnimationLibrary_oua5a")
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 234.0
+offset_right = 1159.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_loy3t")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Vous émergez des ombres, animé par une rage glaciale. Ceux qui ont osé troubler votre sommeil regretteront de vous avoir réveillé.[/center]
+"
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="pressed" from="Main/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]

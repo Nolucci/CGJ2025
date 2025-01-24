@@ -45,5 +45,8 @@ func _on_new_game_pressed() -> void:
 	transition.play("to new page")
 
 
+
+
+
 func _on_transition_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_packed(play_scene)
+	pass # Replace with function body.
