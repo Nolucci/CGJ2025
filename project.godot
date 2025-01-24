@@ -25,6 +25,11 @@ EventManager="*res://scripts/global/event_manager.gd"
 
 enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 move_right={

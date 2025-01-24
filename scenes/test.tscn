@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=3 format=3 uid="uid://bq8lgyexgcun5"]
+
+[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_530br"]
+[ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="1_f1u3p"]
 
 [node name="Test" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 2180)
+autoscroll = Vector2(0, 1000)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(632, 1105)
+scale = Vector2(1.16667, 1.05238)
+texture = ExtResource("1_530br")
+
+[node name="Player" parent="." instance=ExtResource("1_f1u3p")]

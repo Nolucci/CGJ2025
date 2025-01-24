@@ -3,7 +3,8 @@ extends Resource
 class_name PlayerData
 
 @export var name: String = "Alain"
-@export var money: int = 0 
+@export var life: int = 1
+@export var money: int = 0
 @export var upgrades: Array[PlayerUpgrade] = []
 
 # Fonction pour acheter une amélioration
