@@ -1,30 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://tq68ncjbgdih"]
+[gd_scene load_steps=13 format=3 uid="uid://tq68ncjbgdih"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_jimyj"]
-[ext_resource type="Script" path="res://scripts/enemies/movement/path_sentinelle.gd" id="2_fed0b"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="3_6vmhs"]
+[ext_resource type="Script" path="res://scripts/enemies/movement/sentinelle.gd" id="2_x5bkf"]
 [ext_resource type="Script" path="res://scripts/Patterns/PatternManager.gd" id="3_35kli"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_3lwwp"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_7e7ct"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_ldni3"]
 
-[sub_resource type="Resource" id="Resource_h564x"]
-script = ExtResource("2_fed0b")
-path_points = Array[Vector2]([Vector2(0, 0), Vector2(100, 0), Vector2(0, 100)])
-loop_path = true
-reverse_path = false
-speed = 100.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_4gsyh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_6vmhs")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8xwv"]
 radius = 50.0
@@ -111,7 +94,7 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 [node name="Enemie" type="Area2D"]
 position = Vector2(312, 266)
 script = ExtResource("1_jimyj")
-movement = SubResource("Resource_h564x")
+movement = ExtResource("2_x5bkf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4gsyh")
