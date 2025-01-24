@@ -1,0 +1,257 @@
+[gd_scene load_steps=25 format=3 uid="uid://b108br60ietbi"]
+
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_1mamq"]
+[ext_resource type="Texture2D" uid="uid://c2w25ggmayq5q" path="res://assets/images/main_menu.png" id="2_pfgd4"]
+[ext_resource type="FontFile" uid="uid://dg3176jd8hvu1" path="res://assets/fonts/BeontypixelRegularDemo-XGdMg.otf" id="2_wuvld"]
+[ext_resource type="Texture2D" uid="uid://ca43nbl1bc7u6" path="res://assets/images/chatPanneau.tres" id="3_7cfwd"]
+[ext_resource type="FontFile" uid="uid://dj6eva8umh1qg" path="res://assets/fonts/Paaxel-xRjLO.otf" id="3_qst4b"]
+[ext_resource type="Texture2D" uid="uid://d0rro1ok2q35l" path="res://assets/images/Patoune.png" id="4_13un1"]
+[ext_resource type="Texture2D" uid="uid://b6p6cgjys108i" path="res://assets/images/catButton2.png" id="4_acc8c"]
+[ext_resource type="Texture2D" uid="uid://cm80rfsvgvbxn" path="res://assets/images/catButton.png" id="4_oqcx3"]
+[ext_resource type="Texture2D" uid="uid://cg5srctkg0vdf" path="res://assets/images/catButton3.png" id="5_yfka5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywo0d"]
+texture = ExtResource("4_acc8c")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rhe2"]
+texture = ExtResource("5_yfka5")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bj3je"]
+texture = ExtResource("4_oqcx3")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0l0r0"]
+texture = ExtResource("4_acc8c")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x7jky"]
+texture = ExtResource("5_yfka5")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4end"]
+texture = ExtResource("4_oqcx3")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxbx6"]
+texture = ExtResource("4_acc8c")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hy3bw"]
+texture = ExtResource("5_yfka5")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2n1uw"]
+texture = ExtResource("4_oqcx3")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ojpe"]
+texture = ExtResource("4_acc8c")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5svt"]
+texture = ExtResource("5_yfka5")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbswx"]
+texture = ExtResource("4_oqcx3")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_litcc"]
+texture = ExtResource("4_acc8c")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lqlce"]
+texture = ExtResource("5_yfka5")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw0db"]
+texture = ExtResource("4_oqcx3")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_1mamq")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -411.5
+offset_right = 1363.0
+offset_bottom = 411.5
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_pfgd4")
+expand_mode = 1
+
+[node name="CatPanneau" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -386.0
+offset_right = 400.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_7cfwd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BackgroundPatoune" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_13un1")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -681.0
+offset_top = 30.0
+offset_right = -92.0
+offset_bottom = 141.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.665673, 0.748627, 0.705961, 1)
+theme_override_fonts/font = ExtResource("2_wuvld")
+theme_override_font_sizes/font_size = 100
+text = "Titre du Jeu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 149.0
+offset_top = -202.0
+offset_right = 307.0
+offset_bottom = 238.0
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qst4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywo0d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4rhe2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bj3je")
+text = "Jouer"
+icon_alignment = 1
+
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qst4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_0l0r0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x7jky")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k4end")
+text = "Tutoriel
+"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qst4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_cxbx6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hy3bw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2n1uw")
+text = "Option"
+
+[node name="CreditButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qst4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ojpe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o5svt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gbswx")
+text = "Credit"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qst4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_litcc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lqlce")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gw0db")
+text = "Quitter
+"
+
+[connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/OptionButton" to="." method="_on_option_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]

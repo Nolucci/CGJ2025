@@ -2,6 +2,9 @@ extends Resource
 
 class_name PlayerData
 
+#Ajout de signal pour gérer dans certaine classe
+signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int)
+
 @export var name: String = "Alain"
 @export var life: int = 1
 @export var money: int = 0
@@ -18,6 +21,7 @@ func buy_upgrade(primary_key: int) -> bool:
 	money -= upgrade.price
 	upgrade.current_level += 1
 	print("Amélioration achetée:", upgrade.name, "Niveau actuel:", upgrade.current_level)
+	emit_signal("upgrade_bought", upgrade.name, upgrade.current_level, money)
 	return true
 
 # Fonction pour trouver une amélioration par clé primaire
@@ -29,7 +33,7 @@ func find_upgrade_by_key(primary_key: int) -> PlayerUpgrade:
 
 # Fonction pour vérifier si une amélioration peut être effectuée
 func can_upgrade(upgrade: PlayerUpgrade) -> bool:
-	if upgrade.cursrent_level >= upgrade.max_level:
+	if upgrade.current_level >= upgrade.max_level:
 		print("Amélioration déjà au niveau maximum:", upgrade.name)
 		return false
 	if money < upgrade.price:

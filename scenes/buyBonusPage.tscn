@@ -1,0 +1,387 @@
+[gd_scene load_steps=27 format=3 uid="uid://ccak2hcy0s5jm"]
+
+[ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
+[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
+[ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
+[ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
+[ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/Cat_Roll_Animation_color.png" id="5_j3yb4"]
+
+[sub_resource type="Gradient" id="Gradient_4lu3y"]
+offsets = PackedFloat32Array(0, 0.0151515)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bipw2"]
+gradient = SubResource("Gradient_4lu3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c817q"]
+texture = SubResource("GradientTexture1D_bipw2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivl0n"]
+font = ExtResource("2_loy3t")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtwdn"]
+font = ExtResource("2_loy3t")
+font_size = 20
+
+[sub_resource type="Theme" id="Theme_kme7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2jmn"]
+
+[sub_resource type="Gradient" id="Gradient_7wwbj"]
+offsets = PackedFloat32Array(0, 0.99697, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0787879, 0.0787879, 0.0787879, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_poesj"]
+gradient = SubResource("Gradient_7wwbj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74yc6"]
+texture = SubResource("GradientTexture1D_poesj")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixgop"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc5ax"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cku0b"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(3200, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmgo8"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(0, 1600, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itnal"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(1600, 1600, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giv4x"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(3200, 1600, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh5qx"]
+atlas = ExtResource("5_j3yb4")
+region = Rect2(0, 3200, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ch8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixgop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc5ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cku0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmgo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itnal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giv4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh5qx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_p8fvk"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 1186), Vector2(717, -739)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 1.96667, 2.46667, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_iuo51"]
+resource_name = "to new page"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(575, 2440), Vector2(605, -693)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 0.9, 1.36667, 1.8, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oua5a"]
+_data = {
+"RESET": SubResource("Animation_p8fvk"),
+"to new page": SubResource("Animation_iuo51")
+}
+
+[node name="BuyBonusPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_avfc3")
+button_scene = ExtResource("2_tdeeq")
+
+[node name="Main" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = SubResource("StyleBoxTexture_c817q")
+
+[node name="SpriteContainer" type="CenterContainer" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -324.5
+offset_right = 187.0
+offset_bottom = 325.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CatSprite" type="Sprite2D" parent="Main/Panel/SpriteContainer"]
+position = Vector2(185, 319)
+scale = Vector2(2.23491, 3.75)
+texture = ExtResource("1_m6gbt")
+
+[node name="RigthPart" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Main/RigthPart"]
+layout_mode = 2
+
+[node name="CaverneName" type="Label" parent="Main/RigthPart/Header"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "La caverne silencieuse"
+label_settings = SubResource("LabelSettings_ivl0n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberOfCoin" type="Label" parent="Main/RigthPart/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "Coin: "
+label_settings = SubResource("LabelSettings_mtwdn")
+
+[node name="ScrollSkillContainer" type="ScrollContainer" parent="Main/RigthPart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_kme7x")
+horizontal_scroll_mode = 0
+
+[node name="SkillContainer" type="VBoxContainer" parent="Main/RigthPart/ScrollSkillContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "
+"
+theme_override_constants/separation = 20
+
+[node name="Footer" type="PanelContainer" parent="Main/RigthPart"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j2jmn")
+
+[node name="NewGame" type="Button" parent="Main/RigthPart/Footer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_loy3t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_74yc6")
+text = "Faire la sieste"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1536.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 1186)
+scale = Vector2(0.887187, 0.84875)
+sprite_frames = SubResource("SpriteFrames_6ch8b")
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oua5a")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 234.0
+offset_right = 1159.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_loy3t")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Vous émergez des ombres, animé par une rage glaciale. Ceux qui ont osé troubler votre sommeil regretteront de vous avoir réveillé.[/center]
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="pressed" from="Main/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]
