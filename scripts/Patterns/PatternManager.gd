@@ -82,7 +82,6 @@ func updateDifficulty():
 func shoot_pattern_with_rotation(name: String, rotation_angle: float):
 	if patterns_name.has(name):
 		Spawning.spawn({"position": global_position, "rotation": rotation_angle}, name, "0")
-	else:
 
 func shoot_patterns(nb: int):
 	if patterns_name.size() > 0:
