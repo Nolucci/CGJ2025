@@ -11,14 +11,11 @@ config_version=5
 [application]
 
 config/name="CGJ2025"
-run/main_scene="res://scenes/player/player.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerManager="*res://scripts/global/player_manager.gd"
-EventManager="*res://scripts/global/event_manager.gd"
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 
 [editor_plugins]

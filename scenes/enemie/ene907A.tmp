@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_7e7ct"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_ldni3"]
 [ext_resource type="Script" path="res://resources/patterns/difficulty.gd" id="7_8rmu5"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="8_r6umd"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="8_ovwcy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqg5x"]
 animations = [{
@@ -104,17 +104,14 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 script = ExtResource("7_8rmu5")
 nbr = 5
 bullet_increase = 1.2
-targeting = true
+targeting = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_37l85"]
-resource_name = "PatternCircle"
-script = ExtResource("8_r6umd")
-radius = 0
-angle_total = 6.28319
-angle_decal = 0.0
-symmetric = false
-center = 0
-symmetry_type = 0
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w1esy"]
+resource_name = "PatternLine"
+script = ExtResource("8_ovwcy")
+offset = Vector2(0, 0)
+center = 1
+symmetric = true
 bullet = ""
 nbr = 1
 iterations = 1
@@ -137,7 +134,7 @@ wait_tween_time = 0.0
 [sub_resource type="Resource" id="Resource_f0elu"]
 script = ExtResource("4_hc6p7")
 pattern_difficulty = SubResource("Resource_pyskc")
-pattern_type = SubResource("NavigationPolygon_37l85")
+pattern_type = SubResource("NavigationPolygon_w1esy")
 bullet_props = Array[ExtResource("6_ldni3")]([SubResource("PackedDataContainer_gm84q")])
 
 [node name="Enemie" type="Area2D"]
