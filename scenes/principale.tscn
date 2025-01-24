@@ -1,43 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=9 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
+[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
-[ext_resource type="PackedScene" uid="uid://bf2ak7utt86dq" path="res://scenes/enemie/serpent.tscn" id="4_55nls"]
-[ext_resource type="Texture2D" uid="uid://cy7wm6mdh7v8w" path="res://assets/backgroundv5.png" id="4_ctxyu"]
-[ext_resource type="PackedScene" uid="uid://umyq56u840ay" path="res://scenes/enemie/triangle.tscn" id="4_xl3sl"]
-[ext_resource type="PackedScene" uid="uid://dicsom68usoa4" path="res://scenes/enemie/violon.tscn" id="5_bunet"]
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="3_tev63"]
+[ext_resource type="PackedScene" uid="uid://cxal81lhhuopo" path="res://scenes/enemie/boss/bigTeenager.tscn" id="5_r6nls"]
+[ext_resource type="Resource" uid="uid://bbktu2l5cbp4v" path="res://resources/waves/level/level_5_baby.tres" id="6_nlwsg"]
 
-[sub_resource type="Resource" id="Resource_eboig"]
+[sub_resource type="Resource" id="Resource_rqrmn"]
 script = ExtResource("2_y4v6y")
-nbLevelBeforeBoss = 2
-typeEnemy = ExtResource("4_55nls")
-nbEnemies = 4
-typeBoss = ExtResource("4_xl3sl")
-nbBoss = 1
-
-[sub_resource type="Resource" id="Resource_l8t6w"]
-script = ExtResource("2_y4v6y")
-nbLevelBeforeBoss = 2
-typeEnemy = ExtResource("5_bunet")
-nbEnemies = 5
-typeBoss = ExtResource("5_bunet")
-nbBoss = 1
+tabLevel = Array[ExtResource("3_tev63")]([ExtResource("6_nlwsg"), ExtResource("6_nlwsg"), ExtResource("6_nlwsg")])
+tabBoss = Array[PackedScene]([ExtResource("5_r6nls")])
 
 [node name="Principal" type="Node2D"]
 script = ExtResource("1_rqhj8")
-waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_eboig"), SubResource("Resource_l8t6w")])
+waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_rqrmn")])
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, 5)
-repeat_size = Vector2(0, 1390)
-autoscroll = Vector2(0, 450)
+repeat_size = Vector2(0, 2180)
+autoscroll = Vector2(0, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-texture_filter = 1
-position = Vector2(675.499, 650.127)
-scale = Vector2(1.24537, 1.07781)
-texture = ExtResource("4_ctxyu")
+position = Vector2(632, 1105)
+scale = Vector2(1.16667, 1.05238)
+texture = ExtResource("1_vdhsq")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)

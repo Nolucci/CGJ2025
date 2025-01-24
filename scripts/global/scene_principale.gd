@@ -16,8 +16,9 @@ func _physics_process(_delta):
 	if enemies == 0:
 		if(currentWave - 1) == waves.size():
 			currentWave = 1
-			print("c'est repartis");
-		if waves[currentWave - 1].nbLevelBeforeBoss == currentLevel:
+			PatternManager.updateDifficulty()
+			print("difficulté augmentée")
+		if waves[currentWave - 1].tabLevel.size() == currentLevel - 1:
 			spawn_enemies(true)
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
@@ -30,20 +31,19 @@ func _physics_process(_delta):
 			currentLevel += 1	
 
 func spawn_enemies(boss: bool):
-	var enemy_scene: PackedScene
-	var nb: int
-	if boss:
-		nb = waves[currentWave - 1].nbBoss
-		enemy_scene = waves[currentWave - 1].typeBoss
-	else:
-		enemy_scene = waves[currentWave - 1].typeEnemy
-		nb = waves[currentWave - 1].nbEnemies
-	var free_point = go_points.get_children()
 
-	for i in range(nb):
-		
+	var tabEnemies: Array[PackedScene]
+	if boss:
+		tabEnemies = waves[currentWave - 1].tabBoss
+	else:
+		tabEnemies = waves[currentWave - 1].tabLevel[currentLevel - 1].tabEnemies
+
+	var free_point = go_points.get_children()
+	
+	var i = 0
+	for enemy in tabEnemies:
 		var markers = spawn_point.get_children()
-		var enemy_instance = enemy_scene.instantiate()
+		var enemy_instance = enemy.instantiate()
 		enemies += 1
 		add_child(enemy_instance)
 		enemy_instance.position = markers[i % markers.size() - 1].global_position
@@ -51,6 +51,7 @@ func spawn_enemies(boss: bool):
 		var marker = free_point.pick_random()
 		free_point.erase(marker)
 		enemy_instance.goTo(marker.global_position)
+		i += 1
 
 func _on_enemy_death(_enemy: Enemie):
 	enemies -= 1

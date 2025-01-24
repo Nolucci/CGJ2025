@@ -71,7 +71,6 @@ func createPattern():
 
 
 func updateDifficulty():
-	self.queue_free()
 	nb_patterns = 0
 	Spawning.reset()
 	for pattern in patterns:

@@ -1,13 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dicsom68usoa4"]
+[gd_scene load_steps=12 format=3 uid="uid://dicsom68usoa4"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_1mu33"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_s8dlm"]
 [ext_resource type="Texture2D" uid="uid://ekqgjwnp1ru4" path="res://assets/enemies/Violon.png" id="3_60r4k"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_oeww8"]
-[ext_resource type="Script" path="res://resources/patterns/abstract_pattern.gd" id="5_hef7r"]
-[ext_resource type="Resource" uid="uid://cgj0ehbkdwyd3" path="res://resources/bullets/Line_bleue_red.tres" id="6_ncfre"]
-[ext_resource type="Resource" uid="uid://cltpvgy8byp7p" path="res://resources/bullets/circle_black.tres" id="7_gs07g"]
-[ext_resource type="Resource" uid="uid://di006ed4xrmlm" path="res://resources/bullets/circle_bleue_red.tres" id="8_nnug7"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -79,7 +75,6 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.71789
 script = ExtResource("4_oeww8")
-patterns = Array[ExtResource("5_hef7r")]([ExtResource("6_ncfre"), ExtResource("7_gs07g"), ExtResource("8_nnug7")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1

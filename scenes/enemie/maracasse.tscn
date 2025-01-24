@@ -1,13 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ds7cckvhdqp60"]
+[gd_scene load_steps=12 format=3 uid="uid://ds7cckvhdqp60"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_sknit"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_fg2cu"]
 [ext_resource type="Texture2D" uid="uid://bvnps575m4bqr" path="res://assets/enemies/Maracasse.png" id="3_l07j6"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_qxc7i"]
-[ext_resource type="Script" path="res://resources/patterns/abstract_pattern.gd" id="5_n1bg7"]
-[ext_resource type="Resource" uid="uid://cgj0ehbkdwyd3" path="res://resources/bullets/Line_bleue_red.tres" id="6_ox0hb"]
-[ext_resource type="Resource" uid="uid://cltpvgy8byp7p" path="res://resources/bullets/circle_black.tres" id="7_sdp7v"]
-[ext_resource type="Resource" uid="uid://di006ed4xrmlm" path="res://resources/bullets/circle_bleue_red.tres" id="8_jis2e"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -78,7 +74,6 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 frame_progress = 0.896
 script = ExtResource("4_qxc7i")
-patterns = Array[ExtResource("5_n1bg7")]([ExtResource("6_ox0hb"), ExtResource("7_sdp7v"), ExtResource("8_jis2e")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
