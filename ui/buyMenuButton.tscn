@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvcv2rfxcmlsy"]
+[gd_scene load_steps=12 format=3 uid="uid://cvcv2rfxcmlsy"]
 
 [ext_resource type="Script" path="res://scripts/ui/buy_menu_button.gd" id="1_g6vep"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="1_m7kia"]
@@ -19,6 +19,10 @@ offsets = PackedFloat32Array(0.994048, 1)
 gradient = SubResource("Gradient_t4x04")
 
 [sub_resource type="LabelSettings" id="LabelSettings_aw74w"]
+font = ExtResource("1_m7kia")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_eup3v"]
 font = ExtResource("1_m7kia")
 font_size = 20
 
@@ -75,11 +79,29 @@ texture = SubResource("GradientTexture1D_pi6ql")
 [node name="Info" type="VBoxContainer" parent="Main/MainContent"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 
-[node name="Description" type="Label" parent="Main/MainContent/Info"]
+[node name="Info_base" type="HBoxContainer" parent="Main/MainContent/Info"]
 layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Description" type="Label" parent="Main/MainContent/Info/Info_base"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 text = "Je suis la description de ma compétence"
 label_settings = SubResource("LabelSettings_aw74w")
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Main/MainContent/Info/Info_base"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Level: 20
+"
+label_settings = SubResource("LabelSettings_eup3v")
+vertical_alignment = 1
 
 [node name="MarginBuyButton" type="MarginContainer" parent="Main/MainContent/Info"]
 layout_mode = 2

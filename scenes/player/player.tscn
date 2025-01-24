@@ -1,24 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=10 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
+[ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="2_kyo3p"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="2_v5h3j"]
-[ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="2_yau7e"]
-[ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="3_m6ebt"]
+[ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="3_ta0nx"]
 
-[sub_resource type="Resource" id="Resource_ihj28"]
-script = ExtResource("3_m6ebt")
+[sub_resource type="Resource" id="Resource_1ww7h"]
+script = ExtResource("3_ta0nx")
 primary_key = 0
-name = ""
-descrition = ""
-price = 0
-max_level = 0
+name = "test"
+description = "test"
+price = 100
+max_level = 3
 current_level = 0
 
-[sub_resource type="Resource" id="Resource_la42g"]
-script = ExtResource("2_yau7e")
+[sub_resource type="Resource" id="Resource_noxnv"]
+script = ExtResource("3_ta0nx")
+primary_key = 1
+name = "test2"
+description = "test3"
+price = 10000
+max_level = 1
+current_level = 0
+
+[sub_resource type="Resource" id="Resource_sppsm"]
+script = ExtResource("2_kyo3p")
 name = "Alain"
-money = 0
-upgrades = Array[ExtResource("3_m6ebt")]([SubResource("Resource_ihj28")])
+money = 1000
+upgrades = Array[ExtResource("3_ta0nx")]([SubResource("Resource_1ww7h"), SubResource("Resource_noxnv")])
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r4juv"]
 animations = [{
@@ -41,7 +50,7 @@ script = ExtResource("1_f24cv")
 maxSpeed = 700
 accel = 4000
 friction = 2000
-data = SubResource("Resource_la42g")
+data = SubResource("Resource_sppsm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r4juv")

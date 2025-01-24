@@ -23,11 +23,7 @@ font_size = 20
 
 [sub_resource type="Theme" id="Theme_kme7x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g35ce"]
-content_margin_left = 40.0
-content_margin_top = 20.0
-content_margin_right = 40.0
-content_margin_bottom = 20.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5y0h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2jmn"]
 
@@ -118,15 +114,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_kme7x")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_g35ce")
-horizontal_scroll_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e5y0h")
 
 [node name="SkillContainer" type="VBoxContainer" parent="Main/RigthPart/ScrollSkillContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 tooltip_text = "
 "
-theme_override_constants/separation = 300
+theme_override_constants/separation = 250
 alignment = 1
 
 [node name="Footer" type="PanelContainer" parent="Main/RigthPart"]

@@ -28,7 +28,7 @@ func find_upgrade_by_key(primary_key: int) -> PlayerUpgrade:
 
 # Fonction pour vérifier si une amélioration peut être effectuée
 func can_upgrade(upgrade: PlayerUpgrade) -> bool:
-	if upgrade.cursrent_level >= upgrade.max_level:
+	if upgrade.current_level >= upgrade.max_level:
 		print("Amélioration déjà au niveau maximum:", upgrade.name)
 		return false
 	if money < upgrade.price:

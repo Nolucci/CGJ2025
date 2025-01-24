@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
-class_name Player
-
 @export var maxSpeed = 450
 @export var accel = 2000
 @export var friction = 600
-@export var data: PlayerData
+@export var data:PlayerData
 
 var input = Vector2.ZERO
 var screen_size
+
+func _ready() -> void:
+	PlayerManager.player_data = data
+	print(PlayerManager.player_data)
 
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
