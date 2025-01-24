@@ -1,4 +1,4 @@
-class_name Enemie 
+class_name Enemie
 extends CharacterBody2D
 
 @export var life = 5
@@ -6,6 +6,13 @@ extends CharacterBody2D
 @export var start_movement: bool = false
 var area: Area2D
 var screen_size: Vector2
+var target_position: Vector2 = Vector2.ZERO
+
+signal enemy_death(enemy: Enemie)
+
+func goTo(position: Vector2):
+	target_position = position
+	set_start_movement(false)
 
 func _ready() -> void:
 	area = $Area2D
@@ -22,6 +29,20 @@ func _process(delta):
 			movement.process_movement(self, delta, screen_size)
 		else:
 			push_error("Movement script is not assigned!")
+	else:
+		if target_position != Vector2.ZERO:
+			goToTargetPosition()
+
+func goToTargetPosition():
+	var direction = (target_position - position).normalized()
+	velocity = direction * 100.0
+	move_and_slide()
+	
+	# Vérification si la position cible est atteinte
+	if position.distance_to(target_position) < 5.0:  # Tolérance de 5 unités
+		velocity = Vector2.ZERO  # Arrêter le mouvement
+		target_position = Vector2.ZERO
+		set_start_movement(true)
 
 func on_area_entered(area_entered: Area2D):
 	if area_entered is Fart:
@@ -31,4 +52,5 @@ func on_area_entered(area_entered: Area2D):
 		else:
 			life -= 1
 		if life <= 0:
+			enemy_death.emit(self)
 			queue_free()
