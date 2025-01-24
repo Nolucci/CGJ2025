@@ -1,26 +1,25 @@
-[gd_scene load_steps=17 format=3 uid="uid://tq68ncjbgdih"]
+[gd_scene load_steps=13 format=3 uid="uid://tq68ncjbgdih"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_jimyj"]
-[ext_resource type="Script" path="res://scripts/enemies/movement/path_sentinelle.gd" id="2_fed0b"]
+[ext_resource type="Script" path="res://scripts/enemies/movement/sentinelle.gd" id="2_x5bkf"]
 [ext_resource type="Script" path="res://scripts/Patterns/PatternManager.gd" id="3_35kli"]
-[ext_resource type="Script" path="res://resources/patterns/abstract_pattern.gd" id="4_hc6p7"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_3lwwp"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_7e7ct"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_ldni3"]
-[ext_resource type="Script" path="res://resources/patterns/difficulty.gd" id="7_8rmu5"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="8_r6umd"]
 
-[sub_resource type="Resource" id="Resource_h564x"]
-script = ExtResource("2_fed0b")
-path_points = Array[Vector2]([Vector2(0, 0), Vector2(100, 0), Vector2(0, 100)])
-loop_path = true
-reverse_path = false
-speed = 100.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gsyh"]
 
-[sub_resource type="Curve" id="Curve_21fq6"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8xwv"]
+radius = 50.0
+height = 100.0
 
-[sub_resource type="Curve" id="Curve_22263"]
+[sub_resource type="Curve2D" id="Curve2D_iltyl"]
 
-[sub_resource type="PackedDataContainer" id="PackedDataContainer_gm84q"]
+[sub_resource type="Curve" id="Curve_e3om3"]
+
+[sub_resource type="Curve" id="Curve_ffcco"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_bldld"]
 script = ExtResource("6_ldni3")
 anim_more = Array[ExtResource("5_7e7ct")]([])
 damage = 1.0
@@ -40,7 +39,7 @@ death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 a_direction_equation = ""
 a_curve_movement = 0
-a_speed_multiplier = SubResource("Curve_21fq6")
+a_speed_multiplier = SubResource("Curve_e3om3")
 a_speed_multi_iterations = 0
 a_speed_multi_scale = 0.0
 trigger_container = ""
@@ -51,7 +50,7 @@ homing_steer = 0.0
 homing_time_start = 0.0
 homing_duration = 999.0
 scale_multi_iterations = 0
-scale_multiplier = SubResource("Curve_22263")
+scale_multiplier = SubResource("Curve_ffcco")
 scale_multi_scale = 1.0
 r_randomisation_chances = 1.0
 r_speed_choice = PackedFloat32Array()
@@ -92,55 +91,22 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
-[sub_resource type="Resource" id="Resource_pyskc"]
-script = ExtResource("7_8rmu5")
-nbr = 5
-bullet_increase = 1.2
-targeting = true
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_37l85"]
-resource_name = "PatternCircle"
-script = ExtResource("8_r6umd")
-radius = 0
-angle_total = 6.28319
-angle_decal = 0.0
-symmetric = false
-center = 0
-symmetry_type = 0
-bullet = ""
-nbr = 1
-iterations = 1
-pattern_angle = 0.0
-pattern_angle_target = NodePath("")
-pattern_angle_mouse = false
-forced_angle = 0.0
-forced_target = NodePath("")
-forced_lookat_mouse = false
-forced_pattern_lookat = true
-cooldown_stasis = false
-cooldown_spawn = 1.0
-cooldown_shoot = 0.0
-cooldown_next_spawn = 0.0
-cooldown_next_shoot = 0.0
-wait_tween_momentum = 0
-wait_tween_length = 0.0
-wait_tween_time = 0.0
-
-[sub_resource type="Resource" id="Resource_f0elu"]
-script = ExtResource("4_hc6p7")
-pattern_difficulty = SubResource("Resource_pyskc")
-pattern_type = SubResource("NavigationPolygon_37l85")
-bullet_props = Array[ExtResource("6_ldni3")]([SubResource("PackedDataContainer_gm84q")])
-
 [node name="Enemie" type="Area2D"]
-[node name="Enemie" type="CharacterBody2D"]
 position = Vector2(312, 266)
 script = ExtResource("1_jimyj")
-movement = SubResource("Resource_h564x")
+movement = ExtResource("2_x5bkf")
 
-[node name="SpawnPatternBullet" type="Node2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4gsyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k8xwv")
+
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_35kli")
-patterns = Array[ExtResource("4_hc6p7")]([SubResource("Resource_f0elu")])
-speed = 1.0
-shoot_interval = 1.0
-nb_patterns_shoot = 1
+
+[node name="BulletPattern" type="Path2D" parent="Node2D"]
+curve = SubResource("Curve2D_iltyl")
+script = ExtResource("4_3lwwp")
+id = "bullettest"
+props = SubResource("PackedDataContainer_bldld")

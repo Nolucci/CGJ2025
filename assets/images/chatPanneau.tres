@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://ca43nbl1bc7u6"]
+
+[ext_resource type="Texture2D" uid="uid://ib278kn2k32" path="res://assets/images/Panneau_Cat-3.png" id="3_irmp0"]
+[ext_resource type="Texture2D" uid="uid://b3y1avvw887s6" path="res://assets/images/Panneau_Cat-4.png" id="4_5byqi"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("3_irmp0")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_5byqi")
+frame_1/duration = 0.1

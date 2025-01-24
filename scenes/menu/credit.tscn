@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqvj1n1ffbhf8"]
+
+[ext_resource type="Script" path="res://scripts/menu/credit.gd" id="1_pxj42"]
+
+[node name="Credit" type="Node2D"]
+script = ExtResource("1_pxj42")
+
+[node name="CreditsConteneur" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 652.0
+
+[node name="Ligne" type="Label" parent="CreditsConteneur"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 584.0
+offset_right = 1141.0
+offset_bottom = 650.0
+horizontal_alignment = 1
+vertical_alignment = 2
