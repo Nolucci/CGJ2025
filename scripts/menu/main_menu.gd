@@ -1,6 +1,9 @@
 extends CanvasLayer
 
-@onready var first_level = preload("res://addons/BulletUpHell/ExampleScenes/Test.tscn")
+@onready var first_level = preload("res://scenes/menu/Test.tscn")
+
+func _ready() -> void:
+	$CatPanneau.hide()
 
 func _on_start_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout
@@ -10,6 +13,11 @@ func _on_start_button_button_down() -> void:
 
 func _on_quit_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout
+	$Background.hide()
+	$Title.hide()
+	$VBoxContainer.hide()
+	$CatPanneau.show()
+	await get_tree().create_timer(3.0).timeout
 	get_tree().quit()
 
 	
