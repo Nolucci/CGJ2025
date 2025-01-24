@@ -18,9 +18,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
+Spawning="*res://addons/BulletUpHell/Spawning.tscn"
+GlobalSetting="*res://scripts/global/global_setting.gd"
 
 [display]
 
