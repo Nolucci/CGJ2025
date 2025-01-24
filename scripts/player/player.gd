@@ -11,8 +11,11 @@ class_name Player
 
 var input = Vector2.ZERO
 var screen_size
+var test: TriggerContainer
 
 func _ready() -> void:
+	test = $BlackTrigger
+	test.child_entered_tree.connect(test_signal)
 	PlayerManager.player_data = data
 	print(PlayerManager.player_data)
 
@@ -65,3 +68,7 @@ func adapat_sprite(input: Vector2):
 		sprite.rotation = -45
 	else:
 		sprite.rotation = 0
+
+
+func test_signal(node: Node):
+	print("wddawwd")

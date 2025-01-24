@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="AbstractPattern" load_steps=10 format=3 uid="uid://dqovdxb52f8vo"]
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=8 format=3 uid="uid://dqovdxb52f8vo"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_d0whi"]
 [ext_resource type="PackedDataContainer" uid="uid://bpifcgtvsb4sh" path="res://resources/bullets/black_bullet1.tres" id="2_0biav"]
-[ext_resource type="PackedDataContainer" uid="uid://dbkrbnn17dknl" path="res://resources/bullets/black_bullet2.tres" id="3_jcfp5"]
-[ext_resource type="PackedDataContainer" uid="uid://yfeh5wp20qlb" path="res://resources/bullets/black_bullet3.tres" id="4_nx6u3"]
 [ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="5_g5g8v"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="6_4yp1t"]
 [ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="7_a8fs0"]
@@ -46,4 +44,4 @@ wait_tween_time = 0.0
 script = ExtResource("7_a8fs0")
 pattern_difficulty = SubResource("Resource_wqpa8")
 pattern_type = SubResource("NavigationPolygon_nqy51")
-bullet_props = Array[ExtResource("1_d0whi")]([ExtResource("2_0biav"), ExtResource("3_jcfp5"), ExtResource("4_nx6u3")])
+bullet_props = Array[ExtResource("1_d0whi")]([ExtResource("2_0biav")])

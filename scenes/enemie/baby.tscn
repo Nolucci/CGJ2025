@@ -1,14 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8n3qvuk07rja"]
+[gd_scene load_steps=11 format=3 uid="uid://b8n3qvuk07rja"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemie.gd" id="1_k48oh"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_lm2k0"]
 [ext_resource type="Script" path="res://scripts/Patterns/PatternManager.gd" id="3_e0bsv"]
 [ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="4_er6ci"]
 [ext_resource type="Resource" uid="uid://dqovdxb52f8vo" path="res://resources/patterns/black_bullet_bandmaster_pattern.tres" id="6_e6cg1"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_i7mkx"]
 [ext_resource type="Texture2D" uid="uid://sqbas162m6rd" path="res://assets/enemies/baby.png" id="7_7se2y"]
-[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="7_7v0ym"]
-[ext_resource type="Resource" uid="uid://msnxfvtwjscd" path="res://resources/patterns/bullet_line_colors_baby_pattern.tres" id="7_80cab"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -35,17 +32,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_7351r"]
-script = ExtResource("7_7v0ym")
-nbr = 0
-bullet_increase = 0.0
-targeting = false
-
-[sub_resource type="Resource" id="Resource_p7xmf"]
-script = ExtResource("4_er6ci")
-pattern_difficulty = SubResource("Resource_7351r")
-bullet_props = Array[ExtResource("6_i7mkx")]([])
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmcyk"]
 radius = 19.0
 height = 40.0
@@ -68,7 +54,7 @@ position = Vector2(0, -0.250009)
 scale = Vector2(0.0423239, 0.0513614)
 sprite_frames = SubResource("SpriteFrames_y6ahs")
 script = ExtResource("3_e0bsv")
-patterns = Array[ExtResource("4_er6ci")]([ExtResource("6_e6cg1"), ExtResource("7_80cab"), SubResource("Resource_p7xmf")])
+patterns = Array[ExtResource("4_er6ci")]([ExtResource("6_e6cg1")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1

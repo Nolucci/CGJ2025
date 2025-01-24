@@ -3,7 +3,6 @@ extends Node
 class_name _EventManager
 
 # TODO ajouter l'entité concerné dans chaque fonction
-
 signal player_get_hit(damage: int)
 signal enemy_get_hit(damage: int)
 signal enemy_get_killed()
