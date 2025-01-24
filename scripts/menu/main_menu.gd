@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-@onready var first_level = preload("res://scenes/menu/Test.tscn")
+@onready var first_level = preload("res://scenes/principale.tscn")
+@onready var credit_scene = preload("res://scenes/menu/credit.tscn")
 
 func _ready() -> void:
 	$CatPanneau.hide()
@@ -21,6 +22,10 @@ func _on_quit_button_button_down() -> void:
 	$BackgroundPatoune.show()
 	await get_tree().create_timer(3.0).timeout
 	get_tree().quit()
+	
+func _on_credit_button_button_down() -> void:
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_packed(credit_scene)
 
 	
 

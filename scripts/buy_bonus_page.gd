@@ -3,6 +3,7 @@ extends Control
 @export var button_scene: PackedScene
 @onready var scroll_container = $Main/RigthPart/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
+@onready var first_level = preload("res://scenes/principale.tscn")
 var play_scene = preload("res://scenes/player/player.tscn")
 var animation_finished = false
 
@@ -51,8 +52,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _go_to_next_scene():
-	print("je change de scene")
-	get_tree().change_scene_to_file("res://scenes/test.tscn")
+	get_tree().change_scene_to_packed(first_level)
 	
 	
 func _on_transition_animation_finished(anim_name: StringName) -> void:
