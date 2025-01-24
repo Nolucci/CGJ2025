@@ -90,6 +90,14 @@ animations = [{
 "name": &"Example",
 "speed": 1.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2a6km")
+}],
+"loop": true,
+"name": &"black_bullet",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"new_animation",
@@ -101,14 +109,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"note_bleue1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_2a6km")
-}],
-"loop": true,
-"name": &"note_noire1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -161,7 +161,7 @@ default_delete = SubResource("Resource_tl1ht")
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("1")
-animation = &"note_noire1"
+animation = &"black_bullet"
 
 [node name="0" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("2")
