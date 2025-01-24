@@ -1,26 +1,25 @@
-[gd_resource type="Resource" script_class="AbstractPattern" load_steps=13 format=3 uid="uid://cltpvgy8byp7p"]
+[gd_resource type="PackedDataContainer" script_class="BulletProps" load_steps=7 format=3 uid="uid://bpifcgtvsb4sh"]
 
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_6uow6"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_du46n"]
-[ext_resource type="Script" path="res://resources/patterns/difficulty.gd" id="3_5isne"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_hymgc"]
-[ext_resource type="Script" path="res://resources/patterns/abstract_pattern.gd" id="5_60gw0"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="1_t6c3j"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="2_138bu"]
 
 [sub_resource type="Curve" id="Curve_bvqkf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="Resource" id="Resource_uvtu2"]
-script = ExtResource("2_du46n")
+script = ExtResource("1_t6c3j")
 ID = ""
-texture = "notre_noire1_manger"
+texture = "black_bullet1_eat"
 collision = ""
 SFX = ""
 tex_scale = 1.0
 tex_skew = 0.0
 
 [sub_resource type="Resource" id="Resource_pk87r"]
-script = ExtResource("2_du46n")
+script = ExtResource("1_t6c3j")
 ID = ""
-texture = "note_noire1"
+texture = "black_bullet1"
 collision = ""
 SFX = ""
 tex_scale = 1.0
@@ -28,16 +27,16 @@ tex_skew = 0.0
 
 [sub_resource type="Curve" id="Curve_hc6ch"]
 
-[sub_resource type="PackedDataContainer" id="PackedDataContainer_tttno"]
-script = ExtResource("1_6uow6")
+[resource]
+script = ExtResource("2_138bu")
 anim_idle = SubResource("Resource_pk87r")
 anim_delete = SubResource("Resource_uvtu2")
-anim_more = Array[ExtResource("2_du46n")]([])
+anim_more = Array[ExtResource("1_t6c3j")]([])
 damage = 1.0
 speed = 100.0
 scale = 1.0
 angle = 0.0
-groups = PackedStringArray()
+groups = PackedStringArray("black_group")
 spec_bounces = 0
 spec_no_collision = false
 spec_modulate_loop = 0.0
@@ -48,7 +47,7 @@ spec_rotating_speed = 0.0
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
-a_direction_equation = ""
+a_direction_equation = "cos(x)"
 a_curve_movement = 0
 a_speed_multiplier = SubResource("Curve_bvqkf")
 a_speed_multi_iterations = 0
@@ -101,43 +100,3 @@ r_homing_dur_variation = Vector3(0, 0, 0)
 r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
-
-[sub_resource type="Resource" id="Resource_nale2"]
-script = ExtResource("3_5isne")
-nbr = 1
-bullet_increase = 2.0
-targeting = false
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_molvj"]
-resource_name = "PatternCircle"
-script = ExtResource("4_hymgc")
-radius = 0
-angle_total = 6.28319
-angle_decal = 0.0
-symmetric = false
-center = 0
-symmetry_type = 0
-bullet = ""
-nbr = 1
-iterations = 1
-pattern_angle = 0.0
-pattern_angle_target = NodePath("")
-pattern_angle_mouse = false
-forced_angle = 0.0
-forced_target = NodePath("")
-forced_lookat_mouse = false
-forced_pattern_lookat = true
-cooldown_stasis = false
-cooldown_spawn = 1.0
-cooldown_shoot = 0.0
-cooldown_next_spawn = 0.0
-cooldown_next_shoot = 0.0
-wait_tween_momentum = 0
-wait_tween_length = 0.0
-wait_tween_time = 0.0
-
-[resource]
-script = ExtResource("5_60gw0")
-pattern_difficulty = SubResource("Resource_nale2")
-pattern_type = SubResource("NavigationPolygon_molvj")
-bullet_props = Array[ExtResource("1_6uow6")]([SubResource("PackedDataContainer_tttno")])

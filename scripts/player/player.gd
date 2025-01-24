@@ -11,9 +11,12 @@ class_name Player
 
 var input = Vector2.ZERO
 var screen_size
+var test: TriggerContainer
 
 func _ready() -> void:
 	EventManager.register_player(self)
+	test = $BlackTrigger
+	test.child_entered_tree.connect(test_signal)
 	PlayerManager.player_data = data
 	print(PlayerManager.player_data)
 	EventManager.player_get_hit.connect(take_damage)
@@ -77,3 +80,7 @@ func take_damage():
 		await get_tree().create_timer(0.1).timeout
 	
 	data.isInvinsible = false
+
+
+func test_signal(node: Node):
+	print("wddawwd")

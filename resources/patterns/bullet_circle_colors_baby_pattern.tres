@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=12 format=3 uid="uid://ddebw6apoxs28"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_mfubf"]
+[ext_resource type="PackedDataContainer" uid="uid://blw5waekr4ioa" path="res://resources/bullets/blue_bullet1.tres" id="2_j4j2v"]
+[ext_resource type="PackedDataContainer" uid="uid://0dcc7a0cyft1" path="res://resources/bullets/green_bullet1.tres" id="3_ypom1"]
+[ext_resource type="PackedDataContainer" uid="uid://chmxk2fkcnyiu" path="res://resources/bullets/pink_bullet1.tres" id="4_jr44g"]
+[ext_resource type="PackedDataContainer" uid="uid://c76e7nrdku33d" path="res://resources/bullets/red_bullet1.tres" id="5_ay186"]
+[ext_resource type="PackedDataContainer" uid="uid://0a0kss6skr12" path="res://resources/bullets/yellow_bullet1.tres" id="6_85pqs"]
+[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="7_cqfvs"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="8_m5njx"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="9_g53xm"]
+
+[sub_resource type="Resource" id="Resource_reygd"]
+script = ExtResource("7_cqfvs")
+nbr = 2
+bullet_increase = 1.5
+targeting = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jvucb"]
+resource_name = "PatternCircle"
+script = ExtResource("8_m5njx")
+radius = 0
+angle_total = 6.28319
+angle_decal = 0.0
+symmetric = false
+center = 0
+symmetry_type = 0
+bullet = ""
+nbr = 2
+iterations = 1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[resource]
+script = ExtResource("9_g53xm")
+pattern_difficulty = SubResource("Resource_reygd")
+pattern_type = SubResource("NavigationPolygon_jvucb")
+bullet_props = Array[ExtResource("1_mfubf")]([ExtResource("2_j4j2v"), ExtResource("3_ypom1"), ExtResource("4_jr44g"), ExtResource("5_ay186"), ExtResource("6_85pqs")])

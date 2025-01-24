@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=22 format=3 uid="uid://c8tepqxhr4nip"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_dfpow"]
+[ext_resource type="PackedDataContainer" uid="uid://blw5waekr4ioa" path="res://resources/bullets/blue_bullet1.tres" id="2_wr3ke"]
+[ext_resource type="PackedDataContainer" uid="uid://0dcc7a0cyft1" path="res://resources/bullets/green_bullet1.tres" id="3_abned"]
+[ext_resource type="PackedDataContainer" uid="uid://chmxk2fkcnyiu" path="res://resources/bullets/pink_bullet1.tres" id="4_aakp6"]
+[ext_resource type="PackedDataContainer" uid="uid://c76e7nrdku33d" path="res://resources/bullets/red_bullet1.tres" id="5_kgm4r"]
+[ext_resource type="PackedDataContainer" uid="uid://0a0kss6skr12" path="res://resources/bullets/yellow_bullet1.tres" id="6_6ovse"]
+[ext_resource type="PackedDataContainer" uid="uid://dlgww30ordl37" path="res://resources/bullets/blue_bullet2.tres" id="7_l1olf"]
+[ext_resource type="PackedDataContainer" uid="uid://be5pxhwdw144c" path="res://resources/bullets/green_bullet2.tres" id="8_1he4v"]
+[ext_resource type="PackedDataContainer" uid="uid://c4y1budhkch06" path="res://resources/bullets/pink_bullet2.tres" id="9_vh7h7"]
+[ext_resource type="PackedDataContainer" uid="uid://bxu8njxr81dg6" path="res://resources/bullets/red_bullet2.tres" id="10_gknuf"]
+[ext_resource type="PackedDataContainer" uid="uid://b2lgnvq0dmrjx" path="res://resources/bullets/yellow_bullet2.tres" id="11_vg0db"]
+[ext_resource type="PackedDataContainer" uid="uid://dltt2mr28sn6i" path="res://resources/bullets/blue_bullet3.tres" id="12_jsxxk"]
+[ext_resource type="PackedDataContainer" uid="uid://d2gl8ufmdnyhf" path="res://resources/bullets/green_bullet3.tres" id="13_7emr1"]
+[ext_resource type="PackedDataContainer" uid="uid://b1evdr3a82wjo" path="res://resources/bullets/pink_bullet3.tres" id="14_8ykxo"]
+[ext_resource type="PackedDataContainer" uid="uid://b1uni0lax5mml" path="res://resources/bullets/red_bullet3.tres" id="15_pj0nw"]
+[ext_resource type="PackedDataContainer" uid="uid://vrx1wdjhc04m" path="res://resources/bullets/yellow_bullet3.tres" id="16_v8gg6"]
+[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="17_htx8r"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="18_so0ms"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="19_c7m1w"]
+
+[sub_resource type="Resource" id="Resource_reygd"]
+script = ExtResource("17_htx8r")
+nbr = 2
+bullet_increase = 1.5
+targeting = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xhtg2"]
+resource_name = "PatternLine"
+script = ExtResource("18_so0ms")
+offset = Vector2(0, 0)
+center = 1
+symmetric = true
+bullet = ""
+nbr = 2
+iterations = 1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[resource]
+script = ExtResource("19_c7m1w")
+pattern_difficulty = SubResource("Resource_reygd")
+pattern_type = SubResource("NavigationPolygon_xhtg2")
+bullet_props = Array[ExtResource("1_dfpow")]([ExtResource("2_wr3ke"), ExtResource("3_abned"), ExtResource("4_aakp6"), ExtResource("5_kgm4r"), ExtResource("6_6ovse"), ExtResource("7_l1olf"), ExtResource("8_1he4v"), ExtResource("9_vh7h7"), ExtResource("10_gknuf"), ExtResource("11_vg0db"), ExtResource("12_jsxxk"), ExtResource("13_7emr1"), ExtResource("14_8ykxo"), ExtResource("15_pj0nw"), ExtResource("16_v8gg6")])
