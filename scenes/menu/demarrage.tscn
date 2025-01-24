@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=3 uid="uid://80j11xbycb48"]
 
-[ext_resource type="Texture2D" uid="uid://dutohaq2d5yml" path="res://assets/aquila_logo.png" id="1_d4h1c"]
 [ext_resource type="Script" path="res://scripts/menu/demarrage.gd" id="1_w72gi"]
 [ext_resource type="Texture2D" uid="uid://bplsm411ptk74" path="res://assets/Godot_splash_screen_original_logo_dark (1).png" id="2_1qk06"]
+[ext_resource type="Texture2D" uid="uid://dnuk1ivn0iptr" path="res://assets/logo2.png" id="2_8ykhe"]
 [ext_resource type="Texture2D" uid="uid://dystbk23duc4l" path="res://assets/Intro.png" id="3_p281j"]
 [ext_resource type="Texture2D" uid="uid://8aaifeno73yi" path="res://assets/image.psd322 (2).png" id="5_xv4cb"]
 
@@ -345,18 +345,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = 111.0
-offset_right = 1133.0
-offset_bottom = 618.0
+offset_top = 66.0
+offset_right = 1131.0
+offset_bottom = 579.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_d4h1c")
+texture = ExtResource("2_8ykhe")
+expand_mode = 2
 stretch_mode = 3
 
 [node name="MadeBy" type="Label" parent="First screen"]
 layout_mode = 0
 offset_right = 1159.0
-offset_bottom = 140.0
+offset_bottom = 119.0
 theme_override_font_sizes/font_size = 50
 text = "Made By"
 horizontal_alignment = 1
@@ -376,6 +377,7 @@ texture = ExtResource("2_1qk06")
 expand_mode = 1
 
 [node name="ThirdScreen" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

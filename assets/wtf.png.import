@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0gcdgk440dfb"
-path="res://.godot/imported/Cat_Roll_Animation_color.png-34976b9acc8c2e4fbfe075920b345596.ctex"
+uid="uid://dewoeh61arr8t"
+path="res://.godot/imported/wtf.png-05cceb51af2e1f668a777b2f964abb6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cat_Roll_Animation_color.png"
-dest_files=["res://.godot/imported/Cat_Roll_Animation_color.png-34976b9acc8c2e4fbfe075920b345596.ctex"]
+source_file="res://assets/wtf.png"
+dest_files=["res://.godot/imported/wtf.png-05cceb51af2e1f668a777b2f964abb6a.ctex"]
 
 [params]
 
