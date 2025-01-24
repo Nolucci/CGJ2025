@@ -9,6 +9,7 @@ signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int
 @export var life: int = 1
 @export var money: int = 0
 @export var upgrades: Array[PlayerUpgrade] = []
+@export var isInvinsible: bool = false
 
 # Fonction pour acheter une amélioration
 func buy_upgrade(primary_key: int) -> bool:

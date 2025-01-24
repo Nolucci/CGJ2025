@@ -16,3 +16,9 @@ func _process(delta):
 			movement.process_movement(self, delta, screen_size)
 		else:
 			push_error("Movement script is not assigned!")
+
+func _on_area_2d_body_entered(body: Player) -> void:
+	if !body.data.isInvinsible:
+		body.take_damage()
+	else:
+		print('t nul')

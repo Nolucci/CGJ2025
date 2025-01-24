@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var first_level = preload("res://scenes/menu/Test.tscn")
+@onready var first_level = preload("res://scenes/principale.tscn")
 
 func _ready() -> void:
 	$CatPanneau.hide()

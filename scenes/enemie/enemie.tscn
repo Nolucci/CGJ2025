@@ -94,6 +94,8 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [node name="Enemie" type="CharacterBody2D"]
 position = Vector2(312, 266)
+collision_layer = 4
+collision_mask = 6
 script = ExtResource("1_jimyj")
 movement = SubResource("Resource_h564x")
 
@@ -105,3 +107,11 @@ curve = SubResource("Curve2D_iltyl")
 script = ExtResource("4_3lwwp")
 id = "bullettest"
 props = SubResource("PackedDataContainer_bldld")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

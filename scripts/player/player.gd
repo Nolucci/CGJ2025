@@ -13,11 +13,12 @@ var input = Vector2.ZERO
 var screen_size
 
 func _ready() -> void:
+	EventManager.register_player(self)
 	PlayerManager.player_data = data
 	print(PlayerManager.player_data)
+	EventManager.player_get_hit.connect(take_damage)
 
 func _physics_process(delta):
-	EventManager.register_player(self)
 	screen_size = get_viewport_rect().size
 	player_movement(delta)
 	fart()
@@ -65,3 +66,15 @@ func adapat_sprite(input: Vector2):
 		sprite.rotation = -45
 	else:
 		sprite.rotation = 0
+	
+func take_damage():
+	data.isInvinsible = true
+	data.life = data.life - 1
+	for i in range(1, 15):
+		var t = create_tween()
+		sprite.set_modulate('ff8e7e');
+		await get_tree().create_timer(0.1).timeout
+		sprite.set_modulate('ffffff');
+		await get_tree().create_timer(0.1).timeout
+	
+	data.isInvinsible = false
