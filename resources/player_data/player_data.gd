@@ -3,7 +3,7 @@ extends Resource
 class_name PlayerData
 
 #Ajout de signal pour gérer dans certaine classe
-signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int)
+signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int, name_icon: String)
 
 @export var name: String = "Alain"
 @export var life: int = 1
@@ -21,7 +21,7 @@ func buy_upgrade(primary_key: int) -> bool:
 	money -= upgrade.price
 	upgrade.current_level += 1
 	print("Amélioration achetée:", upgrade.name, "Niveau actuel:", upgrade.current_level)
-	emit_signal("upgrade_bought", upgrade.name, upgrade.current_level, money)
+	emit_signal("upgrade_bought", upgrade.name, upgrade.current_level, money, upgrade.link_icon_buy_menu)
 	return true
 
 # Fonction pour trouver une amélioration par clé primaire

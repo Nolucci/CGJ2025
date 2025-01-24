@@ -16,6 +16,7 @@ price = 100
 max_level = 3
 current_level = 0
 icon = ExtResource("3_5av7n")
+link_icon_buy_menu = ""
 
 [sub_resource type="Resource" id="Resource_lmnle"]
 script = ExtResource("2_o1r2w")
@@ -26,6 +27,7 @@ price = 500
 max_level = 2
 current_level = 0
 icon = ExtResource("4_dwe5v")
+link_icon_buy_menu = "space"
 
 [sub_resource type="Resource" id="Resource_1unf8"]
 script = ExtResource("2_o1r2w")
@@ -36,6 +38,7 @@ price = 1000
 max_level = 2
 current_level = 0
 icon = ExtResource("5_7krts")
+link_icon_buy_menu = "casque"
 
 [sub_resource type="Resource" id="Resource_um8lx"]
 script = ExtResource("2_o1r2w")
@@ -46,6 +49,7 @@ price = 11000
 max_level = 1
 current_level = 0
 icon = ExtResource("6_j1jyg")
+link_icon_buy_menu = ""
 
 [resource]
 script = ExtResource("1_xx3fb")
