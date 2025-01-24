@@ -3,7 +3,6 @@ extends Node2D
 @export var shoot_interval: float = 1.0  # Intervalle entre les tirs
 var timer: float = 0.0  # Timer pour gérer les tirs
 
-
 # Fonction pour tirer un pattern unique
 func shoot(pattern_name: String, position: Vector2, rotation: float, bullet_type: String, offset: Vector2, nbr: int):
 	
