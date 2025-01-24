@@ -15,9 +15,10 @@ random_change = false
 random_switch_start = 4.0
 random_switch_end = 7.0
 center = Vector2(0, 0)
-angle = 0.0
 radius = 100.0
 radius_change_speed = 20.0
+approach_speed = 100.0
+angle = 0.0
 is_increasing = true
 speed = 100.0
 
