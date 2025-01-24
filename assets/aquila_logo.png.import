@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dii47707xp1l8"
-path="res://.godot/imported/image.png-af64cbdbdc139b73c5ff815c6a441973.ctex"
+uid="uid://dutohaq2d5yml"
+path="res://.godot/imported/aquila_logo.png-8c9a4091e3ec3348c0507fcf65f8c44f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/image.png"
-dest_files=["res://.godot/imported/image.png-af64cbdbdc139b73c5ff815c6a441973.ctex"]
+source_file="res://assets/aquila_logo.png"
+dest_files=["res://.godot/imported/aquila_logo.png-8c9a4091e3ec3348c0507fcf65f8c44f.ctex"]
 
 [params]
 

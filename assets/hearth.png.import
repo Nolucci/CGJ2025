@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu340bwavoc4j"
-path="res://.godot/imported/hearth (2).png-c188e553df03619f1d67576ada673fd2.ctex"
+uid="uid://cg533aoktgc1d"
+path="res://.godot/imported/hearth.png-d86416e5e3bca58221146a188ec62378.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/hearth (2).png"
-dest_files=["res://.godot/imported/hearth (2).png-c188e553df03619f1d67576ada673fd2.ctex"]
+source_file="res://assets/hearth.png"
+dest_files=["res://.godot/imported/hearth.png-d86416e5e3bca58221146a188ec62378.ctex"]
 
 [params]
 

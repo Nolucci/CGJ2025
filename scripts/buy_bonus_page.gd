@@ -19,7 +19,7 @@ func _ready() -> void:
 		add_child(player)
 		player.queue_free()
 		player_instantiated = true
-		$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
+		$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
 
@@ -39,7 +39,7 @@ func _setup_button(button_instance, skill_data):
 	scroll_container.add_child(button_instance)
 	
 func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int, name_link: String):
-	$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Coin: " + str(remaining_money)
+	$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Patoune: " + str(remaining_money)
 	if $Main/Panel/SpriteContainer.has_node(name_link):
 		var node = $Main/Panel/SpriteContainer.get_node(name_link)
 		if not node.visible:

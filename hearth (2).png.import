@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dewoeh61arr8t"
-path="res://.godot/imported/wtf.png-4e35ce34b9d7ab5093af9aff17cbd707.ctex"
+uid="uid://cu340bwavoc4j"
+path="res://.godot/imported/hearth (2).png-46878cbf1d82d411506bbf768e87310a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/wtf.png"
-dest_files=["res://.godot/imported/wtf.png-4e35ce34b9d7ab5093af9aff17cbd707.ctex"]
+source_file="res://hearth (2).png"
+dest_files=["res://.godot/imported/hearth (2).png-46878cbf1d82d411506bbf768e87310a.ctex"]
 
 [params]
 

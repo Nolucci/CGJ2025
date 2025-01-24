@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="1_xx3fb"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="2_o1r2w"]
-[ext_resource type="Texture2D" uid="uid://cu340bwavoc4j" path="res://resources/hearth (2).png" id="3_5av7n"]
-[ext_resource type="Texture2D" uid="uid://bkejmtw6yygkm" path="res://resources/space.png" id="4_dwe5v"]
-[ext_resource type="Texture2D" uid="uid://d20k4m1c8gh31" path="res://resources/casque.png" id="5_7krts"]
-[ext_resource type="Texture2D" uid="uid://dewoeh61arr8t" path="res://resources/wtf.png" id="6_j1jyg"]
+[ext_resource type="Texture2D" uid="uid://cu340bwavoc4j" path="res://hearth (2).png" id="3_5av7n"]
+[ext_resource type="Texture2D" uid="uid://bkejmtw6yygkm" path="res://assets/space.png" id="4_dwe5v"]
+[ext_resource type="Texture2D" uid="uid://d20k4m1c8gh31" path="res://assets/casque.png" id="5_7krts"]
+[ext_resource type="Texture2D" uid="uid://dewoeh61arr8t" path="res://wtf.png" id="6_j1jyg"]
 
 [sub_resource type="Resource" id="Resource_nev6f"]
 script = ExtResource("2_o1r2w")

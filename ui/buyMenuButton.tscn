@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvcv2rfxcmlsy"]
+[gd_scene load_steps=11 format=3 uid="uid://cvcv2rfxcmlsy"]
 
 [ext_resource type="Script" path="res://scripts/ui/buy_menu_button.gd" id="1_g6vep"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="1_m7kia"]
@@ -29,17 +29,6 @@ content_margin_right = 20.0
 [sub_resource type="LabelSettings" id="LabelSettings_eup3v"]
 font = ExtResource("1_m7kia")
 font_size = 20
-
-[sub_resource type="Gradient" id="Gradient_nogdu"]
-offsets = PackedFloat32Array(0.992647, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_hlgcd"]
-gradient = SubResource("Gradient_nogdu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8evj"]
-texture = SubResource("GradientTexture1D_hlgcd")
-texture_margin_top = 20.0
-texture_margin_bottom = 20.0
 
 [node name="BuyMenuButton" type="Control"]
 custom_minimum_size = Vector2(0, 200)
@@ -124,7 +113,6 @@ size_flags_vertical = 10
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("1_m7kia")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_m8evj")
 text = "800
 "
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl8eo3wi4l86b"
-path="res://.godot/imported/Chat (1).png-9659e350f902105eef1c0b54ed4a0be8.ctex"
+uid="uid://b0gcdgk440dfb"
+path="res://.godot/imported/Cat_Roll_Animation_color.png-34976b9acc8c2e4fbfe075920b345596.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Chat (1).png"
-dest_files=["res://.godot/imported/Chat (1).png-9659e350f902105eef1c0b54ed4a0be8.ctex"]
+source_file="res://Cat_Roll_Animation_color.png"
+dest_files=["res://.godot/imported/Cat_Roll_Animation_color.png-34976b9acc8c2e4fbfe075920b345596.ctex"]
 
 [params]
 

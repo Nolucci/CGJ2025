@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Resource" uid="uid://drm5rnbla6wa8" path="res://resources/player_data/player_data.tres" id="2_6pwet"]
 [ext_resource type="Texture2D" uid="uid://cl2jptdgr8hy5" path="res://assets/player/Cat_Roll_Animation.png" id="3_6vsef"]
-[ext_resource type="PackedScene" uid="uid://otpt2jr0on6t" path="res://scenes/player/fart.tscn" id="3_andpl"]
+[ext_resource type="PackedScene" path="res://scenes/player/fart.tscn" id="3_andpl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epukw"]
 atlas = ExtResource("3_6vsef")

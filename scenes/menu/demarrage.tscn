@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://80j11xbycb48"]
+
+[ext_resource type="Texture2D" uid="uid://dutohaq2d5yml" path="res://assets/aquila_logo.png" id="1_d4h1c"]
+[ext_resource type="Texture2D" uid="uid://bplsm411ptk74" path="res://assets/Godot_splash_screen_original_logo_dark (1).png" id="2_1qk06"]
+
+[sub_resource type="Animation" id="Animation_o14wo"]
+resource_name = "main"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("First screen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.93333, 3.73333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.36874, -0.00387549, 4.9659]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SecondScreen:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.76667, 3.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.40749, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_w5nyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("First screen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.36874]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SecondScreen:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yguqh"]
+_data = {
+"RESET": SubResource("Animation_w5nyd"),
+"main": SubResource("Animation_o14wo")
+}
+
+[node name="Demarrage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1363.0
+offset_bottom = 755.0
+color = Color(0, 0, 0, 1)
+
+[node name="First screen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = 2.36874
+
+[node name="Logo" type="TextureRect" parent="First screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 111.0
+offset_right = 1133.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d4h1c")
+stretch_mode = 3
+
+[node name="MadeBy" type="Label" parent="First screen"]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 50
+text = "Made By"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SecondScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SecondScreen"]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 653.0
+rotation = 6.28371
+texture = ExtResource("2_1qk06")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yguqh")
+}
