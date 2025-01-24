@@ -1,3 +1,58 @@
 [gd_scene format=3 uid="uid://ik2cnqrhi6aw"]
 
-[node name="Option" type="CanvasLayer"]
+[node name="SettingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1232.0
+offset_bottom = 687.0
+color = Color(0.408329, 0.408329, 0.408329, 1)
+
+[node name="SettingTabs" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Video" type="TabBar" parent="SettingTabs"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingTabs/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VideoSettings" type="GridContainer" parent="SettingTabs/Video/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="DisplayMode" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
