@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://drm5rnbla6wa8"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=11 format=3 uid="uid://drm5rnbla6wa8"]
 
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="1_xx3fb"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="2_o1r2w"]
 [ext_resource type="Texture2D" uid="uid://cu340bwavoc4j" path="res://resources/hearth (2).png" id="3_5av7n"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="3_gudms"]
+[ext_resource type="Texture2D" uid="uid://bkejmtw6yygkm" path="res://resources/space.png" id="4_dwe5v"]
+[ext_resource type="Texture2D" uid="uid://d20k4m1c8gh31" path="res://resources/casque.png" id="5_7krts"]
+[ext_resource type="Texture2D" uid="uid://dewoeh61arr8t" path="res://resources/wtf.png" id="6_j1jyg"]
 
 [sub_resource type="Resource" id="Resource_nev6f"]
 script = ExtResource("2_o1r2w")
@@ -23,7 +25,7 @@ description = "Ajoute un bouclier temporaire"
 price = 500
 max_level = 2
 current_level = 0
-icon = ExtResource("3_gudms")
+icon = ExtResource("4_dwe5v")
 
 [sub_resource type="Resource" id="Resource_1unf8"]
 script = ExtResource("2_o1r2w")
@@ -33,11 +35,21 @@ description = "Faster is better"
 price = 1000
 max_level = 2
 current_level = 0
-icon = ExtResource("3_gudms")
+icon = ExtResource("5_7krts")
+
+[sub_resource type="Resource" id="Resource_um8lx"]
+script = ExtResource("2_o1r2w")
+primary_key = 3
+name = "wtf"
+description = "trouve par toi même"
+price = 11000
+max_level = 1
+current_level = 0
+icon = ExtResource("6_j1jyg")
 
 [resource]
 script = ExtResource("1_xx3fb")
 name = "Alain"
 life = 1
 money = 5464564545646
-upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_1unf8")])
+upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_1unf8"), SubResource("Resource_um8lx")])
