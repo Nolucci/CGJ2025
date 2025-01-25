@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/menu/setting_menu.gd" id="1_1vi4g"]
 
 [node name="SettingMenuPopup" type="Popup"]
+initial_position = 1
 size = Vector2i(950, 500)
 visible = true
 
@@ -17,6 +18,7 @@ size_flags_vertical = 3
 script = ExtResource("1_1vi4g")
 
 [node name="Background" type="ColorRect" parent="SettingMenu"]
+layout_mode = 0
 offset_right = 1232.0
 offset_bottom = 687.0
 color = Color(0.408329, 0.408329, 0.408329, 1)
@@ -115,7 +117,7 @@ columns = 2
 
 [node name="MasterVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
 layout_mode = 2
-text = "Max FPS
+text = "Volume général
 "
 
 [node name="MasterVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
@@ -126,7 +128,7 @@ size_flags_vertical = 4
 
 [node name="MusicVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
 layout_mode = 2
-text = "Max FPS
+text = "Volume musique
 "
 
 [node name="MusicVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
@@ -137,7 +139,7 @@ size_flags_vertical = 4
 
 [node name="SFXVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
 layout_mode = 2
-text = "Max FPS
+text = "Volume sfx
 "
 
 [node name="SFXVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
