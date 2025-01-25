@@ -22,7 +22,7 @@
 
 [sub_resource type="Resource" id="Resource_reygd"]
 script = ExtResource("17_fsbgm")
-nbr = 2
+nbr = 5
 bullet_increase = 1.5
 targeting = false
 

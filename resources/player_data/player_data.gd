@@ -44,3 +44,12 @@ func can_upgrade(upgrade: PlayerUpgrade) -> bool:
 		print("Pas assez d'argent pour acheter l'amélioration:", upgrade.name)
 		return false
 	return true
+
+func eat_ball():
+	pass
+
+func can_fart():
+	return true
+
+func fart():
+	pass

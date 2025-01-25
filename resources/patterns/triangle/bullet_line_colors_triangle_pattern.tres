@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=12 format=3 uid="uid://cpwmsw6bfeuv7"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_s2327"]
+[ext_resource type="PackedDataContainer" uid="uid://blw5waekr4ioa" path="res://resources/bullets/blue_bullet1.tres" id="2_sobfd"]
+[ext_resource type="PackedDataContainer" uid="uid://0dcc7a0cyft1" path="res://resources/bullets/green_bullet1.tres" id="3_pngsw"]
+[ext_resource type="PackedDataContainer" uid="uid://chmxk2fkcnyiu" path="res://resources/bullets/pink_bullet1.tres" id="4_e32al"]
+[ext_resource type="PackedDataContainer" uid="uid://c76e7nrdku33d" path="res://resources/bullets/red_bullet1.tres" id="5_5mcd2"]
+[ext_resource type="PackedDataContainer" uid="uid://0a0kss6skr12" path="res://resources/bullets/yellow_bullet1.tres" id="6_uga8c"]
+[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="7_nvcys"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="8_0tn3n"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="9_8obga"]
+
+[sub_resource type="Resource" id="Resource_reygd"]
+script = ExtResource("7_nvcys")
+nbr = 2
+bullet_increase = 1.5
+targeting = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xhtg2"]
+resource_name = "PatternLine"
+script = ExtResource("8_0tn3n")
+offset = Vector2(0, 0)
+center = 1
+symmetric = true
+bullet = ""
+nbr = 2
+iterations = 1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[resource]
+script = ExtResource("9_8obga")
+pattern_difficulty = SubResource("Resource_reygd")
+pattern_type = SubResource("NavigationPolygon_xhtg2")
+bullet_props = Array[ExtResource("1_s2327")]([ExtResource("2_sobfd"), ExtResource("3_pngsw"), ExtResource("4_e32al"), ExtResource("5_5mcd2"), ExtResource("6_uga8c")])

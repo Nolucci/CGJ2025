@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://umyq56u840ay"]
+[gd_scene load_steps=15 format=3 uid="uid://umyq56u840ay"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_hjv5w"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_ugumc"]
 [ext_resource type="Texture2D" uid="uid://cbxblscsqbtoa" path="res://assets/enemies/triangle.png" id="3_ydx3j"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_wo736"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_6q8a3"]
+[ext_resource type="Resource" uid="uid://cpwmsw6bfeuv7" path="res://resources/patterns/triangle/bullet_line_colors_triangle_pattern.tres" id="6_mvtbm"]
+[ext_resource type="Resource" uid="uid://dy7r7sqvsvo1f" path="res://resources/patterns/triangle/bullet_circle_colors_triangle_pattern.tres" id="7_l2d2j"]
+[ext_resource type="Resource" uid="uid://bx2dqufy7hy47" path="res://resources/patterns/triangle/black_bullet_triangle_pattern.tres" id="8_xic3q"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -53,7 +57,7 @@ height = 38.0
 z_index = 500
 position = Vector2(287, 259)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 safe_margin = 0.001
 script = ExtResource("1_hjv5w")
 movement = SubResource("Resource_2wsfb")
@@ -67,7 +71,8 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 frame_progress = 0.25108
 script = ExtResource("4_wo736")
-speed = 2.0
+patterns = Array[ExtResource("5_6q8a3")]([ExtResource("6_mvtbm"), ExtResource("7_l2d2j"), ExtResource("8_xic3q")])
+speed = 3.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
 

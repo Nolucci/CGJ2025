@@ -17,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_reygd"]
 script = ExtResource("12_rybq2")
-nbr = 2
+nbr = 5
 bullet_increase = 1.5
 targeting = false
 
@@ -32,7 +32,7 @@ center = 0
 symmetry_type = 0
 bullet = ""
 nbr = 2
-iterations = 1
+iterations = 2
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false

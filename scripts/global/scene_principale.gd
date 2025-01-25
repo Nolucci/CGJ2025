@@ -28,7 +28,7 @@ func _physics_process(_delta):
 			spawn_enemies(false)
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
-			currentLevel += 1	
+			currentLevel += 1
 
 func spawn_enemies(boss: bool):
 

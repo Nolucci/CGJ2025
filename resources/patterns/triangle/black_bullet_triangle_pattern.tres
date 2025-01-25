@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=9 format=3 uid="uid://bx2dqufy7hy47"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_tc2ck"]
+[ext_resource type="PackedDataContainer" uid="uid://bpifcgtvsb4sh" path="res://resources/bullets/black_bullet1.tres" id="2_xweyb"]
+[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="3_70o64"]
+[ext_resource type="PackedDataContainer" uid="uid://dbkrbnn17dknl" path="res://resources/bullets/black_bullet2.tres" id="3_q4avm"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_qopon"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_355pa"]
+
+[sub_resource type="Resource" id="Resource_nale2"]
+script = ExtResource("3_70o64")
+nbr = 2
+bullet_increase = 1.5
+targeting = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_molvj"]
+resource_name = "PatternCircle"
+script = ExtResource("4_qopon")
+radius = 0
+angle_total = 6.28319
+angle_decal = 0.0
+symmetric = false
+center = 0
+symmetry_type = 0
+bullet = ""
+nbr = 2
+iterations = 1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[resource]
+script = ExtResource("5_355pa")
+pattern_difficulty = SubResource("Resource_nale2")
+pattern_type = SubResource("NavigationPolygon_molvj")
+bullet_props = Array[ExtResource("1_tc2ck")]([ExtResource("2_xweyb"), ExtResource("3_q4avm")])

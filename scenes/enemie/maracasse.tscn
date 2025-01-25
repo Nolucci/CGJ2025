@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds7cckvhdqp60"]
+[gd_scene load_steps=15 format=3 uid="uid://ds7cckvhdqp60"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_sknit"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_fg2cu"]
 [ext_resource type="Texture2D" uid="uid://bvnps575m4bqr" path="res://assets/enemies/Maracasse.png" id="3_l07j6"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_qxc7i"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_bvo4r"]
+[ext_resource type="Resource" uid="uid://d4a72xkxavp7e" path="res://resources/patterns/maracasse/black_bullet_maracasse_pattern.tres" id="6_v4u4s"]
+[ext_resource type="Resource" uid="uid://chn7t1fke376d" path="res://resources/patterns/violon/bullet_circle_colors_violon_pattern.tres" id="7_u0ew1"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -60,7 +63,7 @@ height = 60.0
 z_index = 500
 position = Vector2(287, 259)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 safe_margin = 0.001
 script = ExtResource("1_sknit")
 movement = SubResource("Resource_2wsfb")
@@ -74,7 +77,8 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 frame_progress = 0.896
 script = ExtResource("4_qxc7i")
-speed = 2.0
+patterns = Array[ExtResource("5_bvo4r")]([ExtResource("7_u0ew1"), ExtResource("6_v4u4s")])
+speed = 1.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
 
