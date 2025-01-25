@@ -8,6 +8,8 @@ var area: Area2D
 var screen_size: Vector2
 var target_position: Vector2 = Vector2.ZERO
 
+var sound_damage: AudioStreamPlayer2D
+
 signal enemy_death(enemy: Enemie)
 
 func goTo(pos: Vector2):
@@ -18,6 +20,11 @@ func _ready() -> void:
 	area = $Area2D
 	EventManager.register_enemy(self)
 	area.area_entered.connect(on_area_entered)
+	sound_damage = AudioStreamPlayer2D.new()
+	sound_damage.stream = load("res://assets/enemies/sound/take_damage.mp3")
+	sound_damage.volume_db = 10.0
+	add_child(sound_damage)
+
 	
 func set_start_movement(new_start_movement: bool):
 	self.start_movement = new_start_movement
@@ -50,7 +57,9 @@ func on_area_entered(area_entered: Area2D):
 			life -= upgrade.current_level
 		else:
 			life -= 1
+			sound_damage.play()
 		if life <= 0:
+			sound_damage.play()
 			enemy_death.emit(self)
 			queue_free()
 
