@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=7 format=3 uid="uid://fqav33bxwpwt"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://fqav33bxwpwt"]
 
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="1_xx3fb"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="2_o1r2w"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="3_gudms"]
+[ext_resource type="Texture2D" uid="uid://cg533aoktgc1d" path="res://assets/hearth.png" id="3_nwkgq"]
+[ext_resource type="Texture2D" uid="uid://bkejmtw6yygkm" path="res://assets/space.png" id="4_8ekyf"]
+[ext_resource type="Texture2D" uid="uid://d20k4m1c8gh31" path="res://assets/casque.png" id="5_rccij"]
 
 [sub_resource type="Resource" id="Resource_nev6f"]
 script = ExtResource("2_o1r2w")
@@ -12,7 +14,7 @@ description = "Donne 1 vie supplémentaire"
 price = 100
 max_level = 3
 current_level = 0
-icon = ExtResource("3_gudms")
+icon = ExtResource("3_nwkgq")
 link_icon_buy_menu = ""
 
 [sub_resource type="Resource" id="Resource_lmnle"]
@@ -23,19 +25,19 @@ description = "Ajoute un bouclier temporaire"
 price = 500
 max_level = 2
 current_level = 0
-icon = ExtResource("3_gudms")
-link_icon_buy_menu = ""
+icon = ExtResource("4_8ekyf")
+link_icon_buy_menu = "space"
 
 [sub_resource type="Resource" id="Resource_ly6fa"]
 script = ExtResource("2_o1r2w")
 primary_key = 14
 name = "Choc"
-description = "Lance une onde sonore dévastatrice qui détruit tout sur son passage. Amélioration ultime. (Clic droit)"
+description = "Lance une onde sonore dévastatrice. (Clic droit)"
 price = 800
 max_level = 1
 current_level = 0
-icon = ExtResource("3_gudms")
-link_icon_buy_menu = ""
+icon = ExtResource("5_rccij")
+link_icon_buy_menu = "casque"
 
 [resource]
 script = ExtResource("1_xx3fb")

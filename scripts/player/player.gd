@@ -38,10 +38,11 @@ func _physics_process(delta):
 		screen_size = get_viewport_rect().size
 		player_movement(delta)
 		
-		if Input.is_action_just_pressed("fart"):
+		if Input.is_action_just_pressed("griffe"):
 			if nbGriffure > 0 and canGriffe:
 				nbGriffure -= 1
 				griffer()
+				
 		if Input.is_action_just_pressed("fart"):
 			fart()		
 			
