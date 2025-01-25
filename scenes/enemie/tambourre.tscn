@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dh5j8sr3gdxur"]
+[gd_scene load_steps=16 format=3 uid="uid://dh5j8sr3gdxur"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_ouabt"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_xlk7w"]
 [ext_resource type="Texture2D" uid="uid://cfwm3t0axjsi7" path="res://assets/enemies/Tambourine.png" id="3_uh0eo"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_4jvq7"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_ohrh5"]
+[ext_resource type="Resource" uid="uid://dadnnl2i1a2mg" path="res://resources/patterns/tambourre/bullet_circle_colors_tambourre_pattern.tres" id="6_xsuga"]
+[ext_resource type="Resource" uid="uid://dgt6lfxba0jqe" path="res://resources/patterns/tambourre/black_bullet_tambourre_pattern.tres" id="7_uw3ve"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -81,8 +84,9 @@ sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 frame_progress = 0.896
 script = ExtResource("4_4jvq7")
+patterns = Array[ExtResource("5_ohrh5")]([ExtResource("6_xsuga"), ExtResource("7_uw3ve")])
 speed = 2.0
-shoot_interval = 1.0
+shoot_interval = 3.0
 nb_patterns_shoot = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

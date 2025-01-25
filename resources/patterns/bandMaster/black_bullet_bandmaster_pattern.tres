@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_wqpa8"]
 script = ExtResource("5_g5g8v")
-nbr = 2
+nbr = 3
 bullet_increase = 1.5
 targeting = false
 

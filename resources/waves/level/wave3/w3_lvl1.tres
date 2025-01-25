@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Level" load_steps=9 format=3 uid="uid://cfqu0ybtlrfn7"]
+
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="1_sues3"]
+[ext_resource type="PackedScene" uid="uid://dicsom68usoa4" path="res://scenes/enemie/violon.tscn" id="2_01amw"]
+[ext_resource type="PackedScene" uid="uid://b8n3qvuk07rja" path="res://scenes/enemie/baby.tscn" id="2_shkqd"]
+[ext_resource type="PackedScene" uid="uid://bf2ak7utt86dq" path="res://scenes/enemie/serpent.tscn" id="3_0govi"]
+[ext_resource type="PackedScene" uid="uid://umyq56u840ay" path="res://scenes/enemie/triangle.tscn" id="3_x4aem"]
+[ext_resource type="PackedScene" uid="uid://dh5j8sr3gdxur" path="res://scenes/enemie/tambourre.tscn" id="4_fini0"]
+[ext_resource type="PackedScene" uid="uid://ds7cckvhdqp60" path="res://scenes/enemie/maracasse.tscn" id="6_ec83d"]
+[ext_resource type="PackedScene" uid="uid://b84yph8ebluu" path="res://scenes/enemie/lyre.tscn" id="7_gskj7"]
+
+[resource]
+script = ExtResource("1_sues3")
+tabEnemies = Array[PackedScene]([ExtResource("2_01amw"), ExtResource("3_x4aem"), ExtResource("4_fini0"), ExtResource("3_0govi"), ExtResource("6_ec83d"), ExtResource("7_gskj7"), ExtResource("2_shkqd"), ExtResource("2_shkqd")])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Level" load_steps=5 format=3 uid="uid://c5kghww7h8diq"]
+
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="1_l40rd"]
+[ext_resource type="PackedScene" uid="uid://b84yph8ebluu" path="res://scenes/enemie/lyre.tscn" id="2_wm8ap"]
+[ext_resource type="PackedScene" uid="uid://dicsom68usoa4" path="res://scenes/enemie/violon.tscn" id="3_p07ij"]
+[ext_resource type="PackedScene" uid="uid://ds7cckvhdqp60" path="res://scenes/enemie/maracasse.tscn" id="4_lyek6"]
+
+[resource]
+script = ExtResource("1_l40rd")
+tabEnemies = Array[PackedScene]([ExtResource("2_wm8ap"), ExtResource("2_wm8ap"), ExtResource("3_p07ij"), ExtResource("3_p07ij"), ExtResource("4_lyek6"), ExtResource("4_lyek6")])

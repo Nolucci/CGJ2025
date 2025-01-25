@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://b84yph8ebluu"]
+[gd_scene load_steps=15 format=3 uid="uid://b84yph8ebluu"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_oinh8"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_4yqtr"]
 [ext_resource type="Texture2D" uid="uid://bygkqn10stvk1" path="res://assets/enemies/Lyre.png" id="3_tmp0c"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_wx0j5"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_k3gah"]
+[ext_resource type="Resource" uid="uid://1j5seqqi728g" path="res://resources/patterns/lyre/bullet_line_colors_lyre_pattern.tres" id="6_ww022"]
+[ext_resource type="Resource" uid="uid://tfak1bujdcrj" path="res://resources/patterns/lyre/black_bullet_lyre_pattern.tres" id="7_7565x"]
 
 [sub_resource type="Resource" id="Resource_2wsfb"]
 resource_local_to_scene = true
@@ -75,9 +78,10 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.896
 script = ExtResource("4_wx0j5")
+patterns = Array[ExtResource("5_k3gah")]([ExtResource("6_ww022"), ExtResource("7_7565x")])
 speed = 2.0
-shoot_interval = 1.0
-nb_patterns_shoot = 1
+shoot_interval = 2.0
+nb_patterns_shoot = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 900
