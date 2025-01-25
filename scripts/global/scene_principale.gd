@@ -24,7 +24,6 @@ func _physics_process(_delta):
 	if enemies == 0:
 		if(currentWave - 1) == waves.size():
 			currentWave = 1
-			PatternManager.updateDifficulty()
 			print("difficulté augmentée")
 		if waves[currentWave - 1].tabLevel.size() == currentLevel - 1:
 			spawn_enemies(true)
@@ -37,6 +36,8 @@ func _physics_process(_delta):
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
 			currentLevel += 1
+			PatternManager.updateDifficulty()
+
 
 	if player != null:
 		ui_nbgriffure.text = str(player.nbGriffure) + "/" + str(player.nbGriffureMax) + " griffures"

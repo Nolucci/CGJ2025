@@ -20,6 +20,7 @@ func _ready() -> void:
 		$Panel2/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
+		show_upgrades()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,3 +68,10 @@ func _on_transition_animation_finished(anim_name: StringName) -> void:
 func _on_quitter_pressed() -> void:
 	$ColorRect.visible = true
 	transition.play("quit")
+
+func show_upgrades():
+	for skill_data in PlayerManager.player_data.upgrades:
+		if skill_data.current_level > 0:
+			if $Panel/SpriteContainer.has_node(skill_data.link_icon_buy_menu):
+				var node = $Panel/SpriteContainer.get_node(skill_data.link_icon_buy_menu)
+				node.visible = true
