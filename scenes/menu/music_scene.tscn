@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkbfuh5v4c8sx"]
+
+[ext_resource type="Script" path="res://scenes/menu/music_scene.gd" id="1_ms36u"]
+[ext_resource type="AudioStream" uid="uid://cicl53w4n7i0e" path="res://assets/musics/Grotte.mp3" id="2_sakjx"]
+[ext_resource type="AudioStream" uid="uid://f8g212imwl0m" path="res://assets/musics/Music_Drill.mp3" id="3_m7h8a"]
+[ext_resource type="AudioStream" uid="uid://xrkaygq2qo78" path="res://assets/musics/Music_Pop.mp3" id="4_qwch2"]
+[ext_resource type="AudioStream" uid="uid://dlpb4mt78s80y" path="res://assets/musics/Music_Trumpet.mp3" id="5_quswe"]
+
+[node name="MusicScene" type="Node2D"]
+script = ExtResource("1_ms36u")
+
+[node name="Musique_Grotte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_sakjx")
+bus = &"Bus_one"
+parameters/looping = false
+
+[node name="Musique_2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m7h8a")
+bus = &"Bus_one"
+parameters/looping = false
+
+[node name="Musique_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qwch2")
+bus = &"Bus_one"
+parameters/looping = false
+
+[node name="Musique_3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_quswe")
+bus = &"Bus_one"
+parameters/looping = false

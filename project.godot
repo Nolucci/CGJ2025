@@ -22,7 +22,7 @@ PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
 PatternManager="*res://scripts/Patterns/pattern_manager.gd"
 AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
-ProjectMusicController="*res://addons/maaacks_music_controller/base/scenes/autoloads/project_music_controller.tscn"
+MusicScene="*res://scenes/menu/music_scene.tscn"
 
 [display]
 
@@ -31,7 +31,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/maaacks_music_controller/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg")
 
 [input]
 
