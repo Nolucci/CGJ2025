@@ -18,6 +18,7 @@ var area: Area2D
 var canGriffe: bool = true;
 var canFart: bool = true
 var cant_moove: bool = false
+var canShield = false
 
 signal player_is_dead()
 signal player_spawn(player: Player)
