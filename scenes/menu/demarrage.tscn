@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu/demarrage.gd" id="1_w72gi"]
 [ext_resource type="Texture2D" uid="uid://bplsm411ptk74" path="res://assets/Godot_splash_screen_original_logo_dark (1).png" id="2_1qk06"]
-[ext_resource type="Texture2D" uid="uid://dnuk1ivn0iptr" path="res://assets/logo2.png" id="2_8ykhe"]
+[ext_resource type="Texture2D" uid="uid://b2v3tn4dg5ij0" path="res://assets/projectile/dhead (Personnalisé) (1).jpg" id="2_ql4c7"]
 [ext_resource type="Texture2D" uid="uid://8awqs2rgj72g" path="res://assets/Intro (1).png" id="4_cpoug"]
 [ext_resource type="Texture2D" uid="uid://8aaifeno73yi" path="res://assets/image.psd322 (2).png" id="5_xv4cb"]
 
@@ -329,7 +329,7 @@ script = ExtResource("1_w72gi")
 layout_mode = 0
 offset_right = 1363.0
 offset_bottom = 755.0
-color = Color(0.137707, 0.126292, 0.129214, 1)
+color = Color(0, 0, 0, 0.627451)
 
 [node name="First screen" type="Control" parent="."]
 anchors_preset = 0
@@ -350,7 +350,7 @@ offset_right = 1131.0
 offset_bottom = 579.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8ykhe")
+texture = ExtResource("2_ql4c7")
 expand_mode = 2
 stretch_mode = 3
 
@@ -360,6 +360,24 @@ offset_right = 1159.0
 offset_bottom = 119.0
 theme_override_font_sizes/font_size = 50
 text = "Made By"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MadeBy2" type="Label" parent="First screen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 458.317
+offset_top = 468.762
+offset_right = 615.317
+offset_bottom = 537.762
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Dhead"
 horizontal_alignment = 1
 vertical_alignment = 2
 

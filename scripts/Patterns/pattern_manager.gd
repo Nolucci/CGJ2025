@@ -5,9 +5,7 @@ extends Node2D
 @export var shoot_interval : float
 @export var nb_patterns_shoot : int
 
-var nbr : int
-var bullet_increase : float
-var targeting : bool
+var nbrIncrease : int = 1
 
 var timer: float = 0.0
 var bullet_increase_base : float
@@ -49,7 +47,7 @@ func createPattern():
 				add_child(bullet_pattern)
 				var new_pattern = generatePattern(pattern.pattern_type)
 				new_pattern.bullet = bullet_pattern.id
-				new_pattern.nbr = pattern.pattern_difficulty.nbr
+				new_pattern.nbr = pattern.pattern_difficulty.nbr * nbrIncrease
 				bullet_increase_base = pattern.pattern_difficulty.bullet_increase
 
 				if pattern.pattern_type.resource_name == "PatternLine":
@@ -77,9 +75,7 @@ func createPattern():
 
 
 func updateDifficulty():
-	print(patterns)
-	for pattern in patterns:
-		pattern.pattern_difficulty.nbr = int(pattern.pattern_difficulty.bullet_increase * pattern.pattern_difficulty.bullet_increase)
+	nbrIncrease += 1 
 	createPattern()
 
 func shoot_pattern_with_rotation(pattern_name: String, rotation_angle: float):

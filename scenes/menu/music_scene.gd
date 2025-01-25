@@ -8,6 +8,9 @@ extends Node2D
 @onready var MusiqueTrumpet1 = $MusiqueTrumpet1
 @onready var MusiqueTrumpet2 = $MusiqueTrumpet2
 
+@onready var SonMenu = $SonMenu
+
+
 @onready var music_id = AudioServer.get_bus_index("Bus_one")
 
 # Une liste pour suivre toutes les musiques
@@ -57,6 +60,9 @@ func launchAleatoire():
 		launchMusic2()
 	elif rand == 2:
 		launchMusic3()
+
+func launchSon():
+	SonMenu.play()
 
 func update_music_level(new_level):
 	AudioServer.get_bus_volume_db(music_id)

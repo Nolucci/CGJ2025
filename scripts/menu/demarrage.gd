@@ -6,6 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPlayer.play("main")
+	lancerSon()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,3 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_packed(first_level)
+
+func lancerSon():
+	await get_tree().create_timer(6).timeout
+	MusicScene.launchSon()
