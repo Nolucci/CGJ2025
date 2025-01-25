@@ -22,7 +22,6 @@ Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
 PatternManager="*res://scripts/Patterns/pattern_manager.gd"
-AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
 MusicScene="*res://scenes/menu/music_scene.tscn"
 SceneSwither="*res://scripts/global/scene_swither.gd"
 GlobalSetting="*res://scripts/global/global_setting.gd"
@@ -35,7 +34,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
 [input]
 
