@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkbfuh5v4c8sx"]
+[gd_scene load_steps=10 format=3 uid="uid://bkbfuh5v4c8sx"]
 
 [ext_resource type="Script" path="res://scenes/menu/music_scene.gd" id="1_ms36u"]
 [ext_resource type="AudioStream" uid="uid://cv3n75xjoh6ks" path="res://assets/musics/Music_Bass1.mp3" id="2_5y63x"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d1nmehxd6p4np" path="res://assets/musics/Music_Trumpet1.mp3" id="6_phi2r"]
 [ext_resource type="AudioStream" uid="uid://btw46ky6sn8sh" path="res://assets/musics/Music_Egypt2.mp3" id="7_l3r30"]
 [ext_resource type="AudioStream" uid="uid://b678g1cqlmbaq" path="res://assets/musics/Music_Trumpet2.mp3" id="8_h5umb"]
+[ext_resource type="AudioStream" uid="uid://bjf5aqehe7k45" path="res://assets/musics/GLASBrk_Miroir qui explose (ID 0387)_LS.wav" id="9_jj607"]
 
 [node name="MusicScene" type="Node2D"]
 script = ExtResource("1_ms36u")
@@ -46,6 +47,11 @@ parameters/looping = true
 stream = ExtResource("8_h5umb")
 bus = &"Bus_one"
 parameters/looping = true
+
+[node name="SonMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jj607")
+volume_db = 2.786
+pitch_scale = 0.65
 
 [connection signal="finished" from="MusiqueEgypt1" to="." method="_on_musique_egypt_1_finished"]
 [connection signal="finished" from="MusiqueBass1" to="." method="_on_musique_bass_1_finished"]
