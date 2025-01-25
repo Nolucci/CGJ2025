@@ -52,8 +52,6 @@ texture = ExtResource("19_yem12")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
-maxSpeed = 600
-accel = 3000
 friction = 3000
 
 [node name="spawnPoints" type="Node2D" parent="."]
