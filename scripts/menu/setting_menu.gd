@@ -17,7 +17,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	display_option.select(1 if Save.game_data.fullscreen_on else 0)
+	GlobalSetting.toggle_fullscreen(Save.game_data.fullscreen_on)
+	max_fps_slider.value = Save.game_data.max_fps
+	master_vol_slider.value = Save.game_data.master_vol
+	music_vol_slider.value = Save.game_data.music_vol
+	sfx_vol_slider.value = Save.game_data.sfx_vol
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
