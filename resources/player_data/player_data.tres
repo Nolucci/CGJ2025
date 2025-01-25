@@ -38,7 +38,6 @@ icon = ExtResource("3_gudms")
 link_icon_buy_menu = ""
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("1_xx3fb")
 name = "Alain"
 life = 2

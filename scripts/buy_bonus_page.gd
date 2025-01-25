@@ -10,13 +10,16 @@ var play_scene = preload("res://scenes/player/player.tscn")
 
 var animation_finished = false
 
+var player_instantiated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ColorRect.visible = false
-	$Main/RigthPart/Header/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
-	PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
-	load_buttons()
+	#@TODO obliger de faire ça pour le moment car sinon data pas initialisé
+	if !player_instantiated:
+		$Main/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
+		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
+		load_buttons()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
