@@ -20,6 +20,8 @@ var canFart: bool = true
 signal player_is_dead()
 signal player_spawn(player: Player)
 
+@onready var sound_cut: AudioStreamPlayer2D = $cut
+
 func _ready() -> void:
 	area = $Area2D
 	
@@ -59,9 +61,11 @@ func fart():
 	canGriffe = false
 	canFart = false
 	if fart_scene:
+		sound_cut.play()
 		var fart_instance = fart_scene.instantiate()
 		fart_instance.position = get_global_mouse_position()
 		get_parent().add_child(fart_instance)
+		
 	else:
 		print("Aucune scène de fart assignée !")
 	canGriffe = true

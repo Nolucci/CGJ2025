@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0auwd0p4d0uu"]
+[gd_scene load_steps=15 format=3 uid="uid://b0auwd0p4d0uu"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Texture2D" uid="uid://cl2jptdgr8hy5" path="res://assets/player/Cat_Roll_Animation.png" id="3_6vsef"]
+[ext_resource type="PackedScene" uid="uid://otpt2jr0on6t" path="res://scenes/player/fart.tscn" id="3_andpl"]
+[ext_resource type="AudioStream" uid="uid://b762rqfevvuc2" path="res://assets/enemies/sound/cut.mp3" id="4_1eoop"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epukw"]
 atlas = ExtResource("3_6vsef")
@@ -78,6 +80,7 @@ maxSpeed = 700
 accel = 4000
 friction = 2000
 sprite = NodePath("AnimatedSprite2D")
+fart_scene = ExtResource("3_andpl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
@@ -95,3 +98,7 @@ shape = SubResource("CapsuleShape2D_yt0hi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.47058, 0)
 shape = SubResource("CapsuleShape2D_mbhng")
+
+[node name="cut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1eoop")
+volume_db = -10.0
