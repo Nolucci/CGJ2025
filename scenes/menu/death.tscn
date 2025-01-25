@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://blg4l5c8ri7wr"]
+
+[ext_resource type="Script" path="res://scenes/menu/death.gd" id="1_22n8c"]
+[ext_resource type="Texture2D" uid="uid://dcuj55p8e1axf" path="res://assets/images/imagegrotte.png" id="2_hrhgm"]
+[ext_resource type="FontFile" uid="uid://dj6eva8umh1qg" path="res://assets/fonts/Paaxel-xRjLO.otf" id="6_l1bss"]
+[ext_resource type="Texture2D" uid="uid://dgrhlugsjwoqn" path="res://resources/cat/catangry.png" id="6_qqvtp"]
+[ext_resource type="Texture2D" uid="uid://b6p6cgjys108i" path="res://assets/images/catButton2.png" id="7_sk1it"]
+[ext_resource type="Texture2D" uid="uid://cg5srctkg0vdf" path="res://assets/images/catButton3.png" id="8_ac764"]
+[ext_resource type="Texture2D" uid="uid://cm80rfsvgvbxn" path="res://assets/images/catButton.png" id="9_myt3f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywo0d"]
+texture = ExtResource("7_sk1it")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rhe2"]
+texture = ExtResource("8_ac764")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bj3je"]
+texture = ExtResource("9_myt3f")
+expand_margin_left = 80.0
+expand_margin_top = 100.0
+expand_margin_right = 80.0
+expand_margin_bottom = 70.0
+
+[node name="death" type="CanvasLayer"]
+script = ExtResource("1_22n8c")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_hrhgm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Catangry" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(299.453, 590.594)
+scale = Vector2(0.646756, 0.726237)
+texture = ExtResource("6_qqvtp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Catangry"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -493.0
+offset_top = -545.0
+offset_right = -26.0
+offset_bottom = -159.0
+grow_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer/Catangry/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_l1bss")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywo0d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4rhe2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bj3je")
+text = "Boutique"
+icon_alignment = 1
+
+[connection signal="button_down" from="HBoxContainer/Catangry/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]

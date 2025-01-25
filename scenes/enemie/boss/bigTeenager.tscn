@@ -1,13 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cxal81lhhuopo"]
+[gd_scene load_steps=14 format=3 uid="uid://cxal81lhhuopo"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_qdd11"]
 [ext_resource type="Script" path="res://scripts/enemies/movement/path_sentinelle.gd" id="2_6fewp"]
 [ext_resource type="Texture2D" uid="uid://dho088ru0eh0c" path="res://assets/enemies/TeenagerBoss.png" id="3_csmyp"]
 [ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_q73fo"]
-[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_y78bc"]
-[ext_resource type="Resource" uid="uid://dhwqbspkidyw7" path="res://resources/patterns/black_bullet_guitarist_pattern.tres" id="6_ko3ec"]
-[ext_resource type="Resource" uid="uid://ccgk1ctj1hqhh" path="res://resources/patterns/bullet_line_colors_guitarist_pattern.tres" id="7_c0qhh"]
-[ext_resource type="Resource" uid="uid://wca3coskw4v7" path="res://resources/patterns/bullet_circle_colors_guitarist_pattern.tres" id="8_la6ox"]
 
 [sub_resource type="Resource" id="Resource_xkxc7"]
 script = ExtResource("2_6fewp")
@@ -84,7 +80,6 @@ scale = Vector2(0.198081, 0.200707)
 sprite_frames = SubResource("SpriteFrames_y6ahs")
 autoplay = "default"
 script = ExtResource("4_q73fo")
-patterns = Array[ExtResource("5_y78bc")]([ExtResource("6_ko3ec"), ExtResource("8_la6ox"), ExtResource("7_c0qhh"), ExtResource("6_ko3ec"), ExtResource("6_ko3ec")])
 speed = 2.0
 shoot_interval = 1.0
 nb_patterns_shoot = 1
