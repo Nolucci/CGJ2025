@@ -67,7 +67,7 @@ popup/item_1/id = 1
 
 [node name="DisplayFPS" type="Label" parent="SettingMenu/SettingTabs/Options/MarginContainer/VideoSettings"]
 layout_mode = 2
-text = "Display FPS (Marche pas)
+text = "Display FPS (Ne marche pas encore)
 "
 
 [node name="CheckButton" type="CheckButton" parent="SettingMenu/SettingTabs/Options/MarginContainer/VideoSettings"]

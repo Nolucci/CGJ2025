@@ -20,14 +20,12 @@ var curr_line := 0
 var lines := []
 
 var credits = [
-	["Un jeu de la mère à nikhil"],
-	["La programmation", "Moi", "Encore et toujours moi"],
-	["Art", "Un migrant de service"],
-	["Musique", "ChatGPT"],
-	["Effets sonores", "Fait main"],
-	["Testeurs", "Mon chien"],
+	["DHEAD"],
+	["Sur le thème : ","Mélodie à l'infinie !"],
+	["Toute l'équipe vous remercie d'avoir téléchargé le jeu !"],
+	["Graphiste", "Nikhil RAM"],
+	["Developpeurs", "FRANCESKIN Nathan, DE LUCA Elliott, GEORGES Aurel, POIRRIER Peter, GOETZ Hugo"],
 	["Les outils utilisés", "Développé avec Godot Engine", "https://godotengine.org/license", ""],
-	["Remerciement spécial", "Mes parents", "Mes amis", "Mon lapin de compagnie"],
 ]
 
 func _process(delta: float) -> void:

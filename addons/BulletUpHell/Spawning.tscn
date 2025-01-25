@@ -1,14 +1,15 @@
-[gd_scene load_steps=46 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=49 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_4dc5c"]
-[ext_resource type="Texture2D" uid="uid://b6x2il3bnxp30" path="res://assets/sprite_54.png" id="3_2a6km"]
 [ext_resource type="Texture2D" uid="uid://bxufbb20ryxce" path="res://assets/projectile/sprite_48.png" id="3_85p6c"]
-[ext_resource type="Texture2D" uid="uid://dwvtc8jl5qy4n" path="res://assets/projectile/sprite_10.png" id="4_adp2d"]
+[ext_resource type="Texture2D" uid="uid://c6ch6x1sjrv6a" path="res://assets/projectile/Note_Couleur_17.png" id="4_wug66"]
 [ext_resource type="Texture2D" uid="uid://bmufkm3plgcuc" path="res://assets/projectile/sprite_49.png" id="5_1h4qe"]
+[ext_resource type="Texture2D" uid="uid://cscirq7nk81kr" path="res://assets/projectile/Note_Couleur_18.png" id="5_hk8v4"]
 [ext_resource type="Texture2D" uid="uid://bglvncor3cu7l" path="res://assets/projectile/Note_Couleur.png" id="5_hxh1s"]
 [ext_resource type="AudioStream" uid="uid://ce0nv1pbr1ppo" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
-[ext_resource type="Texture2D" uid="uid://cv6lej5021is6" path="res://assets/projectile/sprite_34.png" id="5_xa4oi"]
+[ext_resource type="Texture2D" uid="uid://c51rgl7bbe3h6" path="res://assets/projectile/Note_Couleur_15.png" id="7_15v2i"]
+[ext_resource type="Texture2D" uid="uid://cbarax6u2xf3q" path="res://assets/projectile/Note_Couleur_16.png" id="8_31l68"]
 [ext_resource type="Texture2D" uid="uid://vom4abgd3umg" path="res://assets/projectile/sprite_04.png" id="8_c7lrt"]
 [ext_resource type="Texture2D" uid="uid://dxscteghtaafb" path="res://assets/projectile/sprite_36.png" id="9_o817e"]
 [ext_resource type="Texture2D" uid="uid://daj5vh0tpnlb3" path="res://assets/projectile/sprite_50.png" id="10_4eu7b"]
@@ -88,6 +89,10 @@ region = Rect2(0, 6144, 1024, 1024)
 atlas = ExtResource("5_hxh1s")
 region = Rect2(1024, 6144, 1024, 1024)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yyqbd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oa2kr"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmbde"]
 atlas = ExtResource("5_hxh1s")
 region = Rect2(5120, 1024, 1024, 1024)
@@ -153,7 +158,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_2a6km")
+"texture": ExtResource("4_wug66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wug66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wug66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hk8v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hk8v4")
 }],
 "loop": true,
 "name": &"black_bullet1",
@@ -181,7 +198,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_adp2d")
+"texture": SubResource("CompressedTexture2D_yyqbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_yyqbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_yyqbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_oa2kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_oa2kr")
 }],
 "loop": true,
 "name": &"black_bullet2",
@@ -209,7 +238,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_xa4oi")
+"texture": ExtResource("7_15v2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_15v2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_15v2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31l68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31l68")
 }],
 "loop": true,
 "name": &"black_bullet3",
@@ -377,7 +418,7 @@ default_delete = SubResource("Resource_tl1ht")
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("1")
-animation = &"Example"
+animation = &"black_bullet3"
 
 [node name="0" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("2")

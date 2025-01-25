@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cg8j46itsdsyf"]
+[gd_scene load_steps=34 format=3 uid="uid://cg8j46itsdsyf"]
 
 [ext_resource type="Script" path="res://scripts/menu/tutorial.gd" id="1_n3wlx"]
 [ext_resource type="Texture2D" uid="uid://dtrkl6p67bup5" path="res://resources/cat/chatastronaute.png" id="2_4265b"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://nccpbuj2y7k2" path="res://assets/projectile/sprite_06.png" id="7_vtk68"]
 [ext_resource type="Texture2D" uid="uid://d1dk5hoj61iom" path="res://assets/projectile/sprite_05.png" id="8_f5vbb"]
 [ext_resource type="Texture2D" uid="uid://bufwfurjmmxav" path="res://assets/projectile/sprite_01.png" id="9_dholt"]
-[ext_resource type="Texture2D" uid="uid://c7ll4bp5no50x" path="res://assets/projectile/sprite_11.png" id="10_sxq27"]
+[ext_resource type="Texture2D" uid="uid://cvikywkkikgfe" path="res://assets/projectile/Note_Couleur_10.png" id="10_2t8t5"]
 [ext_resource type="Texture2D" uid="uid://c06062y428l4u" path="res://assets/player/Griffure.png" id="11_068q6"]
+[ext_resource type="Texture2D" uid="uid://mpu1530tbdk1" path="res://assets/projectile/Note_Couleur_11.png" id="11_exexx"]
 [ext_resource type="Texture2D" uid="uid://72phdne36os2" path="res://assets/New Piskel.png" id="12_1sndv"]
 [ext_resource type="Texture2D" uid="uid://bpjds46jg3yoy" path="res://assets/enemies/serpent.png" id="13_w75rm"]
 [ext_resource type="Texture2D" uid="uid://bhlpl28s3oggu" path="res://assets/New Piskel (1).png" id="14_yyn56"]
@@ -126,6 +127,18 @@ _data = {
 "RESET": SubResource("Animation_o6ouc"),
 "main": SubResource("Animation_q3gxi")
 }
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dwqmq"]
+frames = 5
+frame_0/texture = ExtResource("10_2t8t5")
+frame_1/texture = ExtResource("10_2t8t5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_2t8t5")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("11_exexx")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("11_exexx")
+frame_4/duration = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lflc"]
 atlas = ExtResource("11_068q6")
@@ -244,7 +257,7 @@ texture = ExtResource("3_ytl81")
 metadata/_edit_lock_ = true
 
 [node name="Chatastronaute" type="Sprite2D" parent="."]
-position = Vector2(266, 442)
+position = Vector2(298, 440)
 scale = Vector2(0.250446, 0.254395)
 texture = ExtResource("2_4265b")
 
@@ -299,24 +312,25 @@ scale = Vector2(3.65625, 2.71875)
 texture = ExtResource("9_dholt")
 
 [node name="Second" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Second"]
-position = Vector2(625, 292)
+position = Vector2(641, 305)
 scale = Vector2(5.51563, 6.1875)
-texture = ExtResource("10_sxq27")
+texture = SubResource("AnimatedTexture_dwqmq")
 
 [node name="NewPiskel" type="Sprite2D" parent="Second"]
-position = Vector2(760, 331)
+position = Vector2(789, 333)
 scale = Vector2(6.15625, 7.40625)
 texture = ExtResource("12_1sndv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Second"]
-position = Vector2(1809, 304)
-scale = Vector2(0.241211, 0.325195)
+position = Vector2(1626, 305)
+scale = Vector2(0.192344, 0.239707)
 sprite_frames = SubResource("SpriteFrames_2oqxg")
 autoplay = "default"
 frame = 4
@@ -324,11 +338,12 @@ frame_progress = 1.0
 offset = Vector2(-3695.77, 153.457)
 
 [node name="Label" type="Label" parent="Second"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 892.0
-offset_top = 135.0
-offset_right = 943.0
-offset_bottom = 198.0
+offset_left = 930.0
+offset_top = 168.0
+offset_right = 981.0
+offset_bottom = 231.0
 text = "+1"
 label_settings = SubResource("LabelSettings_slvvu")
 
@@ -381,10 +396,10 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Fourth"]
 layout_mode = 0
-offset_left = 567.0
-offset_top = 275.0
-offset_right = 1049.0
-offset_bottom = 389.0
+offset_left = 582.0
+offset_top = 270.0
+offset_right = 1064.0
+offset_bottom = 384.0
 text = "Good Luck
 "
 label_settings = SubResource("LabelSettings_ianbd")
