@@ -13,13 +13,29 @@ var currentWave: int = 1
 var currentLevel: int = 1
 
 @export var enemies: int = 0
+var pause = false
 
 func _ready():
 	
 	EventManager.player_dead.connect(_on_player_dead)
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
 	MusicScene.launchAleatoire()
-
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+		
+func pauseMenu():
+	if pause:
+		$CanvasLayer/Pause.hide()
+		Engine.time_scale = 1
+	else:
+		$CanvasLayer/Pause.show()
+		Engine.time_scale = 0
+		
+	pause = !pause
+		
+		
 func _physics_process(_delta):
 	if enemies == 0:
 		if(currentWave - 1) == waves.size():
