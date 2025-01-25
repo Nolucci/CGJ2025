@@ -255,5 +255,6 @@ text = "Quitter
 [connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/OptionButton" to="." method="_on_option_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/OptionButton" to="." method="_on_option_input_down"]
 [connection signal="button_down" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]

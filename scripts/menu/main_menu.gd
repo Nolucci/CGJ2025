@@ -10,7 +10,6 @@ func _ready() -> void:
 func _on_start_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_packed(first_level)
-	
 
 
 func _on_quit_button_button_down() -> void:
@@ -31,3 +30,8 @@ func _on_credit_button_button_down() -> void:
 
 func _on_message_timer_timeout() -> void:
 	$StartMessage.hide()
+
+
+func _on_option_input_down():
+	get_tree().change_scene_to_packed(
+		preload("res://addons/maaacks_options_menus/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn"))
