@@ -11,8 +11,7 @@ func _ready() -> void:
 	EventManager.enemy_get_killed.connect(_on_enemy_kill)
 
 func _on_enemy_kill(enemy):
-	print("money")
-	player_data.money += 10
+	player_data.money += 30
 
 func _on_player_spawn(player):
 	print("salut")

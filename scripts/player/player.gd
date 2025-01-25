@@ -8,7 +8,7 @@ class_name Player
 @export var sprite: AnimatedSprite2D
 
 @export var nbGriffureMax: int = 3
-@export var nbGriffure: int = 0
+@export var nbGriffure: int = 100
 
 var fart_scene: PackedScene = preload("res://scenes/player/fart.tscn")
 var griffe_scene: PackedScene = preload("res://scenes/player/griffe.tscn")

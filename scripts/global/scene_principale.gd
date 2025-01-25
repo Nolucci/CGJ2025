@@ -7,8 +7,7 @@ extends Node2D
 @onready var ui_life = $Control/Control/HBoxContainer/vie
 @onready var ui_coeur = $Control/Control/HBoxContainer/coeur
 @onready var ui_fart = $"Control/VBoxContainer/Onde de choc"
-@onready var ui_vague = $"Control/VBoxContainer/Vague"
-@onready var ui_level = $"Control/VBoxContainer/Niveau"
+@onready var ui_money = $Control/VBoxContainer/Money
 @onready var camera = $Camera
 
 @export var waves: Array[Wave] = []
@@ -60,8 +59,7 @@ func _physics_process(_delta):
 	if player != null:
 		ui_nbgriffure.text = "Griffures : " + str(player.nbGriffure) + "/" + str(player.nbGriffureMax)
 		ui_life.text = str(PlayerManager.player_data.life)
-		ui_vague.text = "Niveau : " + str(currentLevel-1) + "/" + str(waves.size())
-		ui_level.text = "Vague : " + str(currentWave) + "/" + str(waves[currentWave - 1].tabLevel.size())
+		ui_money.text = "Patounes : " + str(PlayerManager.player_data.money)
 		if PlayerManager.player_data.can_fart():
 			if player.canFart:
 				ui_fart.text = "Onde de choc : 1/1 (clique droit)"
