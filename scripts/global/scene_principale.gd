@@ -64,9 +64,9 @@ func _physics_process(_delta):
 		ui_level.text = "Vague : " + str(currentWave) + "/" + str(waves[currentWave - 1].tabLevel.size())
 		if PlayerManager.player_data.can_fart():
 			if player.canFart:
-				ui_fart.text = "Onde de choc : 1/1"
+				ui_fart.text = "Onde de choc : 1/1 (clique droit)"
 			else:
-				ui_fart.text = "Onde de choc : 0/1"
+				ui_fart.text = "Onde de choc : 0/1 (clique droit)"
 		else:
 			ui_fart.text = ""
 

@@ -48,10 +48,10 @@ content_margin_left = 30.0
 
 [sub_resource type="Theme" id="Theme_kul8h"]
 default_font = ExtResource("21_t7fwv")
-default_font_size = 24
+default_font_size = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rj8ca"]
-content_margin_left = 30.0
+content_margin_right = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c12m"]
 content_margin_right = 30.0
@@ -217,3 +217,15 @@ text = "1"
 position = Vector2(55, 29)
 scale = Vector2(2.60938, 2.5)
 texture = ExtResource("22_0tjcm")
+
+[node name="echap" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_bottom = 25.0
+grow_horizontal = 0
+theme = SubResource("Theme_kul8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rj8ca")
+text = "Echap = pause"
