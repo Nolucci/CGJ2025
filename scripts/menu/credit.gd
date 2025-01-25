@@ -4,7 +4,7 @@ const section_time := 2.0
 const line_time := 0.3
 const base_speed := 100
 const speed_up_multiplier := 10.0
-const title_color := Color.BLUE_VIOLET
+const title_color := Color.INDIAN_RED
 
 var speed_up := false
 
@@ -27,7 +27,7 @@ var credits = [
 	["Effets sonores", "Fait main"],
 	["Testeurs", "Mon chien"],
 	["Les outils utilisés", "Développé avec Godot Engine", "https://godotengine.org/license", ""],
-	["Remerciement spécial", "Mes parents", "Mes amis", "Mon lapin de compagnie"]
+	["Remerciement spécial", "Mes parents", "Mes amis", "Mon lapin de compagnie"],
 ]
 
 func _process(delta: float) -> void:
