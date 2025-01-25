@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl8eo3wi4l86b"
-path="res://.godot/imported/Chat (1).png-262bc33430818b7ece8ecc2e34a078e3.ctex"
+path="res://.godot/imported/Chat (1).png-f76ef0f5e0318f48244fd91f89976a4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Chat (1).png"
-dest_files=["res://.godot/imported/Chat (1).png-262bc33430818b7ece8ecc2e34a078e3.ctex"]
+source_file="res://assets/Chat (1).png"
+dest_files=["res://.godot/imported/Chat (1).png-f76ef0f5e0318f48244fd91f89976a4c.ctex"]
 
 [params]
 

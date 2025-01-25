@@ -1,3 +1,154 @@
-[gd_scene format=3 uid="uid://ik2cnqrhi6aw"]
+[gd_scene load_steps=2 format=3 uid="uid://ik2cnqrhi6aw"]
 
-[node name="Option" type="CanvasLayer"]
+[ext_resource type="Script" path="res://scripts/menu/setting_menu.gd" id="1_1vi4g"]
+
+[node name="SettingMenuPopup" type="Popup"]
+size = Vector2i(950, 500)
+visible = true
+
+[node name="SettingMenu" type="Control" parent="."]
+custom_minimum_size = Vector2(950, 500)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_1vi4g")
+
+[node name="Background" type="ColorRect" parent="SettingMenu"]
+offset_right = 1232.0
+offset_bottom = 687.0
+color = Color(0.408329, 0.408329, 0.408329, 1)
+
+[node name="SettingTabs" type="TabContainer" parent="SettingMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Video" type="TabBar" parent="SettingMenu/SettingTabs"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/SettingTabs/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VideoSettings" type="GridContainer" parent="SettingMenu/SettingTabs/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="DisplayMode" type="Label" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="DisplayFPS" type="Label" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+text = "Display FPS (Marche pas)
+"
+
+[node name="CheckButton" type="CheckButton" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+
+[node name="MaxFPS" type="Label" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+text = "Max FPS
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+
+[node name="MaxFPSVal" type="Label" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings/HBoxContainer"]
+layout_mode = 2
+text = "Max"
+
+[node name="MaxFpsSlider" type="HSlider" parent="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings/HBoxContainer"]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 500.0
+
+[node name="Audio" type="TabBar" parent="SettingMenu/SettingTabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/SettingTabs/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="AudioSettings" type="GridContainer" parent="SettingMenu/SettingTabs/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="MasterVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Max FPS
+"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+custom_minimum_size = Vector2(500, 10)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="MusicVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Max FPS
+"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+custom_minimum_size = Vector2(500, 10)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SFXVolume" type="Label" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Max FPS
+"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings"]
+custom_minimum_size = Vector2(500, 10)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[connection signal="item_selected" from="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings/OptionButton" to="SettingMenu" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings/CheckButton" to="SettingMenu" method="_on_check_button_toggled"]
+[connection signal="value_changed" from="SettingMenu/SettingTabs/Video/MarginContainer/VideoSettings/HBoxContainer/MaxFpsSlider" to="SettingMenu" method="_on_max_fps_slider_value_changed"]
+[connection signal="value_changed" from="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings/MasterVolumeSlider" to="SettingMenu" method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings/MusicVolumeSlider" to="SettingMenu" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingMenu/SettingTabs/Audio/MarginContainer/AudioSettings/SFXVolumeSlider" to="SettingMenu" method="_on_sfx_volume_slider_value_changed"]
