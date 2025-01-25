@@ -1,7 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
-[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
 [ext_resource type="Script" path="res://resources/waves/level/level.gd" id="3_tev63"]
@@ -20,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://c5kghww7h8diq" path="res://resources/waves/level/wave3/w3_lvl3.tres" id="16_a0x6f"]
 [ext_resource type="Resource" uid="uid://duc2kcg06a8xn" path="res://resources/waves/level/wave3/w3_lvl4.tres" id="17_isgvq"]
 [ext_resource type="Resource" uid="uid://cpa3fi7dy81cs" path="res://resources/waves/level/wave3/w3_lvl5.tres" id="18_qp4r6"]
+[ext_resource type="Texture2D" uid="uid://cy7wm6mdh7v8w" path="res://assets/backgroundv5.png" id="19_yem12"]
 
 [sub_resource type="Resource" id="Resource_rqrmn"]
 script = ExtResource("2_y4v6y")
@@ -42,13 +42,13 @@ waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_rqrmn"), SubResourc
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, 5)
-repeat_size = Vector2(0, 2180)
-autoscroll = Vector2(0, 1000)
+repeat_size = Vector2(0, 1350)
+autoscroll = Vector2(0, 650)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(632, 1105)
+position = Vector2(605, 507)
 scale = Vector2(1.16667, 1.05238)
-texture = ExtResource("1_vdhsq")
+texture = ExtResource("19_yem12")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
