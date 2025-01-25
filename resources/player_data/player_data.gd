@@ -8,6 +8,8 @@ class_name PlayerData
 @export var upgrades: Array[PlayerUpgrade] = []
 @export var isInvinsible: bool = false
 
+signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int, name_icon: String)
+
 # Fonction pour acheter une amélioration
 func buy_upgrade(primary_key: int) -> bool:
 	var upgrade = find_upgrade_by_key(primary_key)
@@ -19,7 +21,7 @@ func buy_upgrade(primary_key: int) -> bool:
 	money -= upgrade.price
 	upgrade.current_level += 1
 	print("Amélioration achetée:", upgrade.name, "Niveau actuel:", upgrade.current_level)
-	emit_signal("upgrade_bought", upgrade.name, upgrade.current_level, money)
+	emit_signal("upgrade_bought", upgrade.name, upgrade.current_level, money, upgrade.link_icon_buy_menu)
 	return true
 
 # Fonction pour trouver une amélioration par clé primaire
