@@ -1,13 +1,9 @@
 extends Control
 
-
 @onready var button_scene = preload("res://ui/buyMenuButton.tscn")
-@onready var scroll_container = $Main/RigthPart/ScrollSkillContainer/SkillContainer
-@export var button_scene: PackedScene
 @onready var scroll_container = $Panel2/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
 @onready var first_level = preload("res://scenes/principale.tscn")
-
 
 @onready var main_menu = preload("res://scenes/menu/main_menu.tscn")
 var play_scene = preload("res://scenes/player/player.tscn")

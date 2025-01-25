@@ -1,12 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://ccak2hcy0s5jm"]
+[gd_scene load_steps=32 format=3 uid="uid://ccak2hcy0s5jm"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
-[ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
 [ext_resource type="Texture2D" uid="uid://0qoy0n58up8e" path="res://assets/image.psd3 (4).png" id="3_c1dq4"]
 [ext_resource type="Texture2D" uid="uid://cnquw01t2gwyp" path="res://Chat (2).png" id="4_8jf5c"]
 [ext_resource type="Texture2D" uid="uid://cl8eo3wi4l86b" path="res://assets/Chat (1).png" id="4_k4g56"]
-[ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://assets/Cat_Roll_Animation_color.png" id="5_j3yb4"]
+[ext_resource type="Texture2D" uid="uid://cl2jptdgr8hy5" path="res://assets/player/Cat_Roll_Animation.png" id="5_j3yb4"]
 [ext_resource type="Texture2D" uid="uid://ddgjmiy5pvan6" path="res://assets/images/Sign.png" id="6_h76xd"]
 [ext_resource type="Texture2D" uid="uid://cbh5jew71eqr8" path="res://assets/images/SleepButton2.png" id="8_1wuyu"]
 [ext_resource type="Texture2D" uid="uid://gvc4dxc2uyni" path="res://assets/images/SleepButton3.png" id="9_bh3aw"]
@@ -341,7 +340,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_avfc3")
-button_scene = ExtResource("2_tdeeq")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
@@ -503,6 +501,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [connection signal="pressed" from="Panel2/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_new_game_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
