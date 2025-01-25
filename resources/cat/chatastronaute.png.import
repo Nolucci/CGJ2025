@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgrhlugsjwoqn"
-path="res://.godot/imported/catangry.png-26c42bbc5a101de2adec7c241f04b108.ctex"
+uid="uid://dtrkl6p67bup5"
+path="res://.godot/imported/chatastronaute.png-2f6168d1dcabb547d8d8dff15f0fb958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cat/catangry.png"
-dest_files=["res://.godot/imported/catangry.png-26c42bbc5a101de2adec7c241f04b108.ctex"]
+source_file="res://resources/cat/chatastronaute.png"
+dest_files=["res://.godot/imported/chatastronaute.png-2f6168d1dcabb547d8d8dff15f0fb958.ctex"]
 
 [params]
 

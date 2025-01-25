@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://cg8j46itsdsyf"]
+[gd_scene load_steps=5 format=3 uid="uid://cg8j46itsdsyf"]
+
+[ext_resource type="Texture2D" uid="uid://dtrkl6p67bup5" path="res://resources/cat/chatastronaute.png" id="2_4265b"]
+[ext_resource type="Texture2D" uid="uid://da7561xknsmtj" path="res://resources/cat/sprite_54(2).png" id="3_ytl81"]
+[ext_resource type="Texture2D" uid="uid://bxa8u1b7c3ut6" path="res://resources/cat/sprite_54(4).png" id="4_073mi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dy8qm"]
 
 [node name="Tutorial" type="CanvasLayer"]
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -411.5
+offset_right = 1363.0
+offset_bottom = 411.5
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = SubResource("CanvasTexture_dy8qm")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.664
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.928
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Sprite54(4)" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(70, 256.5)
+scale = Vector2(0.552734, 0.469727)
+texture = ExtResource("4_073mi")
+
+[node name="Sprite54(2)" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(70, 406.5)
+scale = Vector2(0.552734, 0.44043)
+texture = ExtResource("3_ytl81")
+
+[node name="Chatastronaute" type="Sprite2D" parent="."]
+position = Vector2(266, 442)
+scale = Vector2(0.250446, 0.254395)
+texture = ExtResource("2_4265b")
