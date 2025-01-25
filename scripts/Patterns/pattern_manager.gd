@@ -5,6 +5,10 @@ extends Node2D
 @export var shoot_interval : float
 @export var nb_patterns_shoot : int
 
+var nbr : int
+var bullet_increase : float
+var targeting : bool
+
 var timer: float = 0.0
 var bullet_increase_base : float
 var shoot_interval_base : float
@@ -28,6 +32,7 @@ func _physics_process(delta):
 func createPattern():
 	nb_patterns = 0
 	for pattern in patterns:
+		
 		for bullet_prop in pattern.bullet_props:
 			var directions = [
 				Vector2(0, -1),  # Vers le haut

@@ -24,7 +24,7 @@ signal player_spawn(player: Player)
 
 func _ready() -> void:
 	area = $Area2D
-	
+
 	Spawning.bullet_collided_body.connect(on_ball_entered)
 	EventManager.register_player(self)
 	EventManager.player_get_hit.connect(take_damage)
@@ -108,6 +108,7 @@ func take_damage():
 	print("Player take tamage, new life :", PlayerManager.player_data.life)
 	if PlayerManager.player_data.life <= 0:
 		player_is_dead.emit()
+		MusicScene.launchMusicGrotte()
 		await queue_free()
 		return
 	

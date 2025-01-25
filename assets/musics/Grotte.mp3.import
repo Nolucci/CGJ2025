@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Grotte.mp3-fc4e7db6c03ba8eb15a5c6732793f26b.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
