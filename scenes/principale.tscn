@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=32 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://c5kghww7h8diq" path="res://resources/waves/level/wave3/w3_lvl3.tres" id="16_a0x6f"]
 [ext_resource type="Resource" uid="uid://duc2kcg06a8xn" path="res://resources/waves/level/wave3/w3_lvl4.tres" id="17_isgvq"]
 [ext_resource type="Resource" uid="uid://cpa3fi7dy81cs" path="res://resources/waves/level/wave3/w3_lvl5.tres" id="18_qp4r6"]
-[ext_resource type="PackedScene" uid="uid://c7r5tqdbcsn" path="res://scenes/menu/pause.tscn" id="19_plgo0"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pause.tscn" id="19_plgo0"]
 [ext_resource type="Texture2D" uid="uid://cy7wm6mdh7v8w" path="res://assets/backgroundv5.png" id="19_yem12"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="21_t7fwv"]
 [ext_resource type="Texture2D" uid="uid://lodiv6fjrrjp" path="res://assets/player/coeur.png" id="22_0tjcm"]
@@ -94,7 +94,6 @@ texture = ExtResource("19_yem12")
 position = Vector2(624, 511)
 maxSpeed = 600
 accel = 3000
-friction = 3000
 
 [node name="spawnPoints" type="Node2D" parent="."]
 

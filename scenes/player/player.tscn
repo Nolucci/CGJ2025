@@ -141,7 +141,7 @@ collision_mask = 5
 script = ExtResource("1_f24cv")
 maxSpeed = 700
 accel = 4000
-friction = 2000
+friction = 3500
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
