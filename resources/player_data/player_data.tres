@@ -35,9 +35,10 @@ current_level = 0
 icon = ExtResource("3_gudms")
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_xx3fb")
 name = "Alain"
-life = 5
+life = 2
 money = 5464564545646
 upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_1unf8")])
 isInvinsible = false
