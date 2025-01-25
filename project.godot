@@ -13,7 +13,6 @@ config_version=5
 config/name="CGJ2025"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,7 +22,6 @@ PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
 PatternManager="*res://scripts/Patterns/pattern_manager.gd"
 SceneSwither="*res://scripts/global/scene_swither.gd"
-GlobalSetting="*res://scripts/global/global_setting.gd"
 
 [display]
 

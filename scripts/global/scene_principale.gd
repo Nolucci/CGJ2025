@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var spawn_point = $spawnPoints
 @onready var go_points = $goPoints
-var death_scene = preload("res://scenes/buyBonusPage.tscn")
 
 @export var waves: Array[Wave] = []
 var currentWave: int = 1
@@ -62,7 +61,7 @@ func _on_enemy_death(_enemy: Enemie):
 
 func _on_player_dead():
 	Spawning.clear_all_bullets()
-	get_tree().change_scene_to_packed(death_scene)
+	get_tree().change_scene_to_file("res://scenes/buyBonusPage.tscn")
 
 func _cleanup_resources():
 	for child in get_children():

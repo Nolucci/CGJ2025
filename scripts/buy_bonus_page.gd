@@ -36,12 +36,8 @@ func _setup_button(button_instance, skill_data):
 	button_instance.setup(skill_data)
 	scroll_container.add_child(button_instance)
 	
-func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int, name_link: String):
-	$Panel2/NumberOfCoin.text = "Patoune: " + str(remaining_money)
-	if $Panel/SpriteContainer.has_node(name_link):
-		var node = $Panel/SpriteContainer.get_node(name_link)
-		if not node.visible:
-			node.visible = true
+func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int):
+	$Main/RigthPart/Header/NumberOfCoin.text = "Coin: " + str(remaining_money)
 
 
 func _on_new_game_pressed() -> void:
@@ -54,9 +50,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _go_to_next_scene():
-	get_tree().change_scene_to_packed(first_level)
-	
-	
+	get_tree().change_scene_to_file("res://scenes/principale.tscn")
+
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'quit':
 		animation_finished = true

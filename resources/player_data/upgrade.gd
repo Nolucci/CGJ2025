@@ -8,4 +8,3 @@ class_name PlayerUpgrade
 @export var max_level: int
 @export var current_level: int
 @export var icon: Texture2D = preload("res://icon.svg")
-@export var link_icon_buy_menu : String = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ccak2hcy0s5jm"]
+[gd_scene load_steps=32 format=3 uid="uid://blvu7teip2k5h"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
