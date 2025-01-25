@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f24cv"]
 [ext_resource type="Texture2D" uid="uid://cl2jptdgr8hy5" path="res://assets/player/Cat_Roll_Animation.png" id="3_6vsef"]
-[ext_resource type="PackedScene" uid="uid://otpt2jr0on6t" path="res://scenes/player/fart.tscn" id="3_andpl"]
 [ext_resource type="AudioStream" uid="uid://b762rqfevvuc2" path="res://assets/enemies/sound/cut.mp3" id="4_1eoop"]
 [ext_resource type="Texture2D" uid="uid://ba2ep83xx1xpk" path="res://assets/player/Cat_death.png" id="4_oumq0"]
 [ext_resource type="Script" path="res://scripts/player/camera.gd" id="5_u6jnk"]
@@ -143,7 +142,6 @@ maxSpeed = 700
 accel = 4000
 friction = 2000
 sprite = NodePath("AnimatedSprite2D")
-fart_scene = ExtResource("3_andpl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
