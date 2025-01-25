@@ -1,41 +1,44 @@
 extends CharacterBody2D
-
 class_name Player
 
 @export var maxSpeed = 450
 @export var accel = 2000
 @export var friction = 600
 @export var sprite: AnimatedSprite2D
-@export var fart_scene: PackedScene
+
 @export var nbGriffureMax: int = 3
 @export var nbGriffure: int = 0
 
-
+var fart_scene: PackedScene = preload("res://scenes/player/fart.tscn")
+var griffe_scene: PackedScene = preload("res://scenes/player/griffe.tscn")
 var input = Vector2.ZERO
 var screen_size
 var area: Area2D
 var canGriffe: bool = true;
+var canFart: bool = true
 
 signal player_is_dead()
+signal player_spawn(player: Player)
 
 @onready var sound_cut: AudioStreamPlayer2D = $cut
 
 func _ready() -> void:
 	area = $Area2D
+
 	Spawning.bullet_collided_body.connect(on_ball_entered)
 	EventManager.register_player(self)
 	EventManager.player_get_hit.connect(take_damage)
+	player_spawn.emit(self)
 
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
 	player_movement(delta)
-	
-	if Input.is_action_just_pressed("fart"):
+	if Input.is_action_just_pressed("griffe"):
 		if nbGriffure > 0 and canGriffe:
 			nbGriffure -= 1
 			griffer()
-			
-		
+	if Input.is_action_just_pressed("fart"):
+		fart()
 
 func get_input():
 	input.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -44,6 +47,19 @@ func get_input():
 
 func griffer():
 	canGriffe = false
+	if griffe_scene:
+		var griffe_instance = griffe_scene.instantiate()
+		griffe_instance.position = get_global_mouse_position()
+		get_parent().add_child(griffe_instance)
+	else:
+		print("Aucune scène de griffe assignée !")
+	canGriffe = true
+
+func fart():
+	if !canFart || !PlayerManager.player_data.can_fart():
+		return
+	canGriffe = false
+	canFart = false
 	if fart_scene:
 		sound_cut.play()
 		var fart_instance = fart_scene.instantiate()
@@ -93,8 +109,6 @@ func take_damage():
 	if PlayerManager.player_data.life <= 0:
 		player_is_dead.emit()
 		MusicScene.launchMusicGrotte()
-		PlayerManager.player_data.isInvinsible = false
-		PlayerManager.player_data.life = 2
 		await queue_free()
 		return
 	
@@ -114,9 +128,8 @@ func on_ball_entered(body, body_shape_index, B, local_shape_index, shared_area):
 		take_damage()
 	else:
 		PlayerManager.player_data.eat_ball()
-		if PlayerManager.player_data.can_fart():
-			if nbGriffure < nbGriffureMax:
-				nbGriffure += 1
+		if nbGriffure < nbGriffureMax:
+			nbGriffure += 1
 		
 
 func get_props_groups(B: Dictionary) -> Variant:

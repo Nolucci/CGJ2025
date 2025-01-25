@@ -14,6 +14,7 @@ var currentLevel: int = 1
 @export var enemies: int = 0
 
 func _ready():
+	
 	EventManager.player_dead.connect(_on_player_dead)
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
 	MusicScene.launchAleatoire()

@@ -25,7 +25,7 @@ func _ready() -> void:
 	sound_damage.volume_db = 10.0
 	add_child(sound_damage)
 
-	
+
 func set_start_movement(new_start_movement: bool):
 	self.start_movement = new_start_movement
 
@@ -52,14 +52,14 @@ func goToTargetPosition():
 
 func on_area_entered(area_entered: Area2D):
 	if area_entered is Fart:
-		var upgrade = PlayerManager.player_data.find_upgrade_by_name("puissance")
-		if upgrade != null:
-			life -= upgrade.current_level
-		else:
-			life -= 1
-			sound_damage.play()
+		life -= 10
 		if life <= 0:
-			sound_damage.play()
+			enemy_death.emit(self)
+			queue_free()
+	elif area_entered is Griffe:
+		life -= 1
+		sound_damage.play()
+		if life <= 0:
 			enemy_death.emit(self)
 			queue_free()
 
