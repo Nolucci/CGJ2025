@@ -1,7 +1,8 @@
 extends Node2D
 
-@onready var spawn_point = $spawnPoints  # Le nœud contenant les spawn points
-@onready var go_points = $goPoints  # Le nœud contenant les points cibles
+@onready var spawn_point = $spawnPoints
+@onready var go_points = $goPoints
+var death_scene = preload("res://scenes/buyBonusPage.tscn")
 
 @export var waves: Array[Wave] = []
 var currentWave: int = 1
@@ -10,6 +11,7 @@ var currentLevel: int = 1
 @export var enemies: int = 0
 
 func _ready():
+	EventManager.player_dead.connect(_on_player_dead)
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
 
 func _physics_process(_delta):
@@ -57,3 +59,11 @@ func _on_enemy_death(_enemy: Enemie):
 	enemies -= 1
 	if enemies < 0:
 		enemies = 0
+
+func _on_player_dead():
+	Spawning.clear_all_bullets()
+	get_tree().change_scene_to_packed(death_scene)
+
+func _cleanup_resources():
+	for child in get_children():
+		child.queue_free()

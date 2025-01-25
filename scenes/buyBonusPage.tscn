@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://blvu7teip2k5h"]
+[gd_scene load_steps=26 format=3 uid="uid://blvu7teip2k5h"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
 [ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
-[ext_resource type="PackedScene" uid="uid://cvcv2rfxcmlsy" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
 [ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/Cat_Roll_Animation.png" id="5_j3yb4"]
 
 [sub_resource type="Gradient" id="Gradient_4lu3y"]
@@ -265,7 +264,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_avfc3")
-button_scene = ExtResource("2_tdeeq")
 
 [node name="Main" type="HBoxContainer" parent="."]
 layout_mode = 1
