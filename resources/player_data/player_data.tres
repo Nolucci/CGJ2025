@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://resources/player_data/player_data.gd" id="1_xx3fb"]
 [ext_resource type="Script" path="res://resources/player_data/upgrade.gd" id="2_o1r2w"]
-[ext_resource type="Texture2D" uid="uid://cg533aoktgc1d" path="res://assets/hearth.png" id="3_q41iv"]
-[ext_resource type="Texture2D" uid="uid://bkejmtw6yygkm" path="res://assets/space.png" id="4_qsv88"]
-[ext_resource type="Texture2D" uid="uid://d20k4m1c8gh31" path="res://assets/casque.png" id="5_oi8m3"]
+[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="3_gudms"]
 
 [sub_resource type="Resource" id="Resource_nev6f"]
 script = ExtResource("2_o1r2w")
@@ -14,7 +12,8 @@ description = "Donne 1 vie supplémentaire"
 price = 100
 max_level = 3
 current_level = 0
-icon = ExtResource("3_q41iv")
+icon = ExtResource("3_gudms")
+link_icon_buy_menu = ""
 
 [sub_resource type="Resource" id="Resource_lmnle"]
 script = ExtResource("2_o1r2w")
@@ -24,10 +23,10 @@ description = "Ajoute un bouclier temporaire"
 price = 500
 max_level = 2
 current_level = 0
-icon = ExtResource("4_qsv88")
-link_icon_buy_menu = "space"
+icon = ExtResource("3_gudms")
+link_icon_buy_menu = ""
 
-[sub_resource type="Resource" id="Resource_1unf8"]
+[sub_resource type="Resource" id="Resource_ly6fa"]
 script = ExtResource("2_o1r2w")
 primary_key = 14
 name = "Choc"
@@ -35,12 +34,12 @@ description = "Lance une onde sonore dévastatrice qui détruit tout sur son pas
 price = 800
 max_level = 1
 current_level = 0
-icon = ExtResource("5_oi8m3")
-link_icon_buy_menu = "casque"
+icon = ExtResource("3_gudms")
+link_icon_buy_menu = ""
 
 [resource]
 script = ExtResource("1_xx3fb")
-name = null
+name = "Alain"
 life = 3
 money = 500
 upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_ly6fa")])
