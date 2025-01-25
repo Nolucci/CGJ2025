@@ -173,7 +173,7 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(0.665673, 0.748627, 0.705961, 1)
 theme_override_fonts/font = ExtResource("2_wuvld")
 theme_override_font_sizes/font_size = 80
-text = "Chat-pitre Musicale"
+text = "Chat-pitre Musical"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 4
@@ -255,5 +255,6 @@ text = "Quitter
 [connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/OptionButton" to="." method="_on_option_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/OptionButton" to="." method="_on_option_button_button_up"]
 [connection signal="button_down" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]

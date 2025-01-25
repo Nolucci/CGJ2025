@@ -1,7 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
-[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
 [ext_resource type="Script" path="res://resources/waves/level/level.gd" id="3_tev63"]
@@ -9,17 +8,18 @@
 [ext_resource type="Resource" uid="uid://si4bfwwujmd4" path="res://resources/waves/level/wave1/w1_lvl1.tres" id="6_44adx"]
 [ext_resource type="Resource" uid="uid://bbktu2l5cbp4v" path="res://resources/waves/level/wave1/w1_lvl3.tres" id="6_nlwsg"]
 [ext_resource type="Resource" uid="uid://db11kl2igqyo5" path="res://resources/waves/level/wave1/w1_lvl2.tres" id="7_5s17w"]
-[ext_resource type="PackedScene" uid="uid://bdij7mqmqbud2" path="res://scenes/enemie/boss/pianist.tscn" id="9_v5k1w"]
+[ext_resource type="PackedScene" path="res://scenes/enemie/boss/pianist.tscn" id="9_v5k1w"]
 [ext_resource type="Resource" uid="uid://joa6ha2tlcd1" path="res://resources/waves/level/wave2/w2_lvl1.tres" id="10_c3jmy"]
 [ext_resource type="Resource" uid="uid://dmiobkpd61i6" path="res://resources/waves/level/wave2/w2_lvl2.tres" id="11_m4qtw"]
 [ext_resource type="Resource" uid="uid://cyqf6bgsfhu7u" path="res://resources/waves/level/wave2/w2_lvl3.tres" id="12_ldftd"]
 [ext_resource type="Resource" uid="uid://cso2r6qixbr0v" path="res://resources/waves/level/wave2/w2_lvl4.tres" id="13_s75o8"]
 [ext_resource type="Resource" uid="uid://cfqu0ybtlrfn7" path="res://resources/waves/level/wave3/w3_lvl1.tres" id="14_muj0q"]
-[ext_resource type="PackedScene" uid="uid://clqch2ky2eo4b" path="res://scenes/enemie/boss/bandMaster.tscn" id="14_ryoqn"]
+[ext_resource type="PackedScene" path="res://scenes/enemie/boss/bandMaster.tscn" id="14_ryoqn"]
 [ext_resource type="Resource" uid="uid://cq8121pnxavd3" path="res://resources/waves/level/wave3/w3_lvl2.tres" id="15_hn2jk"]
 [ext_resource type="Resource" uid="uid://c5kghww7h8diq" path="res://resources/waves/level/wave3/w3_lvl3.tres" id="16_a0x6f"]
 [ext_resource type="Resource" uid="uid://duc2kcg06a8xn" path="res://resources/waves/level/wave3/w3_lvl4.tres" id="17_isgvq"]
 [ext_resource type="Resource" uid="uid://cpa3fi7dy81cs" path="res://resources/waves/level/wave3/w3_lvl5.tres" id="18_qp4r6"]
+[ext_resource type="Texture2D" uid="uid://cy7wm6mdh7v8w" path="res://assets/backgroundv5.png" id="19_yem12"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="21_t7fwv"]
 [ext_resource type="Texture2D" uid="uid://lodiv6fjrrjp" path="res://assets/player/coeur.png" id="22_0tjcm"]
 
@@ -54,16 +54,18 @@ waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_rqrmn"), SubResourc
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, 5)
-repeat_size = Vector2(0, 2180)
-autoscroll = Vector2(0, 1000)
+repeat_size = Vector2(0, 1350)
+autoscroll = Vector2(0, 750)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(632, 1105)
+position = Vector2(616, 461)
 scale = Vector2(1.16667, 1.05238)
-texture = ExtResource("1_vdhsq")
+texture = ExtResource("19_yem12")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
+maxSpeed = 600
+accel = 3000
 friction = 3000
 
 [node name="spawnPoints" type="Node2D" parent="."]

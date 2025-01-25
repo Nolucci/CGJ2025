@@ -26,6 +26,7 @@ func _physics_process(delta):
 			shoot_interval = shoot_interval_base * pattern.pattern_difficulty.bullet_increase
 
 func createPattern():
+	nb_patterns = 0
 	for pattern in patterns:
 		for bullet_prop in pattern.bullet_props:
 			var directions = [
@@ -71,8 +72,7 @@ func createPattern():
 
 
 func updateDifficulty():
-	nb_patterns = 0
-	Spawning.reset()
+	print(patterns)
 	for pattern in patterns:
 		pattern.pattern_difficulty.nbr = int(pattern.pattern_difficulty.bullet_increase * pattern.pattern_difficulty.bullet_increase)
 	createPattern()
