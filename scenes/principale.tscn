@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=31 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
@@ -46,8 +46,15 @@ default_font_size = 33
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0turq"]
 content_margin_left = 30.0
 
+[sub_resource type="Theme" id="Theme_kul8h"]
+default_font = ExtResource("21_t7fwv")
+default_font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rj8ca"]
+content_margin_left = 30.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c12m"]
-content_margin_right = 20.0
+content_margin_right = 30.0
 
 [node name="Principal" type="Node2D"]
 script = ExtResource("1_rqhj8")
@@ -148,18 +155,40 @@ position = Vector2(900, 242)
 position = Vector2(1036, 238)
 
 [node name="Control" type="Control" parent="."]
+z_index = 4096
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 650.0
 size_flags_horizontal = 6
 
-[node name="nbgriffure" type="RichTextLabel" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-offset_right = 1154.0
-offset_bottom = 648.0
+offset_right = 106.0
+offset_bottom = 236.0
+
+[node name="nbgriffure" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = SubResource("Theme_tpelb")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0turq")
+text = "griffure
+"
+
+[node name="Onde de choc" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_kul8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rj8ca")
+
+[node name="Vague" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_kul8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rj8ca")
+
+[node name="Niveau" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_kul8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rj8ca")
 
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1
@@ -181,10 +210,11 @@ grow_horizontal = 2
 [node name="vie" type="Label" parent="Control/Control/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_t7fwv")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6c12m")
+text = "1"
 
 [node name="coeur" type="Sprite2D" parent="Control/Control/HBoxContainer"]
-position = Vector2(40, 22)
-scale = Vector2(1.78125, 1.8125)
+position = Vector2(55, 29)
+scale = Vector2(2.60938, 2.5)
 texture = ExtResource("22_0tjcm")

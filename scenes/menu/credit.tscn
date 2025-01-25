@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqvj1n1ffbhf8"]
+[gd_scene load_steps=3 format=3 uid="uid://bqvj1n1ffbhf8"]
 
 [ext_resource type="Script" path="res://scripts/menu/credit.gd" id="1_pxj42"]
+[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="2_jnyqh"]
 
 [node name="Credit" type="Node2D"]
 script = ExtResource("1_pxj42")
+
+[node name="Backgroundv4" type="Sprite2D" parent="."]
+position = Vector2(655.001, 253.25)
+scale = Vector2(1.67222, 1.3184)
+texture = ExtResource("2_jnyqh")
 
 [node name="CreditsConteneur" type="Control" parent="."]
 layout_mode = 3

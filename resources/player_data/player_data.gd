@@ -50,6 +50,9 @@ func can_upgrade(upgrade: PlayerUpgrade) -> bool:
 func eat_ball():
 	pass
 
+func can_shield():
+	return false
+
 func can_fart():
 	var u = find_upgrade_by_name("Choc")
 	return u != null && u.current_level == 1
