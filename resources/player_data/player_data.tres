@@ -42,7 +42,7 @@ link_icon_buy_menu = "casque"
 [resource]
 script = ExtResource("1_xx3fb")
 name = "Alain"
-life = 2
+life = 50
 money = 1000
 upgrades = Array[ExtResource("2_o1r2w")]([SubResource("Resource_nev6f"), SubResource("Resource_lmnle"), SubResource("Resource_ly6fa")])
 isInvinsible = false
