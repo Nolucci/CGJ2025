@@ -45,11 +45,12 @@ func goToTargetPosition():
 
 func on_area_entered(area_entered: Area2D):
 	if area_entered is Fart:
-		var upgrade = PlayerManager.player_data.find_upgrade_by_name("puissance")
-		if upgrade != null:
-			life -= upgrade.current_level
-		else:
-			life -= 1
+		life -= 10
+		if life <= 0:
+			enemy_death.emit(self)
+			queue_free()
+	elif area_entered is Griffe:
+		life -= 1
 		if life <= 0:
 			enemy_death.emit(self)
 			queue_free()

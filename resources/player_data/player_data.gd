@@ -3,7 +3,7 @@ extends Resource
 class_name PlayerData
 
 @export var name: String = "Alain"
-@export var life: int = 1
+@export var life: int = 10
 @export var money: int = 0
 @export var upgrades: Array[PlayerUpgrade] = []
 @export var isInvinsible: bool = false
@@ -49,7 +49,9 @@ func eat_ball():
 	pass
 
 func can_fart():
-	return true
+	var u = find_upgrade_by_name("Choc")
+	return u != null && u.current_level == 1
+		
 
 func fart():
 	pass
