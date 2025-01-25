@@ -21,7 +21,7 @@ script = ExtResource("1_1vi4g")
 layout_mode = 0
 offset_right = 1232.0
 offset_bottom = 687.0
-color = Color(0.408329, 0.408329, 0.408329, 1)
+color = Color(0.583592, 0.341893, 0.0852739, 1)
 
 [node name="SettingTabs" type="TabContainer" parent="SettingMenu"]
 layout_mode = 1

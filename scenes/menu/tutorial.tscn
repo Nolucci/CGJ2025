@@ -1,10 +1,10 @@
 [gd_scene load_steps=34 format=3 uid="uid://cg8j46itsdsyf"]
 
 [ext_resource type="Script" path="res://scripts/menu/tutorial.gd" id="1_n3wlx"]
+[ext_resource type="Texture2D" uid="uid://ddgjmiy5pvan6" path="res://assets/images/Sign.png" id="2_6v85i"]
 [ext_resource type="Texture2D" uid="uid://dtrkl6p67bup5" path="res://resources/cat/chatastronaute.png" id="2_4265b"]
 [ext_resource type="Texture2D" uid="uid://da7561xknsmtj" path="res://resources/cat/sprite_54(2).png" id="3_ytl81"]
 [ext_resource type="Texture2D" uid="uid://bxa8u1b7c3ut6" path="res://resources/cat/sprite_54(4).png" id="4_073mi"]
-[ext_resource type="Texture2D" uid="uid://fflat5qswpv2" path="res://assets/projectile/sprite_00.png" id="5_7dajl"]
 [ext_resource type="Texture2D" uid="uid://b3tfv6wsax86l" path="res://assets/CroisEtV.png" id="6_kldwh"]
 [ext_resource type="Texture2D" uid="uid://nccpbuj2y7k2" path="res://assets/projectile/sprite_06.png" id="7_vtk68"]
 [ext_resource type="Texture2D" uid="uid://d1dk5hoj61iom" path="res://assets/projectile/sprite_05.png" id="8_f5vbb"]
@@ -16,8 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bpjds46jg3yoy" path="res://assets/enemies/serpent.png" id="13_w75rm"]
 [ext_resource type="Texture2D" uid="uid://bhlpl28s3oggu" path="res://assets/New Piskel (1).png" id="14_yyn56"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="15_ur4lc"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_dy8qm"]
 
 [sub_resource type="Animation" id="Animation_o6ouc"]
 length = 15.0
@@ -128,6 +126,15 @@ _data = {
 "main": SubResource("Animation_q3gxi")
 }
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lnloj"]
+resource_local_to_scene = true
+frames = 3
+frame_0/texture = ExtResource("10_2t8t5")
+frame_1/texture = ExtResource("10_2t8t5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("11_exexx")
+frame_2/duration = 1.0
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_dwqmq"]
 frames = 5
 frame_0/texture = ExtResource("10_2t8t5")
@@ -223,16 +230,17 @@ font_size = 65
 script = ExtResource("1_n3wlx")
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.306923, 0.306923, 0.306923, 1)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -411.5
-offset_right = 1363.0
-offset_bottom = 411.5
+offset_left = -198.0
+offset_top = -485.0
+offset_right = 1490.0
+offset_bottom = 559.0
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = SubResource("CanvasTexture_dy8qm")
+texture = ExtResource("2_6v85i")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -257,16 +265,18 @@ texture = ExtResource("3_ytl81")
 metadata/_edit_lock_ = true
 
 [node name="Chatastronaute" type="Sprite2D" parent="."]
-position = Vector2(298, 440)
-scale = Vector2(0.250446, 0.254395)
+position = Vector2(338, 447)
+scale = Vector2(0.192187, 0.219971)
 texture = ExtResource("2_4265b")
 
 [node name="Button" type="Button" parent="."]
+offset_left = 42.0
+offset_top = 20.0
 offset_right = 252.0
 offset_bottom = 65.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "A la cave"
+text = "Retour à la cache"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -280,13 +290,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite00" type="Sprite2D" parent="First"]
-position = Vector2(905, 394)
+position = Vector2(948, 424)
 scale = Vector2(6.46875, 7.28125)
-texture = ExtResource("5_7dajl")
+texture = SubResource("AnimatedTexture_lnloj")
 
 [node name="Sprite01" type="Sprite2D" parent="First"]
-position = Vector2(676, 327)
-scale = Vector2(0.148438, 0.212402)
+position = Vector2(684, 334.25)
+scale = Vector2(0.148438, 0.248779)
 texture = ExtResource("6_kldwh")
 
 [node name="Control" type="Control" parent="First"]
@@ -297,17 +307,17 @@ offset_right = 62.0
 offset_bottom = -185.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="First/Control"]
-position = Vector2(846, 364)
+position = Vector2(885, 349)
 scale = Vector2(3, 2.625)
 texture = ExtResource("7_vtk68")
 
 [node name="Sprite2D3" type="Sprite2D" parent="First/Control"]
-position = Vector2(851, 455)
+position = Vector2(875, 428)
 scale = Vector2(3, 2.625)
 texture = ExtResource("8_f5vbb")
 
 [node name="Sprite2D4" type="Sprite2D" parent="First/Control"]
-position = Vector2(932.5, 390.5)
+position = Vector2(963, 407)
 scale = Vector2(3.65625, 2.71875)
 texture = ExtResource("9_dholt")
 
@@ -319,17 +329,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Second"]
-position = Vector2(641, 305)
+position = Vector2(816, 141)
 scale = Vector2(5.51563, 6.1875)
 texture = SubResource("AnimatedTexture_dwqmq")
 
 [node name="NewPiskel" type="Sprite2D" parent="Second"]
-position = Vector2(789, 333)
+position = Vector2(800, 294)
 scale = Vector2(6.15625, 7.40625)
 texture = ExtResource("12_1sndv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Second"]
-position = Vector2(1626, 305)
+position = Vector2(1511, 453)
 scale = Vector2(0.192344, 0.239707)
 sprite_frames = SubResource("SpriteFrames_2oqxg")
 autoplay = "default"
@@ -340,10 +350,10 @@ offset = Vector2(-3695.77, 153.457)
 [node name="Label" type="Label" parent="Second"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 930.0
-offset_top = 168.0
-offset_right = 981.0
-offset_bottom = 231.0
+offset_left = 911.0
+offset_top = 440.0
+offset_right = 962.0
+offset_bottom = 503.0
 text = "+1"
 label_settings = SubResource("LabelSettings_slvvu")
 
@@ -372,14 +382,14 @@ scale = Vector2(5.01562, 4.73438)
 texture = ExtResource("12_1sndv")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Third"]
-position = Vector2(908, 315)
+position = Vector2(940, 317)
 scale = Vector2(0.143066, 0.265625)
 sprite_frames = SubResource("SpriteFrames_00mrt")
 autoplay = "default"
 frame_progress = 0.265115
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Third"]
-position = Vector2(1814, 314)
+position = Vector2(1830, 314)
 scale = Vector2(0.241211, 0.325195)
 sprite_frames = SubResource("SpriteFrames_2oqxg")
 autoplay = "default"
@@ -396,12 +406,14 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Fourth"]
 layout_mode = 0
-offset_left = 582.0
-offset_top = 270.0
-offset_right = 1064.0
-offset_bottom = 384.0
-text = "Good Luck
-"
+offset_left = 588.0
+offset_top = 167.0
+offset_right = 1036.0
+offset_bottom = 382.0
+text = "Bonne 
+Chance
+!"
 label_settings = SubResource("LabelSettings_ianbd")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

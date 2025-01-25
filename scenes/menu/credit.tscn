@@ -7,8 +7,8 @@
 script = ExtResource("1_pxj42")
 
 [node name="Backgroundv4" type="Sprite2D" parent="."]
-position = Vector2(578, 361)
-scale = Vector2(1.06481, 1)
+position = Vector2(655.001, 253.25)
+scale = Vector2(1.67222, 1.3184)
 texture = ExtResource("2_jnyqh")
 
 [node name="CreditsConteneur" type="Control" parent="."]

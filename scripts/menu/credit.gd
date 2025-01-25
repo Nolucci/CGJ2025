@@ -23,7 +23,7 @@ var credits = [
 	["DHEAD"],
 	["Sur le thème : ","Mélodie à l'infinie !"],
 	["Toute l'équipe vous remercie d'avoir téléchargé le jeu !"],
-	["Graphiste", "Nikhil RAM"],
+	["Graphiste", "RAM Nikhil"],
 	["Developpeurs", "FRANCESKIN Nathan, DE LUCA Elliott, GEORGES Aurel, POIRRIER Peter, GOETZ Hugo"],
 	["Les outils utilisés", "Développé avec Godot Engine", "https://godotengine.org/license", ""],
 ]
