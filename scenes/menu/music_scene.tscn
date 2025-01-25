@@ -1,30 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkbfuh5v4c8sx"]
+[gd_scene load_steps=9 format=3 uid="uid://bkbfuh5v4c8sx"]
 
 [ext_resource type="Script" path="res://scenes/menu/music_scene.gd" id="1_ms36u"]
+[ext_resource type="AudioStream" uid="uid://cv3n75xjoh6ks" path="res://assets/musics/Music_Bass1.mp3" id="2_5y63x"]
+[ext_resource type="AudioStream" uid="uid://cqxqn8bt67hpc" path="res://assets/musics/Music_Bass2.mp3" id="2_pgwai"]
 [ext_resource type="AudioStream" uid="uid://cicl53w4n7i0e" path="res://assets/musics/Grotte.mp3" id="2_sakjx"]
-[ext_resource type="AudioStream" uid="uid://f8g212imwl0m" path="res://assets/musics/Music_Drill.mp3" id="3_m7h8a"]
-[ext_resource type="AudioStream" uid="uid://xrkaygq2qo78" path="res://assets/musics/Music_Pop.mp3" id="4_qwch2"]
-[ext_resource type="AudioStream" uid="uid://dlpb4mt78s80y" path="res://assets/musics/Music_Trumpet.mp3" id="5_quswe"]
+[ext_resource type="AudioStream" uid="uid://cr4087d3cjhx0" path="res://assets/musics/Music_Egypt1.mp3" id="4_uhl00"]
+[ext_resource type="AudioStream" uid="uid://d1nmehxd6p4np" path="res://assets/musics/Music_Trumpet1.mp3" id="6_phi2r"]
+[ext_resource type="AudioStream" uid="uid://btw46ky6sn8sh" path="res://assets/musics/Music_Egypt2.mp3" id="7_l3r30"]
+[ext_resource type="AudioStream" uid="uid://b678g1cqlmbaq" path="res://assets/musics/Music_Trumpet2.mp3" id="8_h5umb"]
 
 [node name="MusicScene" type="Node2D"]
 script = ExtResource("1_ms36u")
+
+[node name="MusiqueBass2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pgwai")
+bus = &"Bus_one"
+parameters/looping = true
 
 [node name="Musique_Grotte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_sakjx")
 bus = &"Bus_one"
 parameters/looping = false
 
-[node name="Musique_2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_m7h8a")
+[node name="MusiqueEgypt1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uhl00")
 bus = &"Bus_one"
 parameters/looping = false
 
-[node name="Musique_1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_qwch2")
+[node name="MusiqueBass1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5y63x")
 bus = &"Bus_one"
 parameters/looping = false
 
-[node name="Musique_3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_quswe")
+[node name="MusiqueTrumpet1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_phi2r")
 bus = &"Bus_one"
 parameters/looping = false
+
+[node name="MusiqueEgypt2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_l3r30")
+bus = &"Bus_one"
+parameters/looping = true
+
+[node name="MusiqueTrumpet2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_h5umb")
+bus = &"Bus_one"
+parameters/looping = true
+
+[connection signal="finished" from="MusiqueEgypt1" to="." method="_on_musique_egypt_1_finished"]
+[connection signal="finished" from="MusiqueBass1" to="." method="_on_musique_bass_1_finished"]
+[connection signal="finished" from="MusiqueTrumpet1" to="." method="_on_musique_trumpet_1_finished"]

@@ -1,17 +1,36 @@
 extends Node2D
 
 @onready var Musique_Grotte = $Musique_Grotte
-@onready var Musique_1 = $Musique_1
-@onready var Musique_2 = $Musique_2
-@onready var Musique_3 = $Musique_3
+@onready var MusiqueBass1 = $MusiqueBass1
+@onready var MusiqueBass2 = $MusiqueBass2
+@onready var MusiqueEgypt1 = $MusiqueEgypt1
+@onready var MusiqueEgypt2 = $MusiqueEgypt2
+@onready var MusiqueTrumpet1 = $MusiqueTrumpet1
+@onready var MusiqueTrumpet2 = $MusiqueTrumpet2
 
 @onready var music_id = AudioServer.get_bus_index("Bus_one")
 
+# Une liste pour suivre toutes les musiques
+var all_musics = []
+
+func _ready():
+	all_musics = [
+		Musique_Grotte,
+		MusiqueBass1, MusiqueBass2,
+		MusiqueEgypt1, MusiqueEgypt2,
+		MusiqueTrumpet1, MusiqueTrumpet2
+	]
+	
+	# Connect signals to their respective functions
+	MusiqueBass1.connect("finished", Callable(self, "_on_musique_bass_1_finished"))
+	MusiqueEgypt1.connect("finished", Callable(self, "_on_musique_egypt_1_finished"))
+	MusiqueTrumpet1.connect("finished", Callable(self, "_on_musique_trumpet_1_finished"))
+
 func stopAllMusic():
-	Musique_Grotte.stop()
-	Musique_1.stop()
-	Musique_2.stop()
-	Musique_3.stop()
+	# Arrêter toutes les musiques de la liste
+	for music in all_musics:
+		if music.playing:
+			music.stop()
 
 func launchMusicGrotte():
 	stopAllMusic()
@@ -19,25 +38,25 @@ func launchMusicGrotte():
 
 func launchMusic1():
 	stopAllMusic()
-	Musique_1.play()
+	MusiqueBass1.play()
 
 func launchMusic2():
 	stopAllMusic()
-	Musique_2.play()
+	MusiqueEgypt1.play()
 
 func launchMusic3():
 	stopAllMusic()
-	Musique_3.play()
+	MusiqueTrumpet1.play()
 
-func lauchAleatoire():
-	var rand = randi_range(0,2)
+func launchAleatoire():
+	stopAllMusic()
+	var rand = randi_range(0, 2)
 	if rand == 0:
 		launchMusic1()
-	elif rand == 1 :
+	elif rand == 1:
 		launchMusic2()
-	if rand == 2:
+	elif rand == 2:
 		launchMusic3()
-
 
 func update_music_level(new_level):
 	AudioServer.get_bus_volume_db(music_id)
@@ -45,3 +64,15 @@ func update_music_level(new_level):
 
 func get_music_level():
 	return db_to_linear(AudioServer.get_bus_volume_db(music_id))
+
+
+func _on_musique_bass_1_finished():
+	MusiqueBass2.play()
+
+
+func _on_musique_trumpet_1_finished():
+	MusiqueTrumpet2.play()
+
+
+func _on_musique_egypt_1_finished():
+	MusiqueEgypt2.play()

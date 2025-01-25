@@ -7,6 +7,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$CatPanneau.hide()
 	$BackgroundPatoune.hide()
+	MusicScene.launchMusicGrotte()
 
 func _on_start_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout

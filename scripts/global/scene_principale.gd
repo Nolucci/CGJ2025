@@ -16,7 +16,7 @@ var currentLevel: int = 1
 func _ready():
 	EventManager.player_dead.connect(_on_player_dead)
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
-	MusicScene.lauchAleatoire()
+	MusicScene.launchAleatoire()
 
 func _physics_process(_delta):
 	if enemies == 0:

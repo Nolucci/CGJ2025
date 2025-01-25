@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://80j11xbycb48"]
+[gd_scene load_steps=29 format=3 uid="uid://dxfmffariobne"]
 
 [ext_resource type="Script" path="res://scripts/menu/demarrage.gd" id="1_w72gi"]
 [ext_resource type="Texture2D" uid="uid://bplsm411ptk74" path="res://assets/Godot_splash_screen_original_logo_dark (1).png" id="2_1qk06"]

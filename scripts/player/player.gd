@@ -92,6 +92,7 @@ func take_damage():
 	print("Player take tamage, new life :", PlayerManager.player_data.life)
 	if PlayerManager.player_data.life <= 0:
 		player_is_dead.emit()
+		MusicScene.launchMusicGrotte()
 		PlayerManager.player_data.isInvinsible = false
 		PlayerManager.player_data.life = 2
 		await queue_free()
