@@ -75,9 +75,9 @@ scale = Vector2(0.68, 0.68)
 collision_layer = 3
 collision_mask = 5
 script = ExtResource("1_f24cv")
-maxSpeed = 600
-accel = 3000
-friction = 4000
+maxSpeed = 700
+accel = 4000
+friction = 2000
 sprite = NodePath("AnimatedSprite2D")
 fart_scene = ExtResource("3_andpl")
 

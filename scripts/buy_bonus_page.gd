@@ -17,7 +17,7 @@ func _ready() -> void:
 	$ColorRect.visible = false
 	#@TODO obliger de faire ça pour le moment car sinon data pas initialisé
 	if !player_instantiated:
-		$Main/RigthPart/Header/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
+		$Panel2/NumberOfCoin.text = "Coin: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
 
