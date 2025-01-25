@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var first_level = preload("res://scenes/principale.tscn")
 @onready var credit_scene = preload("res://scenes/menu/credit.tscn")
+@onready var option_scene = preload("res://scenes/menu/option.tscn")
 
 func _ready() -> void:
 	$CatPanneau.hide()
@@ -10,7 +11,6 @@ func _ready() -> void:
 func _on_start_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_packed(first_level)
-
 
 func _on_quit_button_button_down() -> void:
 	await get_tree().create_timer(0.1).timeout
@@ -32,6 +32,8 @@ func _on_message_timer_timeout() -> void:
 	$StartMessage.hide()
 
 
-func _on_option_input_down():
-	get_tree().change_scene_to_packed(
-		preload("res://addons/maaacks_options_menus/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn"))
+func _on_option_button_button_up() -> void:
+	await get_tree().create_timer(0.1).timeout
+	var option_popup = option_scene.instantiate()
+	option_popup.popup_centered()
+	get_tree().root.add_child(option_popup)

@@ -55,5 +55,5 @@ func on_area_entered(area_entered: Area2D):
 			queue_free()
 
 func _on_area_2d_body_entered(body: PhysicsBody2D) -> void:
-	if body is Player and !body.data.isInvinsible and body.data.life >= 1:
+	if body is Player and !PlayerManager.player_data.isInvinsible and PlayerManager.player_data.life >= 1:
 		body.take_damage()

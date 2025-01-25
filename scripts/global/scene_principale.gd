@@ -1,7 +1,11 @@
 extends Node2D
 
-@onready var spawn_point = $spawnPoints  # Le nœud contenant les spawn points
-@onready var go_points = $goPoints  # Le nœud contenant les points cibles
+@onready var spawn_point = $spawnPoints
+@onready var go_points = $goPoints
+@onready var player: Player = $Player
+@onready var ui_nbgriffure = $Control/nbgriffure
+@onready var ui_life = $Control/Control/HBoxContainer/vie
+@onready var ui_coeur = $Control/Control/HBoxContainer/coeur
 
 @export var waves: Array[Wave] = []
 var currentWave: int = 1
@@ -10,6 +14,7 @@ var currentLevel: int = 1
 @export var enemies: int = 0
 
 func _ready():
+	EventManager.player_dead.connect(_on_player_dead)
 	EventManager.enemy_get_killed.connect(_on_enemy_death)
 	MusicScene.lauchAleatoire()
 
@@ -30,6 +35,15 @@ func _physics_process(_delta):
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
 			currentLevel += 1
+
+	if player != null:
+		ui_nbgriffure.text = str(player.nbGriffure) + "/" + str(player.nbGriffureMax) + " griffures"
+		ui_life.text = str(PlayerManager.player_data.life)
+
+	if PlayerManager.player_data.isInvinsible:
+		ui_coeur.texture = load("res://assets/player/iron_coeur.png")
+	else:
+		ui_coeur.texture = load("res://assets/player/coeur.png")
 
 func spawn_enemies(boss: bool):
 
@@ -58,3 +72,11 @@ func _on_enemy_death(_enemy: Enemie):
 	enemies -= 1
 	if enemies < 0:
 		enemies = 0
+
+func _on_player_dead():
+	Spawning.clear_all_bullets()
+	get_tree().change_scene_to_file("res://scenes/buyBonusPage.tscn")
+
+func _cleanup_resources():
+	for child in get_children():
+		child.queue_free()

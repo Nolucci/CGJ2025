@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://bq8lgyexgcun5"]
+[gd_scene load_steps=29 format=3 uid="uid://bq8lgyexgcun5"]
 
 [ext_resource type="Script" path="res://scripts/global/scene_principale.gd" id="1_rqhj8"]
-[ext_resource type="Texture2D" uid="uid://cg7rawktvvc66" path="res://assets/backgroundv4.png" id="1_vdhsq"]
 [ext_resource type="PackedScene" uid="uid://b0auwd0p4d0uu" path="res://scenes/player/player.tscn" id="2_h8hud"]
 [ext_resource type="Script" path="res://resources/waves/wave.gd" id="2_y4v6y"]
 [ext_resource type="Script" path="res://resources/waves/level/level.gd" id="3_tev63"]
@@ -20,6 +19,9 @@
 [ext_resource type="Resource" uid="uid://c5kghww7h8diq" path="res://resources/waves/level/wave3/w3_lvl3.tres" id="16_a0x6f"]
 [ext_resource type="Resource" uid="uid://duc2kcg06a8xn" path="res://resources/waves/level/wave3/w3_lvl4.tres" id="17_isgvq"]
 [ext_resource type="Resource" uid="uid://cpa3fi7dy81cs" path="res://resources/waves/level/wave3/w3_lvl5.tres" id="18_qp4r6"]
+[ext_resource type="Texture2D" uid="uid://cy7wm6mdh7v8w" path="res://assets/backgroundv5.png" id="19_yem12"]
+[ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="21_t7fwv"]
+[ext_resource type="Texture2D" uid="uid://lodiv6fjrrjp" path="res://assets/player/coeur.png" id="22_0tjcm"]
 
 [sub_resource type="Resource" id="Resource_rqrmn"]
 script = ExtResource("2_y4v6y")
@@ -36,22 +38,34 @@ script = ExtResource("2_y4v6y")
 tabLevel = Array[ExtResource("3_tev63")]([ExtResource("14_muj0q"), ExtResource("15_hn2jk"), ExtResource("16_a0x6f"), ExtResource("17_isgvq"), ExtResource("18_qp4r6")])
 tabBoss = Array[PackedScene]([ExtResource("14_ryoqn")])
 
+[sub_resource type="Theme" id="Theme_tpelb"]
+default_font = ExtResource("21_t7fwv")
+default_font_size = 33
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0turq"]
+content_margin_left = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c12m"]
+content_margin_right = 20.0
+
 [node name="Principal" type="Node2D"]
 script = ExtResource("1_rqhj8")
 waves = Array[ExtResource("2_y4v6y")]([SubResource("Resource_rqrmn"), SubResource("Resource_v2j1t"), SubResource("Resource_kdiym")])
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, 5)
-repeat_size = Vector2(0, 2180)
-autoscroll = Vector2(0, 1000)
+repeat_size = Vector2(0, 1350)
+autoscroll = Vector2(0, 750)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(632, 1105)
+position = Vector2(616, 461)
 scale = Vector2(1.16667, 1.05238)
-texture = ExtResource("1_vdhsq")
+texture = ExtResource("19_yem12")
 
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
+maxSpeed = 600
+accel = 3000
 friction = 3000
 
 [node name="spawnPoints" type="Node2D" parent="."]
@@ -111,3 +125,45 @@ position = Vector2(900, 242)
 
 [node name="goPoint14" type="Marker2D" parent="goPoints"]
 position = Vector2(1036, 238)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 650.0
+size_flags_horizontal = 6
+
+[node name="nbgriffure" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+offset_right = 506.0
+offset_bottom = 56.0
+theme = SubResource("Theme_tpelb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0turq")
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_right = 26.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="vie" type="Label" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_t7fwv")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6c12m")
+
+[node name="coeur" type="Sprite2D" parent="Control/Control/HBoxContainer"]
+position = Vector2(40, 22)
+scale = Vector2(1.78125, 1.8125)
+texture = ExtResource("22_0tjcm")

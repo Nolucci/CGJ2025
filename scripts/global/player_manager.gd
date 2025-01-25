@@ -2,4 +2,4 @@ extends Node
 
 class_name _PlayerManager
 
-@export var player_data: PlayerData
+@onready var player_data: PlayerData = load("res://resources/player_data/player_data.tres")

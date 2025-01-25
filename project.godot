@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="CGJ2025"
-run/main_scene="res://scenes/menu/main_menu.tscn"
+run/main_scene="res://scenes/menu/demarrage.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,6 +24,9 @@ EventManager="*res://scripts/global/event_manager.gd"
 PatternManager="*res://scripts/Patterns/pattern_manager.gd"
 AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
 MusicScene="*res://scenes/menu/music_scene.tscn"
+SceneSwither="*res://scripts/global/scene_swither.gd"
+GlobalSetting="*res://scripts/global/global_setting.gd"
+Save="*res://save/save.gd"
 
 [display]
 

@@ -1,23 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://blvu7teip2k5h"]
+[gd_scene load_steps=32 format=3 uid="uid://blvu7teip2k5h"]
 
 [ext_resource type="Script" path="res://scripts/buy_bonus_page.gd" id="1_avfc3"]
-[ext_resource type="Texture2D" uid="uid://cssb7carlqo26" path="res://icon.svg" id="1_m6gbt"]
 [ext_resource type="FontFile" uid="uid://cye4dst74ga0q" path="res://font/HoltwoodOneSC.ttf" id="2_loy3t"]
-[ext_resource type="PackedScene" path="res://ui/buyMenuButton.tscn" id="2_tdeeq"]
-[ext_resource type="Texture2D" uid="uid://b0gcdgk440dfb" path="res://resources/cat/Cat_Roll_Animation.png" id="5_j3yb4"]
-
-[sub_resource type="Gradient" id="Gradient_4lu3y"]
-offsets = PackedFloat32Array(0, 0.0151515)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_bipw2"]
-gradient = SubResource("Gradient_4lu3y")
+[ext_resource type="Texture2D" uid="uid://0qoy0n58up8e" path="res://assets/image.psd3 (4).png" id="3_c1dq4"]
+[ext_resource type="Texture2D" uid="uid://cnquw01t2gwyp" path="res://Chat (2).png" id="4_8jf5c"]
+[ext_resource type="Texture2D" uid="uid://cl8eo3wi4l86b" path="res://assets/Chat (1).png" id="4_k4g56"]
+[ext_resource type="Texture2D" uid="uid://cl2jptdgr8hy5" path="res://assets/player/Cat_Roll_Animation.png" id="5_j3yb4"]
+[ext_resource type="Texture2D" uid="uid://ddgjmiy5pvan6" path="res://assets/images/Sign.png" id="6_h76xd"]
+[ext_resource type="Texture2D" uid="uid://cbh5jew71eqr8" path="res://assets/images/SleepButton2.png" id="8_1wuyu"]
+[ext_resource type="Texture2D" uid="uid://gvc4dxc2uyni" path="res://assets/images/SleepButton3.png" id="9_bh3aw"]
+[ext_resource type="Texture2D" uid="uid://bu13q40u3jbgb" path="res://assets/images/SleepButton.png" id="10_w8m8k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c817q"]
-texture = SubResource("GradientTexture1D_bipw2")
+texture = ExtResource("3_c1dq4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6lp6"]
+texture = ExtResource("6_h76xd")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ivl0n"]
 font = ExtResource("2_loy3t")
 font_size = 20
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mtwdn"]
 font = ExtResource("2_loy3t")
@@ -25,21 +28,40 @@ font_size = 20
 
 [sub_resource type="Theme" id="Theme_kme7x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2jmn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgv8h"]
 
-[sub_resource type="Gradient" id="Gradient_7wwbj"]
-offsets = PackedFloat32Array(0, 0.99697, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.0787879, 0.0787879, 0.0787879, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_poesj"]
-gradient = SubResource("Gradient_7wwbj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74yc6"]
-texture = SubResource("GradientTexture1D_poesj")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o2ksw"]
+texture = ExtResource("8_1wuyu")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
+expand_margin_left = 35.0
+expand_margin_top = 110.0
+expand_margin_right = 35.0
+expand_margin_bottom = 170.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4n1h3"]
+texture = ExtResource("9_bh3aw")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 35.0
+expand_margin_top = 110.0
+expand_margin_right = 35.0
+expand_margin_bottom = 170.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74yc6"]
+texture = ExtResource("10_w8m8k")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 35.0
+expand_margin_top = 110.0
+expand_margin_right = 35.0
+expand_margin_bottom = 170.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixgop"]
 atlas = ExtResource("5_j3yb4")
@@ -173,6 +195,58 @@ tracks/5/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_t2aq3"]
+resource_name = "quit"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(575, 2440), Vector2(605, -693)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 0.9, 1.36667, 1.8, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_iuo51"]
 resource_name = "to new page"
 length = 6.0
@@ -252,6 +326,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oua5a"]
 _data = {
 "RESET": SubResource("Animation_p8fvk"),
+"quit": SubResource("Animation_t2aq3"),
 "to new page": SubResource("Animation_iuo51")
 }
 
@@ -265,72 +340,91 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_avfc3")
-button_scene = ExtResource("2_tdeeq")
 
-[node name="Main" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Main"]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 2
+offset_right = 382.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme_override_styles/panel = SubResource("StyleBoxTexture_c817q")
 
-[node name="SpriteContainer" type="CenterContainer" parent="Main/Panel"]
+[node name="SpriteContainer" type="CenterContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -324.5
-offset_right = 187.0
-offset_bottom = 325.5
+offset_left = -95.0
+offset_top = -203.0
+offset_right = 117.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CatSprite" type="Sprite2D" parent="Main/Panel/SpriteContainer"]
-position = Vector2(185, 319)
-scale = Vector2(2.23491, 3.75)
-texture = ExtResource("1_m6gbt")
+[node name="space" type="Sprite2D" parent="Panel/SpriteContainer"]
+visible = false
+position = Vector2(102, 286)
+scale = Vector2(1.488, 1.93805)
+texture = ExtResource("4_8jf5c")
 
-[node name="RigthPart" type="VBoxContainer" parent="Main"]
+[node name="casque" type="Sprite2D" parent="Panel/SpriteContainer"]
+visible = false
+position = Vector2(99, 315)
+scale = Vector2(1.30859, 1.36328)
+texture = ExtResource("4_k4g56")
+
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 2
+offset_left = 379.0
+offset_right = 1152.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_y6lp6")
 
-[node name="Header" type="HBoxContainer" parent="Main/RigthPart"]
-layout_mode = 2
-
-[node name="CaverneName" type="Label" parent="Main/RigthPart/Header"]
+[node name="CaverneName" type="Label" parent="Panel2"]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.0
+offset_top = -19.0
+offset_right = 253.0
+offset_bottom = 81.0
+grow_horizontal = 2
 size_flags_horizontal = 3
 text = "La caverne silencieuse"
 label_settings = SubResource("LabelSettings_ivl0n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NumberOfCoin" type="Label" parent="Main/RigthPart/Header"]
-layout_mode = 2
+[node name="NumberOfCoin" type="Label" parent="Panel2"]
+layout_mode = 1
+offset_left = 51.0
+offset_top = 40.0
+offset_right = 391.0
+offset_bottom = 73.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
-text = "Coin: "
+text = "Patoune: "
 label_settings = SubResource("LabelSettings_mtwdn")
 
-[node name="ScrollSkillContainer" type="ScrollContainer" parent="Main/RigthPart"]
+[node name="ScrollSkillContainer" type="ScrollContainer" parent="Panel2"]
 layout_mode = 2
+offset_left = 48.0
+offset_top = 89.0
+offset_right = 724.0
+offset_bottom = 467.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_kme7x")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pgv8h")
 horizontal_scroll_mode = 0
 
-[node name="SkillContainer" type="VBoxContainer" parent="Main/RigthPart/ScrollSkillContainer"]
+[node name="SkillContainer" type="VBoxContainer" parent="Panel2/ScrollSkillContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -338,20 +432,42 @@ tooltip_text = "
 "
 theme_override_constants/separation = 20
 
-[node name="Footer" type="PanelContainer" parent="Main/RigthPart"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j2jmn")
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -280.5
+offset_top = -142.0
+offset_right = 281.5
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
 
-[node name="NewGame" type="Button" parent="Main/RigthPart/Footer"]
+[node name="NewGame" type="Button" parent="Panel2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loy3t")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_o2ksw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4n1h3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_74yc6")
 text = "Faire la sieste"
+
+[node name="Quitter" type="Button" parent="Panel2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_loy3t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_o2ksw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4n1h3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_74yc6")
+text = "Quitter la partie"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -384,5 +500,7 @@ text = "[center]Vous émergez des ombres, animé par une rage glaciale. Ceux qui
 visible_characters = 0
 visible_ratio = 0.0
 
-[connection signal="pressed" from="Main/RigthPart/Footer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel2/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
