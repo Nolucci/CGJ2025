@@ -16,9 +16,7 @@ func load_data():
 			"fullscreen_on": false,
 			"display_fps": false,
 			"max_fps": 0,
-			"master_vol": -10,
-			"music_vol": -10,
-			"sfx_vol": -10,
+			"master_vol": 0,
 			}
 		save_data()
 		return

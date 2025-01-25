@@ -14,11 +14,13 @@ class_name Player
 var input = Vector2.ZERO
 var screen_size
 var area: Area2D
-var canGriffe: bool = true;
+var canGriffe: bool = true
+var cant_moove: bool = false
 
 signal player_is_dead()
 
 @onready var sound_cut: AudioStreamPlayer2D = $cut
+@onready var cam: Camera2D = $Camera
 
 func _ready() -> void:
 	area = $Area2D
@@ -27,13 +29,14 @@ func _ready() -> void:
 	EventManager.player_get_hit.connect(take_damage)
 
 func _physics_process(delta):
-	screen_size = get_viewport_rect().size
-	player_movement(delta)
-	
-	if Input.is_action_just_pressed("fart"):
-		if nbGriffure > 0 and canGriffe:
-			nbGriffure -= 1
-			griffer()
+	if not(cant_moove):
+		screen_size = get_viewport_rect().size
+		player_movement(delta)
+		
+		if Input.is_action_just_pressed("fart"):
+			if nbGriffure > 0 and canGriffe:
+				nbGriffure -= 1
+				griffer()
 			
 		
 
@@ -91,9 +94,16 @@ func take_damage():
 	PlayerManager.player_data.life = PlayerManager.player_data.life - 1
 	print("Player take tamage, new life :", PlayerManager.player_data.life)
 	if PlayerManager.player_data.life <= 0:
-		player_is_dead.emit()
+		cant_moove = true
+		cam.enabled = true
+		Spawning.clear_all_bullets()
+		var tween = get_tree().create_tween()
+		tween.tween_property(cam,"zoom", Vector2(5, 5), 1.5)
+		sprite.play("death")
 		PlayerManager.player_data.isInvinsible = false
 		PlayerManager.player_data.life = 2
+		await get_tree().create_timer(2).timeout
+		player_is_dead.emit()
 		await queue_free()
 		return
 	

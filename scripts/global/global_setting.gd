@@ -20,12 +20,3 @@ func update_master_volume(value:int):
 	Save.game_data.master_vol = value
 	Save.save_data()
 	
-func update_music_volume(value: float):
-	AudioServer.set_bus_volume_db(1, value)
-	Save.game_data.music_vol = value
-	Save.save_data()
-	
-func update_sfx_volume(value: float):
-	AudioServer.set_bus_volume_db(2, value)
-	Save.game_data.sfx_vol = value
-	Save.save_data()

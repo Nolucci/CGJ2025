@@ -62,16 +62,6 @@ position = Vector2(616, 461)
 scale = Vector2(1.16667, 1.05238)
 texture = ExtResource("19_yem12")
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/Sprite2D"]
-position = Vector2(1165.71, 31.3575)
-scale = Vector2(1.16667, 1.05238)
-texture = ExtResource("19_yem12")
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/Sprite2D/Sprite2D"]
-position = Vector2(-2088.72, -56.8848)
-scale = Vector2(1.16667, 1.05238)
-texture = ExtResource("19_yem12")
-
 [node name="Player" parent="." instance=ExtResource("2_h8hud")]
 position = Vector2(624, 511)
 maxSpeed = 600

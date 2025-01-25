@@ -6,6 +6,7 @@ extends Node2D
 @onready var ui_nbgriffure = $Control/nbgriffure
 @onready var ui_life = $Control/Control/HBoxContainer/vie
 @onready var ui_coeur = $Control/Control/HBoxContainer/coeur
+@onready var camera = $Camera
 
 @export var waves: Array[Wave] = []
 var currentWave: int = 1
@@ -74,8 +75,9 @@ func _on_enemy_death(_enemy: Enemie):
 		enemies = 0
 
 func _on_player_dead():
-	Spawning.clear_all_bullets()
+	Spawning.reset()
 	get_tree().change_scene_to_file("res://scenes/buyBonusPage.tscn")
+
 
 func _cleanup_resources():
 	for child in get_children():
