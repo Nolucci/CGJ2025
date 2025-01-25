@@ -9,6 +9,7 @@ signal upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int
 @export var life: int = 1
 @export var money: int = 0
 @export var upgrades: Array[PlayerUpgrade] = []
+@export var isInvinsible: bool = false
 
 # Fonction pour acheter une amélioration
 func buy_upgrade(primary_key: int) -> bool:
@@ -31,9 +32,9 @@ func find_upgrade_by_key(primary_key: int) -> PlayerUpgrade:
 			return u
 	return null
 
-func find_upgrade_by_name(name: String) -> PlayerUpgrade:
+func find_upgrade_by_name(upgrade_name: String) -> PlayerUpgrade:
 	for u in upgrades:
-		if u.name == name:
+		if u.name == upgrade_name:
 			return u
 	return null
 
@@ -46,3 +47,12 @@ func can_upgrade(upgrade: PlayerUpgrade) -> bool:
 		print("Pas assez d'argent pour acheter l'amélioration:", upgrade.name)
 		return false
 	return true
+
+func eat_ball():
+	pass
+
+func can_fart():
+	return true
+
+func fart():
+	pass

@@ -1,6 +1,8 @@
 @tool
 extends Path2D
 
+class_name BulletPattern
+
 @export var id:String = ""
 @export var props:PackedDataContainer
 

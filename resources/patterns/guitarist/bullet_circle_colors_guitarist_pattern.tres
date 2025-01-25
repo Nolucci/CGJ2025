@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="AbstractPattern" load_steps=17 format=3 uid="uid://wca3coskw4v7"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="1_8jepf"]
+[ext_resource type="PackedDataContainer" uid="uid://blw5waekr4ioa" path="res://resources/bullets/blue_bullet1.tres" id="2_20doy"]
+[ext_resource type="PackedDataContainer" uid="uid://0dcc7a0cyft1" path="res://resources/bullets/green_bullet1.tres" id="3_govh4"]
+[ext_resource type="PackedDataContainer" uid="uid://chmxk2fkcnyiu" path="res://resources/bullets/pink_bullet1.tres" id="4_iwa60"]
+[ext_resource type="PackedDataContainer" uid="uid://c76e7nrdku33d" path="res://resources/bullets/red_bullet1.tres" id="5_eknss"]
+[ext_resource type="PackedDataContainer" uid="uid://0a0kss6skr12" path="res://resources/bullets/yellow_bullet1.tres" id="6_tvqlj"]
+[ext_resource type="PackedDataContainer" uid="uid://dlgww30ordl37" path="res://resources/bullets/blue_bullet2.tres" id="7_o2e4t"]
+[ext_resource type="PackedDataContainer" uid="uid://be5pxhwdw144c" path="res://resources/bullets/green_bullet2.tres" id="8_fsaha"]
+[ext_resource type="PackedDataContainer" uid="uid://c4y1budhkch06" path="res://resources/bullets/pink_bullet2.tres" id="9_6ef5e"]
+[ext_resource type="PackedDataContainer" uid="uid://bxu8njxr81dg6" path="res://resources/bullets/red_bullet2.tres" id="10_vo3xk"]
+[ext_resource type="PackedDataContainer" uid="uid://b2lgnvq0dmrjx" path="res://resources/bullets/yellow_bullet2.tres" id="11_6fgpp"]
+[ext_resource type="Script" path="res://scripts/enemies/difficulty.gd" id="12_rybq2"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="13_kbupv"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="14_l3oi8"]
+
+[sub_resource type="Resource" id="Resource_reygd"]
+script = ExtResource("12_rybq2")
+nbr = 5
+bullet_increase = 1.5
+targeting = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jvucb"]
+resource_name = "PatternCircle"
+script = ExtResource("13_kbupv")
+radius = 0
+angle_total = 6.28319
+angle_decal = 0.0
+symmetric = false
+center = 0
+symmetry_type = 0
+bullet = ""
+nbr = 2
+iterations = 2
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[resource]
+script = ExtResource("14_l3oi8")
+pattern_difficulty = SubResource("Resource_reygd")
+pattern_type = SubResource("NavigationPolygon_jvucb")
+bullet_props = Array[ExtResource("1_8jepf")]([ExtResource("2_20doy"), ExtResource("3_govh4"), ExtResource("4_iwa60"), ExtResource("5_eknss"), ExtResource("6_tvqlj"), ExtResource("7_o2e4t"), ExtResource("8_fsaha"), ExtResource("9_6ef5e"), ExtResource("10_vo3xk"), ExtResource("11_6fgpp")])

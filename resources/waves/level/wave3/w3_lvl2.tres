@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://cq8121pnxavd3"]
+
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="1_vojar"]
+[ext_resource type="PackedScene" uid="uid://dicsom68usoa4" path="res://scenes/enemie/violon.tscn" id="2_pkfxw"]
+
+[resource]
+script = ExtResource("1_vojar")
+tabEnemies = Array[PackedScene]([ExtResource("2_pkfxw"), ExtResource("2_pkfxw"), ExtResource("2_pkfxw"), ExtResource("2_pkfxw"), ExtResource("2_pkfxw"), ExtResource("2_pkfxw")])

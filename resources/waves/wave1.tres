@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=3 format=3 uid="uid://bw8hf35kg22la"]
+
+[ext_resource type="Script" path="res://resources/waves/wave.gd" id="1_vbwtn"]
+[ext_resource type="Script" path="res://resources/waves/level/level.gd" id="2_w6slg"]
+
+[resource]
+script = ExtResource("1_vbwtn")
+tabLevel = Array[ExtResource("2_w6slg")]([null])
+tabBoss = Array[PackedScene]([])

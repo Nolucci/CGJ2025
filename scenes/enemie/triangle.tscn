@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://umyq56u840ay"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_hjv5w"]
+[ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_ugumc"]
+[ext_resource type="Texture2D" uid="uid://cbxblscsqbtoa" path="res://assets/enemies/triangle.png" id="3_ydx3j"]
+[ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_wo736"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_6q8a3"]
+[ext_resource type="Resource" uid="uid://cpwmsw6bfeuv7" path="res://resources/patterns/triangle/bullet_line_colors_triangle_pattern.tres" id="6_mvtbm"]
+[ext_resource type="Resource" uid="uid://dy7r7sqvsvo1f" path="res://resources/patterns/triangle/bullet_circle_colors_triangle_pattern.tres" id="7_l2d2j"]
+[ext_resource type="Resource" uid="uid://bx2dqufy7hy47" path="res://resources/patterns/triangle/black_bullet_triangle_pattern.tres" id="8_xic3q"]
+
+[sub_resource type="Resource" id="Resource_2wsfb"]
+resource_local_to_scene = true
+script = ExtResource("2_ugumc")
+random_change = false
+random_switch_start = 4.0
+random_switch_end = 7.0
+center = Vector2(0, 0)
+radius = 100.0
+radius_change_speed = 20.0
+approach_speed = 100.0
+angle = 0.0
+is_increasing = true
+speed = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5qvx"]
+atlas = ExtResource("3_ydx3j")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xe5n"]
+atlas = ExtResource("3_ydx3j")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6ahs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5qvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xe5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmcyk"]
+radius = 18.0
+height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xthu5"]
+radius = 19.0
+height = 38.0
+
+[node name="Enemie" type="CharacterBody2D"]
+z_index = 500
+position = Vector2(287, 259)
+collision_layer = 4
+collision_mask = 2
+safe_margin = 0.001
+script = ExtResource("1_hjv5w")
+movement = SubResource("Resource_2wsfb")
+start_movement = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 900
+position = Vector2(7.62939e-06, 2.38419e-07)
+scale = Vector2(0.0639648, 0.0556641)
+sprite_frames = SubResource("SpriteFrames_y6ahs")
+autoplay = "default"
+frame_progress = 0.25108
+script = ExtResource("4_wo736")
+patterns = Array[ExtResource("5_6q8a3")]([ExtResource("6_mvtbm"), ExtResource("7_l2d2j"), ExtResource("8_xic3q")])
+speed = 3.0
+shoot_interval = 1.0
+nb_patterns_shoot = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 900
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_mmcyk")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2Dbis" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_xthu5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

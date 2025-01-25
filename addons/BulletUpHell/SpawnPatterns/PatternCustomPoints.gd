@@ -19,4 +19,3 @@ enum SYMTYPE{ClosedShape,Line}
 
 func _init():
 	resource_name = "PatternCustomPoints"
-

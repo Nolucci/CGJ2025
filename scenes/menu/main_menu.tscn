@@ -131,6 +131,8 @@ texture = ExtResource("2_pfgd4")
 expand_mode = 1
 
 [node name="CatPanneau" type="TextureRect" parent="."]
+visible = false
+z_index = -1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -149,7 +151,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="BackgroundPatoune" type="TextureRect" parent="."]
-z_index = -1
+z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -163,15 +165,15 @@ stretch_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -681.0
-offset_top = 30.0
-offset_right = -92.0
-offset_bottom = 141.0
+offset_left = -772.0
+offset_top = 11.0
+offset_right = -18.0
+offset_bottom = 122.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.665673, 0.748627, 0.705961, 1)
 theme_override_fonts/font = ExtResource("2_wuvld")
-theme_override_font_sizes/font_size = 100
-text = "Titre du Jeu"
+theme_override_font_sizes/font_size = 80
+text = "Chat-pitre Musicale"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 4

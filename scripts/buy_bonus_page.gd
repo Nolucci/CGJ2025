@@ -1,11 +1,17 @@
 extends Control
 
+
+@onready var button_scene = preload("res://ui/buyMenuButton.tscn")
+@onready var scroll_container = $Main/RigthPart/ScrollSkillContainer/SkillContainer
 @export var button_scene: PackedScene
 @onready var scroll_container = $Panel2/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
 @onready var first_level = preload("res://scenes/principale.tscn")
+
+
 @onready var main_menu = preload("res://scenes/menu/main_menu.tscn")
 var play_scene = preload("res://scenes/player/player.tscn")
+
 var animation_finished = false
 
 var player_instantiated = false
@@ -15,12 +21,7 @@ func _ready() -> void:
 	$ColorRect.visible = false
 	#@TODO obliger de faire ça pour le moment car sinon data pas initialisé
 	if !player_instantiated:
-		var player_scene = preload("res://scenes/player/player.tscn")
-		var player = player_scene.instantiate()
-		add_child(player)
-		player.queue_free()
-		player_instantiated = true
-		$Panel2/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
+		$Main/RigthPart/Header/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
 

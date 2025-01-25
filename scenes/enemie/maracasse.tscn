@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://ds7cckvhdqp60"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_sknit"]
+[ext_resource type="Script" path="res://scripts/enemies/movement/orbiting_sentinelle.gd" id="2_fg2cu"]
+[ext_resource type="Texture2D" uid="uid://bvnps575m4bqr" path="res://assets/enemies/Maracasse.png" id="3_l07j6"]
+[ext_resource type="Script" path="res://scripts/Patterns/pattern_manager.gd" id="4_qxc7i"]
+[ext_resource type="Script" path="res://scripts/enemies/abstract_pattern.gd" id="5_bvo4r"]
+[ext_resource type="Resource" uid="uid://d4a72xkxavp7e" path="res://resources/patterns/maracasse/black_bullet_maracasse_pattern.tres" id="6_v4u4s"]
+[ext_resource type="Resource" uid="uid://chn7t1fke376d" path="res://resources/patterns/violon/bullet_circle_colors_violon_pattern.tres" id="7_u0ew1"]
+
+[sub_resource type="Resource" id="Resource_2wsfb"]
+resource_local_to_scene = true
+script = ExtResource("2_fg2cu")
+random_change = false
+random_switch_start = 4.0
+random_switch_end = 7.0
+center = Vector2(0, 0)
+radius = 100.0
+radius_change_speed = 20.0
+approach_speed = 100.0
+angle = 0.0
+is_increasing = true
+speed = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_202wp"]
+atlas = ExtResource("3_l07j6")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb17o"]
+atlas = ExtResource("3_l07j6")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptylk"]
+atlas = ExtResource("3_l07j6")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6ahs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_202wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb17o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptylk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmcyk"]
+radius = 25.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hjql"]
+radius = 28.0
+height = 60.0
+
+[node name="Enemie" type="CharacterBody2D"]
+z_index = 500
+position = Vector2(287, 259)
+collision_layer = 4
+collision_mask = 2
+safe_margin = 0.001
+script = ExtResource("1_sknit")
+movement = SubResource("Resource_2wsfb")
+start_movement = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 900
+position = Vector2(7.92742e-06, -9.53674e-07)
+scale = Vector2(0.0639648, 0.0556641)
+sprite_frames = SubResource("SpriteFrames_y6ahs")
+autoplay = "default"
+frame_progress = 0.896
+script = ExtResource("4_qxc7i")
+patterns = Array[ExtResource("5_bvo4r")]([ExtResource("7_u0ew1"), ExtResource("6_v4u4s")])
+speed = 1.0
+shoot_interval = 1.0
+nb_patterns_shoot = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 900
+shape = SubResource("CapsuleShape2D_mmcyk")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2Dbis" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_2hjql")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
