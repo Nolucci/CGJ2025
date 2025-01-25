@@ -501,7 +501,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [connection signal="pressed" from="Panel2/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
 [connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Panel2/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
