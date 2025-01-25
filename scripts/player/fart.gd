@@ -11,13 +11,14 @@ var timer: float = 0.0
 
 func _ready() -> void:
 	EventManager.register_fart(self)
+	
 
 func _process(delta: float) -> void:
 	pass
 
 
 func _on_area_entered(area):
-	print(area)
+	pass
 
 
 func _on_animated_sprite_2d_animation_finished():

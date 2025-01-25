@@ -22,6 +22,8 @@ Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 PlayerManager="*res://scripts/global/player_manager.gd"
 EventManager="*res://scripts/global/event_manager.gd"
 PatternManager="*res://scripts/Patterns/pattern_manager.gd"
+AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
+MusicScene="*res://scenes/menu/music_scene.tscn"
 SceneSwither="*res://scripts/global/scene_swither.gd"
 GlobalSetting="*res://scripts/global/global_setting.gd"
 Save="*res://save/save.gd"
@@ -33,7 +35,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg")
 
 [input]
 
@@ -66,3 +68,11 @@ fart={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_options_menus/base/translations/menus_translations.en.translation", "res://addons/maaacks_options_menus/base/translations/menus_translations.fr.translation")
+
+[maaacks_options_menus]
+
+disable_plugin_dialogues=true

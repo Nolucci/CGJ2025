@@ -18,6 +18,8 @@ var canGriffe: bool = true;
 
 signal player_is_dead()
 
+@onready var sound_cut: AudioStreamPlayer2D = $cut
+
 func _ready() -> void:
 	area = $Area2D
 	Spawning.bullet_collided_body.connect(on_ball_entered)
@@ -43,9 +45,11 @@ func get_input():
 func griffer():
 	canGriffe = false
 	if fart_scene:
+		sound_cut.play()
 		var fart_instance = fart_scene.instantiate()
 		fart_instance.position = get_global_mouse_position()
 		get_parent().add_child(fart_instance)
+		
 	else:
 		print("Aucune scène de fart assignée !")
 	canGriffe = true
