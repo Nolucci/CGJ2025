@@ -4,6 +4,7 @@ extends Control
 @onready var scroll_container = $Panel2/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
 @onready var first_level = preload("res://scenes/principale.tscn")
+@onready var main_menu = preload("res://scenes/menu/main_menu.tscn")
 var play_scene = preload("res://scenes/player/player.tscn")
 var animation_finished = false
 
@@ -60,4 +61,13 @@ func _go_to_next_scene():
 	
 	
 func _on_transition_animation_finished(anim_name: StringName) -> void:
-	animation_finished = true
+	if anim_name == 'quit':
+		animation_finished = true
+		get_tree().change_scene_to_packed(main_menu)
+	if anim_name == 'to new page':
+		animation_finished = true
+
+
+func _on_quitter_pressed() -> void:
+	$ColorRect.visible = true
+	transition.play("quit")
