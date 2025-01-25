@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var spawn_point = $spawnPoints  # Le nœud contenant les spawn points
 @onready var go_points = $goPoints  # Le nœud contenant les points cibles
+@onready var player: Player = $Player
+@onready var ui_nbgriffure = $Control/nbgriffure
+@onready var ui_life = $Control/Control/HBoxContainer/vie
+@onready var ui_coeur = $Control/Control/HBoxContainer/coeur
 
 @export var waves: Array[Wave] = []
 var currentWave: int = 1
@@ -29,6 +33,15 @@ func _physics_process(_delta):
 			print("currentLevel : ", currentLevel)
 			print("currentWave : ", currentWave)
 			currentLevel += 1
+	
+	if player != null:
+		ui_nbgriffure.text = str(player.nbGriffure) + "/" + str(player.nbGriffureMax) + " griffures"
+		ui_life.text = str(PlayerManager.player_data.life)
+	
+	if PlayerManager.player_data.isInvinsible:
+		ui_coeur.texture = load("res://assets/player/iron_coeur.png")
+	else:
+		ui_coeur.texture = load("res://assets/player/coeur.png")
 
 func spawn_enemies(boss: bool):
 

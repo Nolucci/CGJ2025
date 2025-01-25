@@ -8,10 +8,14 @@ class_name Player
 @export var data: PlayerData
 @export var sprite: AnimatedSprite2D
 @export var fart_scene: PackedScene
+@export var nbGriffureMax: int = 3
+@export var nbGriffure: int = 0
+
 
 var input = Vector2.ZERO
 var screen_size
 var area: Area2D
+var canGriffe: bool = true;
 
 func _ready() -> void:
 	area = $Area2D
@@ -23,19 +27,28 @@ func _ready() -> void:
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
 	player_movement(delta)
+	
+	if Input.is_action_just_pressed("fart"):
+		if nbGriffure > 0 and canGriffe:
+			nbGriffure -= 1
+			griffer()
+			
+		
 
 func get_input():
 	input.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	input.y = int(Input.is_action_pressed("move_bot")) - int(Input.is_action_pressed("move_top"))
 	return input.normalized()
 
-func fart():
+func griffer():
+	canGriffe = false
 	if fart_scene:
 		var fart_instance = fart_scene.instantiate()
-		fart_instance.position = position
+		fart_instance.position = get_global_mouse_position()
 		get_parent().add_child(fart_instance)
 	else:
 		print("Aucune scène de fart assignée !")
+	canGriffe = true
 
 func player_movement(delta):
 	input = get_input()
@@ -93,7 +106,8 @@ func on_ball_entered(body, body_shape_index, B, local_shape_index, shared_area):
 	else:
 		PlayerManager.player_data.eat_ball()
 		if PlayerManager.player_data.can_fart():
-			fart()
+			if nbGriffure < nbGriffureMax:
+				nbGriffure += 1
 		
 
 func get_props_groups(B: Dictionary) -> Variant:
