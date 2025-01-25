@@ -1,7 +1,7 @@
 extends Control
 
 @export var button_scene: PackedScene
-@onready var scroll_container = $Main/Panel2/RigthPart/ScrollSkillContainer/SkillContainer
+@onready var scroll_container = $Panel2/ScrollSkillContainer/SkillContainer
 @onready var transition = $Transition
 @onready var first_level = preload("res://scenes/principale.tscn")
 var play_scene = preload("res://scenes/player/player.tscn")
@@ -19,7 +19,7 @@ func _ready() -> void:
 		add_child(player)
 		player.queue_free()
 		player_instantiated = true
-		$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
+		$Panel2/NumberOfCoin.text = "Patoune: "+str(PlayerManager.player_data.money)
 		PlayerManager.player_data.connect("upgrade_bought", Callable(self, "_on_upgrade_bought"))
 		load_buttons()
 
@@ -39,9 +39,9 @@ func _setup_button(button_instance, skill_data):
 	scroll_container.add_child(button_instance)
 	
 func _on_upgrade_bought(upgrade_name: String, new_level: int, remaining_money: int, name_link: String):
-	$Main/Panel2/RigthPart/Header/NumberOfCoin.text = "Patoune: " + str(remaining_money)
-	if $Main/Panel/SpriteContainer.has_node(name_link):
-		var node = $Main/Panel/SpriteContainer.get_node(name_link)
+	$Panel2/NumberOfCoin.text = "Patoune: " + str(remaining_money)
+	if $Panel/SpriteContainer.has_node(name_link):
+		var node = $Panel/SpriteContainer.get_node(name_link)
 		if not node.visible:
 			node.visible = true
 
